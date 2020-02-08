@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>二分探索で要領よく探す | うらじろ</title>
+  <meta name="author" content="kebayashi">
+  
+  <meta name="description" content="ソートされた配列の中から目当ての値を探し出す方法の一つに二分探索（Binary Search）という手法がある．探索範囲を二分割しながら求めたい値が存在する領域を狭めつつ，最終的に一つに特定する方法である．
+具体例例えば1A = [i for i in range(1,101)]という配列の中で左か">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="二分探索で要領よく探す"/>
+  <meta property="og:site_name" content="うらじろ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="うらじろ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">うらじろ</a></h1>
+  <h2><a href="/">ノートの代わり</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-二分探索で要領よく探す" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-08T09:59:18.000Z"><a href="/2020/02/08/二分探索で要領よく探す/">2020-02-08</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">二分探索で要領よく探す</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>ソートされた配列の中から目当ての値を探し出す方法の一つに二分探索（Binary Search）という手法がある．探索範囲を二分割しながら求めたい値が存在する領域を狭めつつ，最終的に一つに特定する方法である．</p>
+<h2 id="具体例"><a href="#具体例" class="headerlink" title="具体例"></a>具体例</h2><p>例えば<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">101</span>)]</span><br></pre></td></tr></table></figure><br>という配列の中で左から順に探索する線形探索を適用してみる．3という値がどこにあるか探したいときは順に1,2,3と探していけばすぐ見つかるが，90という値を探したいときは1,2,3,…,89,90と90個もの領域を探索していく必要がある．後半にある値を求めたい場合はこれだと効率が悪い．そこで二分探索を適用する．<br>二分探索は探索領域を中央で二分割することを繰り返す手法である．90という値を探すとき，「1~100の一つの領域」を「1~50,51~100の二つの領域」に分割し，その内の90が所属する方を次の探索領域とする．このとき90がどちらに所属するかを判断するために，配列があらかじめソートされている必要がある．分割基準の50 &lt; 90なので，90は後半の領域に含まれると判断できるのである．これを領域内に含まれる数が90だけになるまで繰り返す．<br>二分探索はソートされている配列にのみ適用できるという制約があるが，一から全ての値を見ながら探していく線形探索（Linear Search）と比べて圧倒的に速い．配列のサイズが$N$のときの計算量は線形探索が$O(N)$,二分探索が$O(logN)$である．</p>
+<h2 id="実装"><a href="#実装" class="headerlink" title="実装"></a>実装</h2><p>以下の問題を例題として実装を考える．<br><a href="https://atcoder.jp/contests/abc146/tasks/abc146_c" target="_blank" rel="noopener">AtCoder ABC146 C問題</a><br>実装上のポイントは「探索領域の端っこの管理」である．例えば，探索領域の左端の値をleft，右端の値をrightという変数で管理することにする．一反復内では探索領域は右か左のどちらか一方向のみから狭くなるので，求めたい値が二分割の内どっちに所属しているかでleftあるいはrightのどちらかを更新することになる．leftとrightの位置関係が入れ替わったときを探索の終了の合図とする．<br>なお，以下の実装は「分割の基準値」について処理した後に「分割の基準値未満の領域」と「分割の基準値より大きい領域」の二つに分けている．上の例だと「基準値50」を処理した後に「1~49の領域」と「51~100の領域」に分けていることになる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">A, B, money = map(int,input().split())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">afford</span><span class="params">(N)</span>:</span><span class="comment">#その整数が買えるか否かを返すbool関数</span></span><br><span class="line">    p = A*N+B*len(str(N))</span><br><span class="line">    <span class="keyword">if</span> p &lt;= money:<span class="comment">#その整数が買えるなら</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索領域の初期値</span></span><br><span class="line">left = <span class="number">0</span></span><br><span class="line">right = <span class="number">10</span>**<span class="number">9</span></span><br><span class="line"><span class="comment">#答えの初期値</span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#二分探索</span></span><br><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">    middle = left+(right-left)//<span class="number">2</span><span class="comment">#探索領域を二分割する．分割の基準となる値をmiddleに代入．</span></span><br><span class="line">    <span class="keyword">if</span> afford(middle):<span class="comment">#middleの値で買えるなら</span></span><br><span class="line">        ans = middle<span class="comment">#とりあえずmiddleが買える中での最高値ってことにとする</span></span><br><span class="line">        left = middle+<span class="number">1</span><span class="comment">#もっと大きな値を買えないかを調べるため，探索領域の左端を更新</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = middle<span class="number">-1</span><span class="comment">#もっと小さな値を調べるため，探索領域の右端を更新</span></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure><br>ちなみにこの問題では整数$N$に対して値段が単調増加であるため二分探索を適用できた（大事なこと）．</p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_d" target="_blank" rel="noopener">AtCoder ABC143 D問題</a><br>まず二分探索の問題に落とし込む必要がある．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/競技プログラミング/">競技プログラミング</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Python3/">Python3</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/08/%E4%BA%8C%E5%88%86%E6%8E%A2%E7%B4%A2%E3%81%A7%E8%A6%81%E9%A0%98%E3%82%88%E3%81%8F%E6%8E%A2%E3%81%99/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="検索">
+    <input type="hidden" name="as_sitesearch" value="yakeshiba.github.io">
+  </form>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">カテゴリー</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>5</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Python3/">Python3</a><small>5</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 kebayashi
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
