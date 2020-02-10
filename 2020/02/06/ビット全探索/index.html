@@ -71,7 +71,7 @@
 <h2 id="ビット全探索の実装"><a href="#ビット全探索の実装" class="headerlink" title="ビット全探索の実装"></a>ビット全探索の実装</h2><p>例題を解きながら理解するのが一番早い．<br><a href="https://atcoder.jp/contests/abc079/tasks/abc079_c" target="_blank" rel="noopener">AtCoder ABC079 C問題</a></p>
 <p>先にコードを掲載し，その後一行ずつ解説していく．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">S  = input()</span><br><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">    formula = S[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> digit <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br><span class="line">            formula += <span class="string">"+"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            formula += <span class="string">"-"</span></span><br><span class="line">        formula += S[digit+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> eval(formula) == <span class="number">7</span>:</span><br><span class="line">        print(formula+<span class="string">"=7"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure><br>$op1, op2, op3$の3つの箱それぞれに「+」か「-」を入れる．1で+を，0で-を表すことにする．</p>
 <h4 id="1行目"><a href="#1行目" class="headerlink" title="1行目"></a>1行目</h4><p>入力の受け取り．</p>
-<h4 id="2行目"><a href="#2行目" class="headerlink" title="2行目"></a>2行目</h4><p>今回の問題では3か所の箱に+か-を入れるので，全部で8通りの組み合わせがある．<br>ここで注意するのは，range(8)のときに取り得るのは0~7の値であるということ．<br>つまり，2進数表記で000~111となる3桁の数字を取り扱うということを意識する必要がある．<br>7までの間に3つの箱に0か1を入れる組み合わせの全通りが登場する．<br>余談だが，競プロで他の人の回答を見ると<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;len(S)<span class="number">-1</span>):</span><br></pre></td></tr></table></figure><br>と書かれていることもある．言ってることはrange(8)と同じである．<br>1を$len(S)-1=3$だけ左にビットをシフトすると「1000」，つまり8の2進数表記となる．</p>
+<h4 id="2行目"><a href="#2行目" class="headerlink" title="2行目"></a>2行目</h4><p>今回の問題では3か所の箱に+か-を入れるので，全部で8通りの組み合わせがある．ここで注意するのは，range(8)のときに取り得るのは0~7の値であるということ．<br>つまり，2進数表記で000~111となる3桁の数字を取り扱うということを意識する必要がある．すなわち，7までの間に3つの箱に0か1を入れる組み合わせの全通りが登場するということを言っている．<br>余談だが，競プロで他の人の回答を見ると<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;len(S)<span class="number">-1</span>):</span><br></pre></td></tr></table></figure><br>と書かれていることもある．言ってることはrange(8)と同じである．<br>1を$len(S)-1=3$だけ左にビットをシフトすると2進数で「1000」，つまり8の2進数表記となる．</p>
 <h4 id="3行目"><a href="#3行目" class="headerlink" title="3行目"></a>3行目</h4><p>変数formulaに式を格納していくことにする．初めの数字をそのまま入れる．</p>
 <h4 id="4行目"><a href="#4行目" class="headerlink" title="4行目"></a>4行目</h4><p>このforループ内でそれぞれの箱に+と-のどちらを入れるかを決める．3つの箱があるので3回まわす．</p>
 <h4 id="5行目"><a href="#5行目" class="headerlink" title="5行目"></a>5行目</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br></pre></td></tr></table></figure>
@@ -158,7 +158,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>5</small></li>
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
   </ul>
 </div>
@@ -169,7 +169,7 @@
   <h3 class="title">タグ</h3>
   <ul class="entry">
   
-    <li><a href="/tags/Python3/">Python3</a><small>5</small></li>
+    <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
   
   </ul>
 </div>
