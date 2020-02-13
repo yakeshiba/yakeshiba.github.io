@@ -44,6 +44,97 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-位相空間とは" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-12T10:33:54.000Z"><a href="/2020/02/12/位相空間とは/">2020-02-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/12/位相空間とは/">位相空間とは</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下のサイトや文献を読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a><br>初瀬弘平：微分幾何学講義，共立出版，1993</p>
+<p>基礎のキソ3章で位相空間について記されているのでそれを読んで整理する．<br>解釈に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
+<h2 id="開集合系・位相の直感的解釈"><a href="#開集合系・位相の直感的解釈" class="headerlink" title="開集合系・位相の直感的解釈"></a>開集合系・位相の直感的解釈</h2><p>今回の主役である位相空間をなんとなく理解する．</p>
+<h3 id="集合について（準備）"><a href="#集合について（準備）" class="headerlink" title="集合について（準備）"></a>集合について（準備）</h3><p>整数$n\in\mathbb{Z}$に対し，$\mathbb{R}^2$上の半径$1$，中心座標が$(n,0)$の開円盤を</p>
+<script type="math/tex; mode=display">B_n := \{(x,y)\in\mathbb{R}^2:(x-n)^2+y^2<1\}</script><p>とおく．$B_n$はある円の内側の座標の集合である．このとき，$n$の値によって$B_n$の元が変わる（取り得る座標が異なるため）．<br>それらすべてをまとめて表現するため，「無限個の$n$の中から具体的な$n$を一つ定めたときの$B_n$」を全て合わせたものを</p>
+<script type="math/tex; mode=display">\bigcup_{n\in\mathbb{Z}}B_n = \cdots\cup B_{-2}\cup B_{-1}\cup B_{0}\cup B_1\cup B_2\cdots</script><p>と表す．この集合を和集合という．また，この式の左辺の$\mathbb{Z}$にあたる集合を添え字集合という．</p>
+<h3 id="位相空間の定義"><a href="#位相空間の定義" class="headerlink" title="位相空間の定義"></a>位相空間の定義</h3><p>集合$S$に対し部分集合の族(部分集合の集合)$O$が$S$の開集合系であるとは，次の三つの条件<br>1.　<script type="math/tex">S\in O</script>かつ<script type="math/tex">\emptyset\in O</script><br>2.　<script type="math/tex">m\in\mathbb{N},O_1,\ldots,O_m \Longrightarrow O_1\cap\cdots O_m\in O</script><br>3.　任意の集合$\Lambda$に対し，各元$\lambda\in\Lambda$から$O$の元<script type="math/tex">O_\lambda</script>への対応を考えたとき<script type="math/tex">\bigcup_{\lambda\in\Lambda} O_{\lambda} \in O</script></p>
+<p>を満たすときをいう．<br>集合$S$に開集合系$O$が与えられているとき「$S$には$O$による位相（構造）が入る」といい，$O$の元を開集合とよぶ．このときの$S$を<strong>位相空間</strong>という．</p>
+<h3 id="条件の翻訳"><a href="#条件の翻訳" class="headerlink" title="条件の翻訳"></a>条件の翻訳</h3><p>位相空間が満たすべき三つの条件を日本語に訳す．<br>条件１→もとの集合$S$自体も部分集合の集合（族）$O$に属するグループ（つまり$S$のとある部分集合のこと）である．空集合$\emptyset$も$O$に属するグループとみなす．<br>条件２→$O$に属する有限個のグループに対し，それらの共通部分（積集合）も$O$に属するグループである<br>条件３→$O$に属するグループの有限個あるいは無限個の和集合も$O$に属するグループである．<br>以上より，「位相」というのは「グループ分け」の感覚を定式化したものと捉えられる．練習問題を解くとより一層イメージが明確になる．</p>
+<h3 id="練習問題１"><a href="#練習問題１" class="headerlink" title="練習問題１"></a>練習問題１</h3><p>$S = $ <script type="math/tex">\{英，仏，米\}</script> に対して以下のように部分集合の族$O$を定めるとき，$(S,O)$が位相空間となっているのはどれか？<br>Ⅰ.　<script type="math/tex">O=\{\emptyset,\{英，仏\},\{仏，米\},S\}</script><br>Ⅱ.　<script type="math/tex">O=\{\emptyset,\{英\},\{仏\},\{米\},S\}</script><br>Ⅲ.　<script type="math/tex">O=\{\emptyset,\{米\},\{英，米\},\{英，仏\},S\}</script></p>
+<p>三つの条件それぞれを満たしているかどうか調べる．<br>条件１→いずれも満たしている．<br>条件２→Ⅰは満たしていない（<script type="math/tex">\{英，仏\}\cap\{仏，米\}=\{仏\}</script>だが，$O$に<script type="math/tex">\{仏\}</script>は含まれていない）．Ⅱ，Ⅲは満たしている．<br>条件３→Ⅱは満たしていない（例えば<script type="math/tex">\{英\}，\{仏\}</script>の和集合<script type="math/tex">\{英，仏\}</script>がない）．Ⅰ，Ⅲは満たしている．<br>以上より，位相空間となっているのはⅢである．</p>
+<h2 id="コメント"><a href="#コメント" class="headerlink" title="コメント"></a>コメント</h2><p>基礎のキソ3章ではこの後に「位相空間としてのユークリッド空間」について述べられているが，この章を整理するのはここまでにしてとりあえず次の章をまとめることにする．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-微分幾何学の基礎としての線形代数" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-11T06:05:21.000Z"><a href="/2020/02/11/微分幾何学の基礎としての線形代数/">2020-02-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/11/微分幾何学の基礎としての線形代数/">双対空間をなんとなく理解する</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下のサイトや文献を読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a><br>初瀬弘平：微分幾何学講義，共立出版，1993</p>
+<p>説明が不十分だったり解釈に間違いがあったりするかもしれないので，適宜見直しや修正をしていきたい．</p>
+<h2 id="線形汎関数"><a href="#線形汎関数" class="headerlink" title="線形汎関数"></a>線形汎関数</h2><p>線形写像$f:\mathbb{R}^n\to\mathbb{R}$を$\mathbb{R}^n$の<strong>線形汎関数</strong>と呼ぶ．ベクトルを入力としたときにスカラーを出力する関数のことである．</p>
+<h2 id="双対空間"><a href="#双対空間" class="headerlink" title="双対空間"></a>双対空間</h2><p>例えばベクトルの内積を考える．$n$次元ベクトル$\boldsymbol{a}$と$\boldsymbol{b}$について，$f_a$と$f_b$が</p>
+<script type="math/tex; mode=display">f_a(\boldsymbol{x}) = \boldsymbol{a}\cdot\boldsymbol{x},\boldsymbol{x}\in\mathbb{R}^n</script><script type="math/tex; mode=display">f_b(\boldsymbol{x}) = \boldsymbol{b}\cdot\boldsymbol{x},\boldsymbol{x}\in\mathbb{R}^n</script><p>という関数のとき，$f_a$と$f_b$はいずれも線形汎関数である．つまり，$\mathbb{R}^n$の線形汎関数の集合$(\mathbb{R}^n)^{＊}$というものを考えたとき，$f_a$と$f_b$はいずれも集合$(\mathbb{R}^n)^{＊}$の元である.<br>また，ベクトルの内積について，任意の$\alpha,\beta\in\mathbb{R}$に対し</p>
+<script type="math/tex; mode=display">(\alpha\boldsymbol{a}+\beta\boldsymbol{b})\cdot\boldsymbol{x} = \alpha(\boldsymbol{a}\cdot\boldsymbol{x}) + \beta(\boldsymbol{b}\cdot\boldsymbol{x})</script><p>という関係が成り立つ（ベクトルの内積なので当然）．<br>これは，集合$(\mathbb{R}^n)^{＊}$の中で全ての線形汎関数が満たす関係式</p>
+<script type="math/tex; mode=display">f_{\alpha a + \beta b}(\boldsymbol{x}) = \alpha f_a(\boldsymbol{x}) + \beta f_b(\boldsymbol{x})</script><p>である．この関係式が満たす性質（和とスカラー倍）は線形空間のものだから，集合$(\mathbb{R}^n)^{＊}$が線形空間であることが分かる．この線形空間$(\mathbb{R}^n)^{＊}$を$\mathbb{R}^n$の<strong>双対空間</strong>と呼ぶ．</p>
+<h3 id="双対空間の定義"><a href="#双対空間の定義" class="headerlink" title="双対空間の定義"></a>双対空間の定義</h3><p>任意の線形汎関数$f,g\in(\mathbb{R}^n)^{＊}$，定数$\alpha\in\mathbb{R}$について</p>
+<ul>
+<li>和 : $f+g\in(\mathbb{R}^n)^{＊}$を$(f+g)(\boldsymbol{x}):= f(\boldsymbol{x}) + g(\boldsymbol{x}),\boldsymbol{x}\in\mathbb{R}^n$</li>
+<li>スカラー倍 : $\alpha f\in(\mathbb{R}^n)^{＊}$を$(\alpha f)(\boldsymbol{x}) := \alpha f(\boldsymbol{x}),\boldsymbol{x}\in\mathbb{R}^n$</li>
+</ul>
+<p>と定義する．零ベクトルに対応するのは$0(\boldsymbol{x})=0$となる線形汎関数$0$である．</p>
+<h2 id="双対空間の性質（双対性）"><a href="#双対空間の性質（双対性）" class="headerlink" title="双対空間の性質（双対性）"></a>双対空間の性質（双対性）</h2><p>$\mathbb{R}^n$と$(\mathbb{R}^n)^{＊}$の関係をみてみる．<br>①線形汎関数$f_a\in(\mathbb{R}^n)^{＊}$を自由に選べて，入力するベクトル$\boldsymbol{x}\in\mathbb{R}^n$が不明なときを考える．求まる内積の値は$\boldsymbol{x}$に関して線形であるという性質があるから，基底となる$n$個の線形汎関数に対して同じ$\boldsymbol{x}$を入力したときに求まる$n$個の内積値を見ることで入力した$\boldsymbol{x}$が何なのかを当てることができる．<br>②入力するベクトル$\boldsymbol{x}_0$を自由に選べて，線形汎関数$f$が不明なときを考える．求まる内積の値は$f$に関して線形であるという性質があるから，基底となる$n$個の$n$次元ベクトル（こっちは想像しやすい．単位ベクトルなど）を入力したときに求まる内積値を見ることでどの関数$f$に$\boldsymbol{x}_0$を入力したのかを当てることができる（$f_a$の$\boldsymbol{a}$の具体的な値を求められる）．<br>以上の対称的な関係が成り立っていることから，$x$と$f$には互いが互いを調べられる機能が備わっている事が分かる．この性質を<strong>双対性</strong>という．</p>
+<h2 id="more-information"><a href="#more-information" class="headerlink" title="more information"></a>more information</h2><p>以上の議論を一般化したものが「多様体の基礎のキソ」の1.6.6節に載っているので必要に応じてそちらを参考にする．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-数列に対する操作その１（部分和・累積和，LIS）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -61,7 +152,10 @@
     <div class="e-content entry" itemprop="articleBody">
       
         <p>競プロではしばしば与えられた数列に対して何かしらの操作を加える問題が出題される．今回はそのうちの典型問題と解法を抑える．</p>
-<h2 id="累積和を利用した部分和の計算"><a href="#累積和を利用した部分和の計算" class="headerlink" title="累積和を利用した部分和の計算"></a>累積和を利用した部分和の計算</h2><p>数列の一定範囲の値を足し合わせたものを部分和という．部分和を求めるために必要な情報が累積和と呼ばれる値である．累積和$S_i$は数列の値である$a_0$から$a_i$までの値を全て足し合わせたものである．<br>例えば長さ5の数列に対して範囲3の部分和を求めたいとする．累積和$S_0$から$S_4$は<br>$S_0 = a_0$<br>$S_1 = a_0+a_1$<br>$S_2 = a_0+a_1+a_2$<br>$S_3 = a_0+a_1+a_2+a_3$<br>$S_4 = a_0+a_1+a_2+a_3+a_4$<br>であり，求めたい長さ3の部分和$P_0$，$P_1$，$P_2$は<br>$P_0 = a_0+a_1+a_2$<br>$P_1 = a_1+a_2+a_3$<br>$P_2 = a_2+a_3+a_4$<br>である．<br>上の$S$や$P$に関する式を眺めると，求めたい部分和$P_0$，$P_1$，$P_2$について<br>$P_0 = a_0+a_1+a_2 = S_2$<br>$P_1 = a_1+a_2+a_3 = (a_0+a_1+a_2+a_3)-(a_0) = S_3-S_0$<br>$P_2 = a_2+a_3+a_4 = (a_0+a_1+a_2+a_3+a_4) - (a_0+a_1) = S_4-S_1$<br>の関係が成り立っていることがわかる．これを元の数列の長さ$N$や部分和を求めたい範囲$K$に応じて実装すればよい．<br>以下の問題は基礎中の基礎．特に難しい応用を考える必要もなく，求めるべきは部分和そのもの．<br><a href="https://atcoder.jp/contests/abc037/tasks/abc037_c" target="_blank" rel="noopener">AtCoder ABC037 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">N, K = map(int,input().split())</span><br><span class="line">A = list(map(int,input().split()))</span><br><span class="line">cumsum = []<span class="comment">#累積和を保存するリスト．</span></span><br><span class="line">cumsum.append(A[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N<span class="number">-1</span>):<span class="comment">#累積和の計算．部分和を求めるための前処理．</span></span><br><span class="line">    cumsum.append(A[i+<span class="number">1</span>]+cumsum[i])</span><br><span class="line">ans_sum = []<span class="comment">#部分和を保存するリスト</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(N-K+<span class="number">1</span>):<span class="comment">#部分和の計算</span></span><br><span class="line">    <span class="keyword">if</span> j == <span class="number">0</span>:<span class="comment">#一個目の数列を含む範囲の時は累積和そのものの値</span></span><br><span class="line">        ans_sum.append(cumsum[K<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">else</span>:<span class="comment">#それ以外</span></span><br><span class="line">        ans_sum.append(cumsum[j+K<span class="number">-1</span>]-cumsum[j<span class="number">-1</span>])</span><br><span class="line">print(sum(ans_sum))</span><br></pre></td></tr></table></figure></p>
+<h2 id="累積和を利用した部分和の計算"><a href="#累積和を利用した部分和の計算" class="headerlink" title="累積和を利用した部分和の計算"></a>累積和を利用した部分和の計算</h2><p>数列の一定範囲の値を足し合わせたものを部分和という．部分和を求めるために必要な情報が累積和と呼ばれる値である．累積和$S_i$は数列の値である$a_0$から$a_i$までの値を全て足し合わせたものである．<br>例えば長さ5の数列に対して範囲3の部分和を求めたいとする．累積和$S_0$から$S_4$は</p>
+<script type="math/tex; mode=display">S_0 = a_0</script><script type="math/tex; mode=display">S_1 = a_0+a_1</script><script type="math/tex; mode=display">S_2 = a_0+a_1+a_2</script><script type="math/tex; mode=display">S_3 = a_0+a_1+a_2+a_3</script><script type="math/tex; mode=display">S_4 = a_0+a_1+a_2+a_3+a_4</script><p>であり，求めたい長さ3の部分和$P_0$，$P_1$，$P_2$は</p>
+<script type="math/tex; mode=display">P_0 = a_0+a_1+a_2</script><script type="math/tex; mode=display">P_1 = a_1+a_2+a_3</script><script type="math/tex; mode=display">P_2 = a_2+a_3+a_4</script><p>である．<br>上の$S$や$P$に関する式を眺めると，求めたい部分和$P_0$，$P_1$，$P_2$について</p>
+<script type="math/tex; mode=display">P_0 = a_0+a_1+a_2 = S_2</script><script type="math/tex; mode=display">P_1 = a_1+a_2+a_3 = (a_0+a_1+a_2+a_3)-(a_0) = S_3-S_0</script><script type="math/tex; mode=display">P_2 = a_2+a_3+a_4 = (a_0+a_1+a_2+a_3+a_4) - (a_0+a_1) = S_4-S_1</script><p>の関係が成り立っていることがわかる．これを元の数列の長さ$N$や部分和を求めたい範囲$K$に応じて実装すればよい．<br>以下の問題は基礎中の基礎．特に難しい応用を考える必要もなく，求めるべきは部分和そのもの．<br><a href="https://atcoder.jp/contests/abc037/tasks/abc037_c" target="_blank" rel="noopener">AtCoder ABC037 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">N, K = map(int,input().split())</span><br><span class="line">A = list(map(int,input().split()))</span><br><span class="line">cumsum = []<span class="comment">#累積和を保存するリスト．</span></span><br><span class="line">cumsum.append(A[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N<span class="number">-1</span>):<span class="comment">#累積和の計算．部分和を求めるための前処理．</span></span><br><span class="line">    cumsum.append(A[i+<span class="number">1</span>]+cumsum[i])</span><br><span class="line">ans_sum = []<span class="comment">#部分和を保存するリスト</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(N-K+<span class="number">1</span>):<span class="comment">#部分和の計算</span></span><br><span class="line">    <span class="keyword">if</span> j == <span class="number">0</span>:<span class="comment">#一個目の要素を含む範囲の時は累積和そのものの値</span></span><br><span class="line">        ans_sum.append(cumsum[K<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">else</span>:<span class="comment">#それ以外</span></span><br><span class="line">        ans_sum.append(cumsum[j+K<span class="number">-1</span>]-cumsum[j<span class="number">-1</span>])</span><br><span class="line">print(sum(ans_sum))</span><br></pre></td></tr></table></figure></p>
 <h2 id="LIS問題"><a href="#LIS問題" class="headerlink" title="LIS問題"></a>LIS問題</h2><p>与えられた数列$a_0,a_1,…,a_N$に対し，$0 \leq j &lt; i \leq N$を満たす整数について$a_j &lt; a_i$を満たす部分の内の最長のものを最長増加部分列(LIS:Longest Increasing Subsequence)という．要はどの隣接する2つの要素を見たとしても必ず右にある要素の値の方が大きい数列のことである．<br>よくわからない場合は問題を見た方が早い．<br><a href="https://chokudai_s001.contest.atcoder.jp/tasks/chokudai_S001_h" target="_blank" rel="noopener">AtCoder ChokudaiSpeedrun001 H問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">N = int(input())</span><br><span class="line">a = list(map(int,input().split()))</span><br><span class="line">LIS = [a[<span class="number">0</span>]]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">    <span class="keyword">if</span> a[i] &gt; LIS[<span class="number">-1</span>]:<span class="comment">#LISの右端の要素より大きいとき</span></span><br><span class="line">        LIS.append(a[i])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        LIS[bisect.bisect_left(LIS,a[i])] = a[i]<span class="comment">#bisect_leftで「a[i]より大きい値の内の最小値」の位置</span></span><br><span class="line">print(len(LIS))</span><br></pre></td></tr></table></figure><br>上のコードでやっているのは，新たに用意した空の（最終的に単調増加にしたい）リストLISに対して元の数列の要素$a_0,a_1,…,a_N$の一つひとつをLISの適切な位置に配置しているということである．<br>初めに$a_0$をLISに追加して初期化しておき，その後は各要素$a_1,a_2,…a_N$の値とLISの末端の値”LIS[-1]”の大小関係によって処理を考える．<br>①$a_i&gt;$ LIS[-1]のとき，$a_i$をそのままappendする．<br>②そうでないとき，LISの適切な要素を$a_i$で上書きする．上書きする要素の位置は「LISに含まれる『$a_i$より大きい値』の中で最小の要素」の場所である．その位置を求めるのに二分探索をする必要があるが，Python3ならbisectというモジュールを用いるだけでよい．<br>本当にこの方法で最長の単調増加数列が求まるのか疑問に思うかもしれないが，外部サイトにて証明されている．LISのアルゴリズムの説明そのものもこちらの記事の方が分かりやすい．<br><a href="https://qiita.com/python_walker/items/d1e2be789f6e7a0851e5" target="_blank" rel="noopener">Qiita 最長増加部分列(LIS)の長さを求める</a></p>
 <h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc154/tasks/abc154_d" target="_blank" rel="noopener">AtCoder ABC154 D問題</a><br><a href="https://atcoder.jp/contests/arc098/tasks/arc098_a" target="_blank" rel="noopener">AtCoder ABC098 C問題</a><br>累積和の考え方を使わなきゃならない問題の見極めが出来るようになりたい．</p>
 
@@ -342,6 +436,8 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
+    <li><a href="/categories/数学/">数学</a><small>2</small></li>
+  
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
   </ul>
@@ -354,6 +450,10 @@
   <ul class="entry">
   
     <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
+  
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>2</small></li>
+  
+    <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
   </ul>
 </div>
