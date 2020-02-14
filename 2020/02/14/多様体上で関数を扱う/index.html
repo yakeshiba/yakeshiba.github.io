@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>多様体上で関数を扱う | うらじろ</title>
+  <meta name="author" content="kebayashi">
+  
+  <meta name="description" content="以下のサイトを読んでまとめる．Tomoki Kawahira：多様体の基礎のキソ
+基礎のキソ4章で多様体について記されているのでそれを読んで整理する．内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．
+位相空間の一点ごとになにか値を与える写像を関数というのであった．多様体$M$も（">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="多様体上で関数を扱う"/>
+  <meta property="og:site_name" content="うらじろ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="うらじろ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">うらじろ</a></h1>
+  <h2><a href="/">ノートの代わり</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-多様体上で関数を扱う" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-14T04:15:09.000Z"><a href="/2020/02/14/多様体上で関数を扱う/">2020-02-14</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">多様体上で関数を扱う</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
+<p>基礎のキソ4章で多様体について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
+<p>位相空間の一点ごとになにか値を与える写像を関数というのであった．多様体$M$も（厳密には$M$単体で）位相空間だから，$M$上の一点に値を与える写像というものを考えることができる．</p>
+<h2 id="地図帳で表現された関数の整合性"><a href="#地図帳で表現された関数の整合性" class="headerlink" title="地図帳で表現された関数の整合性"></a>地図帳で表現された関数の整合性</h2><p>位相空間$M$上の関数<script type="math/tex">f:M\rightarrow\mathbb{R}</script>が与えられているとき，これを多様体$M$上の関数<script type="math/tex">f:M\rightarrow\mathbb{R}</script>とみなせる．ただし多様体$M$から直接情報を取り出すことができず，地図帳$A$からの情報のみで全てを察するしかないという問題がある．<br>例として挙げられているのは海抜高度．$M$が地球の表面であり，海抜高度が関数$f:M\rightarrow\mathbb{R}$で与えられているとする．地図帳$A$の各ページには衛星<script type="math/tex">\{\phi_\lambda\}_{\lambda\in\Lambda}</script>たちが観測した海抜高度（関数値）が色や等高線として記録される．すなわち地図帳の$\lambda$ページ目を開くと，<script type="math/tex">\phi_\lambda(U_\lambda)=\mathbb{U}_\lambda</script>で定義された実数値関数</p>
+<script type="math/tex; mode=display">F_\lambda = f\circ{\phi_\lambda}^{-1}:\mathbb{U}_\lambda\rightarrow\mathbb{R}</script><p>が色や等高線で描かれている．以下は基礎のキソ4章に載っている図で，写像同士の関連性が分かりやすい．<br><img src="https://www.dropbox.com/s/4oon7s5zfgtc92u/%E5%A4%9A%E6%A7%98%E4%BD%93%E3%81%AE%E6%95%B4%E5%90%88%E6%80%A7.PNG?dl=0" alt="地図帳のあるページに表現された多様体上の関数"><br>この合成関数でやっているのは「<script type="math/tex">{\phi_\lambda}^{-1}</script>で観測エリア<script type="math/tex">U_\lambda</script>を「再現」して，そいつの海抜を$f$で求める」ということである．この<script type="math/tex">F_\lambda</script>は$\mathbb{R}^n$のある領域から$\mathbb{R}$への関数であり，多変数関数の微分・積分が適用可能である．<br>ここで，「整合性」について考える．実際の世界を例に挙げて考えると．日本地図上の「名古屋」と愛知県地図上の「名古屋」のいずれも同じ色で塗られて同じような等高線が引かれているはずである．つまり眺めるスケールが異なったとしても．値そのものは同じになる必要がある．これが整合性という言葉が指していることである．これを数学で表現する．<br>多様体$M=(M,A)$上の関数$f:M\rightarrow\mathbb{R}$について，実際に得られる情報は地図帳$A$（の局所座標<script type="math/tex">\phi\lambda:U_\lambda \rightarrow\mathbb{U}_\lambda</script>)を通した関数</p>
+<script type="math/tex; mode=display">F_\lambda = f\circ{\phi_\lambda}^{-1}:\mathbb{U}_\lambda\rightarrow\mathbb{R}</script><p>の集まりである．この情報は地図帳の各ページが海抜高度に応じて色付けされていることを表現している．この状況下において「整合性」を数学で表現すると，地図帳の異なるページの重複部分<script type="math/tex">x\in U_\lambda\cap U_\mu</script>において</p>
+<script type="math/tex; mode=display">F_\lambda(\phi_\lambda(x)) = F_\mu(\phi_\mu(x))</script><p>なる関係式が成立しているということである．「$\lambda$ページ目に載っている重複部分$x$の海抜（左辺）は，$\mu$ページ目に載っている重複部分$x$の海抜（右辺）と等しい」という（当然の）ことを式で表しているだけである．</p>
+<h2 id="多様体上の関数の微分可能性"><a href="#多様体上の関数の微分可能性" class="headerlink" title="多様体上の関数の微分可能性"></a>多様体上の関数の微分可能性</h2><p><script type="math/tex">C^\alpha</script>級多様体とは，その上に<script type="math/tex">C^\alpha</script>級関数が定義できる多様体のことである．これを念頭に置いて読み進める．</p>
+<h3 id="ユークリッド空間上の-C-1-級関数について"><a href="#ユークリッド空間上の-C-1-級関数について" class="headerlink" title="ユークリッド空間上の$C^1$級関数について"></a>ユークリッド空間上の$C^1$級関数について</h3><p>開集合$\mathbb{U}\subset\mathbb{R}^n$について関数<script type="math/tex">F:\mathbb{U}\rightarrow\mathbb{R}</script>が$C^1$級関数であるとは，<script type="math/tex">\boldsymbol{x} = (x_1,x_2,\ldots,x_n)\in\mathbb{U}</script>を変数とするとき各成分$x_i$についての偏導関数<script type="math/tex">\boldsymbol{x} \mapsto \frac{\partial F(\boldsymbol{x})}{\partial x_i}\in\mathbb{R}</script>が存在し，連続関数であることをいう．</p>
+<h3 id="C-1-級多様体上の-C-1-級関数について"><a href="#C-1-級多様体上の-C-1-級関数について" class="headerlink" title="$C^1$級多様体上の$C^1$級関数について"></a>$C^1$級多様体上の$C^1$級関数について</h3><p>ユークリッド空間上のそれとは異なる定義がなされている．</p>
+<h4 id="C-1-級多様体上の-C-1-級関数の定義"><a href="#C-1-級多様体上の-C-1-級関数の定義" class="headerlink" title="$C^1$級多様体上の$C^1$級関数の定義"></a><strong>$C^1$級多様体上の$C^1$級関数の定義</strong></h4><p>$M$は$C^1$級多様体であると仮定する．関数$f:M\rightarrow\mathbb{R}$が$C^1$級関数であるとは，全ての局所座標<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\mathbb{U}_\lambda</script>について，関数<script type="math/tex">F_\lambda := f\circ{\phi_\lambda}^{-1}:\mathbb{U}_\lambda\rightarrow\mathbb{R}</script>が$C^1$級関数であることをいう．</p>
+<p>この定義では関数$f$そのものが偏微分可能かどうかについて言及していない．そもそも$f$の偏導関数が存在すると言ってないし，$M$の各点で$f$の偏微分係数を求めたりすることはない（できない？）．<br>あくまで地図帳の各ページの地形図からそこの海抜を求める関数<script type="math/tex">F_\lambda</script>がユークリッド空間上の$C^1$級関数と同じ性質を持っているという話である．別の言い方をすれば，色や等高線で書かれた$f$の値がそのページ固有の座標系に関して連続な偏導関数を持つということである．</p>
+<h4 id="「-C-1-級多様体である」ことが保障するもの"><a href="#「-C-1-級多様体である」ことが保障するもの" class="headerlink" title="「$C^1$級多様体である」ことが保障するもの"></a><strong>「$C^1$級多様体である」ことが保障するもの</strong></h4><p>基礎のキソで１ページ分使って解説されているが，とにかく重要なのは<br>地図帳のあるページのある地域で海抜高度を表す色が$C^1$級で変化していれば，同一地域が記載されている他のページにおいても，海抜高度を表す色は$C^1$級に変化している<br>の部分である．<br>このように局所座標（ページ）によらない不偏的な性質を「多様体上の関数$f$の性質」ということにする．<br>なお，偏微分係数そのものの値は$f$の不偏的な性質ではない．そのページの地図の縮尺や図法次第で海抜の変化度合いは変わるからである（地図帳の各ページは実際の地球上の距離の大小関係を正確に反映していない．同じ名古屋市に注目するとき，紙面のサイズが同じ世界地図と県地図とでずいぶんと大きさが違って見える）．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/数学/">数学</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/微分幾何学/">微分幾何学</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/14/%E5%A4%9A%E6%A7%98%E4%BD%93%E4%B8%8A%E3%81%A7%E9%96%A2%E6%95%B0%E3%82%92%E6%89%B1%E3%81%86/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="検索">
+    <input type="hidden" name="as_sitesearch" value="yakeshiba.github.io">
+  </form>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">カテゴリー</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/数学/">数学</a><small>4</small></li>
+  
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
+  
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>4</small></li>
+  
+    <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 kebayashi
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

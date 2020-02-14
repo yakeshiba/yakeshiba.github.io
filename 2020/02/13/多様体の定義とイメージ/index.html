@@ -47,13 +47,13 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-多様体の話" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-多様体の定義とイメージ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-13T14:16:42.000Z"><a href="/2020/02/13/多様体の話/">2020-02-13</a></time>
+        <time class="dt-published" datetime="2020-02-13T14:16:42.000Z"><a href="/2020/02/13/多様体の定義とイメージ/">2020-02-13</a></time>
       
       
   
@@ -67,26 +67,26 @@
 <p>基礎のキソ4章で多様体について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
 <p>多様体(manifold)は独立した空間の概念で，例えば球面などでイメージされる．多様体の「外」の空間，つまり球面から外れた空間というものは存在しない．イメージとしては地球の「外」，つまり宇宙に相当する空間が存在しないと言っているようなものである．<br>そして，我々は多様体「上」の情報を取り扱うために多様体上の空間を部分的にユークリッド空間として処理する（ユークリッド空間に投影する）必要がある．</p>
 <h2 id="準備（同相写像）"><a href="#準備（同相写像）" class="headerlink" title="準備（同相写像）"></a>準備（同相写像）</h2><p>多様体の定義に同相写像の概念が必要である．</p>
-<h3 id="同相写像の定義"><a href="#同相写像の定義" class="headerlink" title="同相写像の定義"></a>同相写像の定義</h3><p>二つの位相空間$(S,O),(S’,O)$について，写像<script type="math/tex">f:S\rightarrow S'</script>が同相写像であるとは次の条件を満たすとき．<br>1.　全単射であり，したがって<script type="math/tex">f^{-1}:S'\rightarrow S</script>が写像として定まる．<br>2.　$f$も$f^{-1}$も連続である．</p>
-<h3 id="定義の解釈"><a href="#定義の解釈" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>二つの空間が同相であるというのは，二つの空間を「同じとみなせる」ということ．<br>開集合系，すなわちグループ分け全体の間にも一対一の対応があるから．$(S,O)$と$(S,O’)$は位相空間という枠組みで解釈し続ける限り，「同じ空間を別の名前で表現している」だけとも言える．つまり写像$f$は空間の名前を$S$から$S’$に変えているだけとみなせる．</p>
+<h3 id="同相写像の定義"><a href="#同相写像の定義" class="headerlink" title="同相写像の定義"></a>同相写像の定義</h3><p>二つの位相空間$(S,O),(S’,O’)$について，写像<script type="math/tex">f:S\rightarrow S'</script>が同相写像であるとは次の条件を満たすとき．<br>1.　全単射であり，したがって<script type="math/tex">f^{-1}:S'\rightarrow S</script>が写像として定まる．<br>2.　$f$も$f^{-1}$も連続である．</p>
+<h3 id="定義の解釈"><a href="#定義の解釈" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>二つの空間が同相であるというのは，二つの空間を「同じとみなせる」ということ．<br>開集合系，すなわちグループ分け全体の間にも一対一の対応があるから．$(S,O)$と$(S’,O’)$は位相空間という枠組みで解釈し続ける限り，「同じ空間を別の名前で表現している」だけとも言える．つまり写像$f$は空間の名前を$S$から$S’$に変えているだけとみなせる．</p>
 <h2 id="定義と翻訳"><a href="#定義と翻訳" class="headerlink" title="定義と翻訳"></a>定義と翻訳</h2><p>初めに定義を記し，順番に日本語に翻訳する．</p>
-<h3 id="多様体の定義"><a href="#多様体の定義" class="headerlink" title="多様体の定義"></a>多様体の定義</h3><p>1.　$M$を位相空間とする．<br>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．<br>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自信を単に多様体$M$と呼ぶ．<br>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
+<h3 id="多様体の定義"><a href="#多様体の定義" class="headerlink" title="多様体の定義"></a>多様体の定義</h3><p>1.　$M$を位相空間とする．<br>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．<br>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自身を単に多様体$M$と呼ぶ．<br>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
 <script type="math/tex; mode=display">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>は同相写像であるが，これがすべての<script type="math/tex">\mu,\lambda\in\Lambda</script>について<script type="math/tex">C^\alpha</script>級であるとき，$M$を<script type="math/tex">C^\alpha</script>級多様体と呼ぶ．ただし<script type="math/tex">0\leq\alpha\leq\infty</script>もしくは<script type="math/tex">\alpha=\omega</script>（解析的関数）とする．とくに$C^0$級多様体は位相多様体とも呼ぶ．</p>
 <h3 id="定義の解釈-1"><a href="#定義の解釈-1" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>多様体の大雑把なイメージは古代人にとっての地球（の表面）であるとのこと．自分がいる周辺は（つまり局所的には）広がりを持った空間として認識できるが，全体としてどうなっているのか把握できない存在である．そのイメージをもって定義を解釈していく．</p>
-<h4 id="＜定義１について＞"><a href="#＜定義１について＞" class="headerlink" title="＜定義１について＞"></a>＜定義１について＞</h4><p>1.　$M$を位相空間とする．</p>
+<h4 id="＜定義１について＞"><a href="#＜定義１について＞" class="headerlink" title="＜定義１について＞"></a><strong>＜定義１について＞</strong></h4><p>1.　$M$を位相空間とする．</p>
 <p>$M$はすでに存在が確定した位相空間だということである．われわれにとっての「宇宙」や「地球」のように，はっきりとそこに存在している．数学的に言えば，<script type="math/tex">\mathbb{R}^n</script>自身やその中の単位球面のように．集合として完全に特定できなくてはならない．<br>↑このように記述があるが，いまいちよくわからない．とにかく$M$の部分集合について位相空間の性質があるってことだけ把握しておけばよいのか？</p>
-<h4 id="＜定義２について＞"><a href="#＜定義２について＞" class="headerlink" title="＜定義２について＞"></a>＜定義２について＞</h4><p>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．</p>
+<h4 id="＜定義２について＞"><a href="#＜定義２について＞" class="headerlink" title="＜定義２について＞"></a><strong>＜定義２について＞</strong></h4><p>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．</p>
 <p>自分が地表にいるとき，あたりを見渡しても遠くに地平線が見えるだけなので，地球が平面であると錯覚してしまう．あたりを見渡すだけでなく地球の隅々まで歩きつくし，観測することで大局的な形状である球面を認識できるのである．この定義は「歩きつくす」ことを済ませた後の，世界地図（あるいは正確に地図帳）$A$が与えられている状態のことを言っている．</p>
 <p>・(a)について<br>ここは特に「基礎のキソ」の例えがわかりやすい．$M$が未知の惑星だとして，そこに集合<script type="math/tex">\Lambda</script>（たとえば<script type="math/tex">\Lambda=\{1,2,3,\ldots\}</script>）で番号付けされた多数の観測用衛星<script type="math/tex">\{\phi_\lambda\}_{\lambda\in\Lambda}</script>を打ち上げ，惑星$M$の上空に張りつかせる．衛星はそれぞれ決まった領域<script type="math/tex">U_\lambda\subset M</script>の情報を<script type="math/tex">\phi_\lambda(U_\lambda) = \mathbb{U}_\lambda</script>として，つまり<script type="math/tex">\phi_\lambda</script>というカメラを通じて$\mathbb{R}^2$（今は$M$の地表という2次元を観測することにしている）という媒体に記録する．「世界地図」を作るためには惑星の全体を観測する必要があるから，<script type="math/tex">U_\lambda</script>の和集合は$M$でなくてはならない．これが開被覆が要請している条件である．</p>
 <p>・(b)について<br>観測衛星の観測結果を記録する媒体として$\mathbb{R}^n$（観測対象が地表だった先程とは異なりもっと一般的な話をしている？）のコピーを観測衛星の数$\Lambda$だけ用意し，それぞれの通し番号<script type="math/tex">\lambda\in\Lambda</script>に応じた添え字をつけて<script type="math/tex">{\mathbb{R}_\lambda}^n</script>と名前を付ける．これを束ねたのが地図帳である．さらに条件(b)によって<script type="math/tex">{\mathbb{R}_\lambda}^n</script>（地図帳の$\lambda$ページ目）には衛星<script type="math/tex">\phi_\lambda</script>の記録した像<script type="math/tex">\mathbb{U}_\lambda</script>が記録される．この観測と記録が一体化されたシステムが，定義における地図帳$A$の実体である．</p>
-<h4 id="＜定義３について＞"><a href="#＜定義３について＞" class="headerlink" title="＜定義３について＞"></a>＜定義３について＞</h4><p>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自信を単に多様体$M$と呼ぶ．</p>
+<h4 id="＜定義３について＞"><a href="#＜定義３について＞" class="headerlink" title="＜定義３について＞"></a><strong>＜定義３について＞</strong></h4><p>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自信を単に多様体$M$と呼ぶ．</p>
 <p>定義２でイメージした地図帳$A$を備えた位相空間$M$を多様体と呼ぶ．厳密には空間と地図帳のセットを多様体というが単に空間のことを指して多様体と言う事も多いし，今後は断りがなければそうすることにする．</p>
-<h4 id="＜定義４について＞"><a href="#＜定義４について＞" class="headerlink" title="＜定義４について＞"></a>＜定義４について＞</h4><p>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
+<h4 id="＜定義４について＞"><a href="#＜定義４について＞" class="headerlink" title="＜定義４について＞"></a><strong>＜定義４について＞</strong></h4><p>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
 <script type="math/tex; mode=display">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>は同相写像であるが，これがすべての<script type="math/tex">\mu,\lambda\in\Lambda</script>について<script type="math/tex">C^\alpha</script>級であるとき，$M$を<script type="math/tex">C^\alpha</script>級多様体と呼ぶ．ただし<script type="math/tex">0\leq\alpha\leq\infty</script>もしくは<script type="math/tex">\alpha=\omega</script>（解析的関数）とする．とくに$C^0$級多様体は位相多様体とも呼ぶ．</p>
 <p>これも基礎のキソの例が分かりやすい．<br>日本の道路地図を開いて青森から鹿児島まで車で移動したいとする．スタート地点の青森のページを開き，そこから南下していくとすぐにそのページからはみ出してしまう．だから次のページを開いて自分の位置をまた探すわけだが，ふつうは道路地図の各ページは上下左右の端が他のページのそれと重複するようになっていて，その重複部分を通じて他のページとのつながりを読み取ることができ，その結果地図上の自分の位置もわかる．<br>多様体の地図帳にもページ同士のつながりというものがあり，重要な役割を果たす．地図帳$A$のある一つのページだけ見ていても多様体$M$の全貌は分からないので，自分たちでページ同士を切り貼りして全体を追う必要がある．このページを切り貼りするとあのページの横にあるはずだとか，そういったつながりの具合を規定するのがこの定義の条件</p>
 <script type="math/tex; mode=display">\phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>である．</p>
-<p><script type="math/tex">U_\lambda\cap U_\mu</script>は道路地図でいう重複している部分である．このエリアを衛星<script type="math/tex">\phi_\lambda</script>で観測して地図（$\lambda$ページ目）に載せるとき，そこが衛星<script type="math/tex">\phi_\mu</script>で観測したときの地図($\mu$ページ目)のどこに相当するかを示している．その対応関係を<script type="math/tex">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}</script>と書くことにしている．<br>ちなみに記号「$\circ$」は合成関数を示す．合成関数は右の写像から順に解釈していく．</p>
-<p><script type="math/tex">{\phi_\lambda}^{-1}</script>で観測エリア<script type="math/tex">U_\lambda</script>を指定して，そのエリアを衛星<script type="math/tex">\phi_\mu</script>で観測する．このとき<script type="math/tex">\phi_\mu</script>が観測するのは元々自分のエリアじゃないので，自分のエリアと被っている一部分だけを観測することになる．<br>$C^\alpha$級の話は微分に着目しているわけだが，また後で触れることにする．</p>
+<p><script type="math/tex">U_\lambda\cap U_\mu</script>は道路地図でいう重複している部分である．このエリアを衛星<script type="math/tex">\phi_\lambda</script>で観測して地図（$\lambda$ページ目）に載せるとき，そこが衛星<script type="math/tex">\phi_\mu</script>で観測したときの地図($\mu$ページ目)のどこに相当するかを示している．その対応関係を<script type="math/tex">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}</script>と書くことにしている．<br>ちなみに記号「$\circ$」は合成関数を示す．合成関数は右の写像から順に解釈していく．<br>まず<script type="math/tex">{\phi_\lambda}^{-1}</script>で観測エリア<script type="math/tex">U_\lambda</script>を「再現」して，そのエリアを衛星<script type="math/tex">\phi_\mu</script>で観測する．このとき<script type="math/tex">\phi_\mu</script>が観測するのは元々自分のエリアじゃないので，自分のエリアと被っている一部分だけを観測することになる．その「一部分」にあたるのが<script type="math/tex">U_\lambda\cap U_\mu</script>である．</p>
+<p>$C^\alpha$級の話は微分に着目しているわけだが，また後で触れることにする．</p>
 
       
     </div>
@@ -144,7 +144,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/13/%E5%A4%9A%E6%A7%98%E4%BD%93%E3%81%AE%E8%A9%B1/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/13/%E5%A4%9A%E6%A7%98%E4%BD%93%E3%81%AE%E5%AE%9A%E7%BE%A9%E3%81%A8%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -164,7 +164,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/数学/">数学</a><small>3</small></li>
+    <li><a href="/categories/数学/">数学</a><small>4</small></li>
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
@@ -179,7 +179,7 @@
   
     <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
   
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>3</small></li>
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>4</small></li>
   
     <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
