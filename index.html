@@ -44,17 +44,71 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article id="post-方向微分の空間としての接空間" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-方向微分の空間としての接ベクトル空間（２）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-18T05:45:00.000Z"><a href="/2020/02/18/方向微分の空間としての接空間/">2020-02-18</a></time>
+        <time class="dt-published" datetime="2020-02-18T10:43:41.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（２）/">2020-02-18</a></time>
       
       
   
-    <h1 class="title"><a href="/2020/02/18/方向微分の空間としての接空間/">方向微分の空間としての接ベクトル空間（１）</a></h1>
+    <h1 class="title"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（２）/">方向微分の空間としての接ベクトル空間（２）</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013</p>
+<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当に教科書を開いてみると大体このアプローチで書かれている．</p>
+<p>前回の記事と合わせて一つの記事という認識である．</p>
+<h2 id="曲線-c-に沿った方向微分"><a href="#曲線-c-に沿った方向微分" class="headerlink" title="曲線$c$に沿った方向微分"></a>曲線$c$に沿った方向微分</h2><p>$C^r$級多様体$M$の点$p$を通る$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow M,c(0)=p$が与えられているとする．</p>
+<p>$c$のパラメータ$t=0$における方向微分$\boldsymbol{v}_c$，つまり$c$に沿った方向微分を考える．$\boldsymbol{v}_c$はもちろん$p$における方向微分の集合${D_p}^r (M)$の元であるが，実は次の命題が成り立つ．</p>
+<h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>$\boldsymbol{v}_c$は$p$における接ベクトル空間$T_p(M)$の元である．すなわち$\boldsymbol{v}_c$は接ベクトルである．</p>
+<p>証明は省略する．方針としては，点$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を任意に固定し，$\boldsymbol{v}_c$が$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$という方向微分の線形結合として表されることを証明すればよい．</p>
+<p>前回の記事で述べたように，方向微分の値$\boldsymbol{v}_c$は$f,c$の形によって決まり，$p$のまわりの局所座標系の取り方によらない．したがって，$\boldsymbol{v}_c$は局所座標系の取り方によらず，$c$のみで決まる接ベクトルである．</p>
+<p>ところで，上記の証明により$\boldsymbol{v}_c$が$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$という方向微分の線形結合として表されることが分かっているものとして$\boldsymbol{v}_c$を具体的に書くと</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>である．これは，方向微分を基底とする空間（つまり接ベクトル空間）での$\boldsymbol{v}_c$の座標が</p>
+<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>であると言っている（係数と座標の対応が分からなければ，標準基底の張る三次元ユークリッド空間で考えるとよい）．よく見ると，曲線$c$を$(x_1,x_2\ldots,x_m)$で座標表示して単純に微分する方法で得た速度ベクトル（ユークリッド空間での速度ベクトル）と一致している．このことから，$\boldsymbol{v}_c$は<strong>曲線$c$の$t=0$における速度ベクトル</strong>と呼ばれるべきものであると分かる．</p>
+<p>前回の記事の「多様体上の速度ベクトル」の項で，このような速度ベクトルは局所座標系の取り方に依存してしまう（のでふさわしくない）と述べた．これは局所座標系$(x_1,x_2\ldots,x_m)$に依存する基底$\langle \left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p\rangle$で表したときの係数を見ているからである．$\boldsymbol{v}_c$そのものは</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>という局所座標系に依らない存在であるが，<strong>基底が局所座標系によって変化するので，その係数である</strong></p>
+<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p><strong>が局所座標系によって変化するのは当然である．つまり縮尺の違う地図上に描かれている速度ベクトル（矢印）を目で見たときにその長さ（あるいは矢印の指す，その地図上での座標の値）が異なっているのは当然であるが，その矢印が示す運動の「速さ」の絶対的な値は縮尺に関係なく一定であることを言っている．</strong><br>というわけで，速度ベクトルの実体は「$\boldsymbol{v}_c$」である．ここまでの議論により，速度ベクトルを局所座標系の取り方に依らない存在として定式化できた．</p>
+<h2 id="前回と今回の記事のまとめ"><a href="#前回と今回の記事のまとめ" class="headerlink" title="前回と今回の記事のまとめ"></a>前回と今回の記事のまとめ</h2><p>ここまでの話を整理する．</p>
+<h3 id="曲線-c-上の速度ベクトルの定義"><a href="#曲線-c-上の速度ベクトルの定義" class="headerlink" title="曲線$c$上の速度ベクトルの定義"></a>曲線$c$上の速度ベクトルの定義</h3><p>$c:(-\epsilon,\epsilon)\rightarrow M$を$C^r$級曲線とし，$c(0)=p$であるとする．曲線$c$の$t=0$における速度ベクトルとは</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_{c}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>で定義される接ベクトル$\boldsymbol{v}_c \in T_p(M)$のことである．$f$は点$p$のまわりで定義された任意の$C^r$級関数である．</p>
+<p>以後，$\boldsymbol{v}_c$が速度ベクトルであることを意識しやすいように</p>
+<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}</script><p>という記号で表すことにする．上の定義をこの表記で書くと</p>
+<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>である．<br>また，ここまで$t=0$として考えてきたが，$0$に特別な意味はない．$c:(a-\epsilon,a+\epsilon)\rightarrow M$という$C^r$級曲線が$t=a$のときに点$p$を通るとすると，$t=a$における速度ベクトルは</p>
+<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=a} = \boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(a)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>で与えられる．</p>
+<p><strong>$m$次元多様体の速度ベクトルは実数で，それを$m$個の方向微分係数の線形和として表現するとき，それぞれの「方向微分係数の係数（重み）」が接ベクトル空間の元（$m$次元ベクトル）の各成分である．</strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article id="post-方向微分の空間としての接ベクトル空間（１）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-18T05:45:00.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">2020-02-18</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">方向微分の空間としての接ベクトル空間（１）</a></h1>
   
 
     </header>
@@ -65,7 +119,7 @@
 <h2 id="ユークリッド空間での速度ベクトル"><a href="#ユークリッド空間での速度ベクトル" class="headerlink" title="ユークリッド空間での速度ベクトル"></a>ユークリッド空間での速度ベクトル</h2><p>くどいようだが，もう一度ユークリッド空間$\mathbb{R}^m$での速度ベクトルを考える．$-\epsilon&lt; t &lt; \epsilon$の範囲を動くパラメータ$t$で表される$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}^m$を座標表示したものが$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$であるとする．このときの$t=0$における速度ベクトルは</p>
 <script type="math/tex; mode=display">\boldsymbol{v} = \frac{dc(0)}{dt} = \left(\frac{dx_1(0)}{dt},\frac{dx_2(0)}{dt},\ldots,\frac{dx_m(0)}{dt}\right)</script><p>で与えられる．</p>
 <h2 id="多様体上の速度ベクトル"><a href="#多様体上の速度ベクトル" class="headerlink" title="多様体上の速度ベクトル"></a>多様体上の速度ベクトル</h2><p>多様体$M$を$m$次元$C^r$級であるとする．また，$M$上の点$p$を通る$C^r$級曲線を$c$とする．</p>
-<p>まず，$p$を含む座標近傍$(U;x_1,\ldots,x_m)$をとり，曲線$c$を$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$と局所座標表示する（つまりこれは地図帳のあるページ上の座標である）．また，これとは異なる局所座標系をとり，同じ曲線$c$を$c(t) = (y_1(t),y_2(t),\ldots y_m(t))$と座標表示する（これはさっきと別のページ上の座標であり，各成分の値は異なる）．これら二つの座標系における速度ベクトルをユークリッド空間のそれと同じように求めると，それぞれ別のベクトルが求まる．つまり速度ベクトルが座標系の取り方に依存しているといえる．今は「多様体の速度ベクトル」という多様体上のある一点に対してただ一つ対応するものを考えたいのに，その値が局所座標系の取り方に依存しているのは喜ばしいことではない．つまり今求まったような数ベクトルたちを$c$の速度ベクトルであると考えるわけにはいかないのである．</p>
+<p>まず，$p$を含む座標近傍$(U;x_1,\ldots,x_m)$をとり，曲線$c$を$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$と局所座標表示する（つまりこれは地図帳のあるページ上の座標である）．また，これとは異なる局所座標系をとり，同じ曲線$c$を$c(t) = (y_1(t),y_2(t),\ldots y_m(t))$と座標表示する（これはさっきと別のページ上の座標であり，各成分の値は異なる）．これら二つの座標系（縮尺の異なる二つの地図）における速度ベクトルをユークリッド空間のそれと同じように求めると，それぞれ別のベクトルが求まる．つまり速度ベクトルが座標系の取り方に依存しているといえる．今は「多様体の速度ベクトル」という多様体上のある一点に対してただ一つ対応するものを考えたいのに，それが局所座標系の取り方によって変化するのは喜ばしいことではない．</p>
 <p>以上のことを踏まえると，「$c$の速度ベクトル」は局所座標系の取り方に無関係なものとして定式化されている必要があるとわかる．この問題の解決のために「$c$に沿う微分操作」を考える．<br>点$p$の開近傍（$p$を含む開集合）$U$で定義された任意の$C^r$級関数$f$を考える．パラメータ$t$の曲線$c:(-\epsilon,\epsilon)\rightarrow U$と$f:U\rightarrow\mathbb{R}$の合成関数$f(c(t))$を作ると，これは$t(-\epsilon &lt; t &lt; \epsilon)$を変数とする$C^r$級関数になる($C^r$級関数と$C^r$級関数の合成関数は$C^r$級である)．この合成関数がやっているのは「$f$を曲線$c$上に制限された一変数関数にする」ことである．ここで$f(c(t))$が$p$の周りの局所座標系（地図帳のページ）に関係なく$f$と$c$だけで決まる一変数関数であるということを強調したい．<br>次に，$f(c(t))$の$t=0$における通常の微分係数</p>
 <script type="math/tex; mode=display">\frac{df(c(0))}{dt} = \displaystyle \lim_{t \to 0} \frac{f(c(t))-f(c(0))}{t}</script><p>を考える．これはひとつの実数である．もとの関数$f(c(t))$が局所座標系に無関係だから，この微分係数も局所座標系と無関係に$f$と$c$だけで決まる数である．関数$f$にこの微分係数を関連付ける対応</p>
 <script type="math/tex; mode=display">f\mapsto \frac{df(c(0))}{dt}</script><p>のことを$c$に沿う($t=0$での)<strong>方向微分</strong>とよび，記号$\boldsymbol{v}_c$で表すことにする．先ほど通常の微分係数と言ってたものを，関数$f$に関するものであることを強調して</p>
@@ -76,7 +130,7 @@
 <li>上と同じ$f,g$と実数$a,b$に関して<script type="math/tex; mode=display">\boldsymbol{v}_c(af+bg) = a\boldsymbol{v}_c(f)+b\boldsymbol{v}_c(g)</script></li>
 <li>上と同じ$f,g$に関して$fg$をそれらの積とすれば<script type="math/tex; mode=display">\boldsymbol{v}_c(fg) = \boldsymbol{v}_c(f)g(p)+f(p)\boldsymbol{v}_c(g)</script></li>
 </ul>
-<h2 id="点-p-における方向微分"><a href="#点-p-における方向微分" class="headerlink" title="点$p$における方向微分"></a>点$p$における方向微分</h2><p><strong>以下，本記事は曲線$c$に関する方向微分を抽象化した点$p$における形式的な「方向微分」の概念について述べている（最重要）．</strong></p>
+<h2 id="点-p-における方向微分"><a href="#点-p-における方向微分" class="headerlink" title="点$p$における方向微分"></a>点$p$における方向微分</h2><p><strong>以下，本記事は曲線$c$に関する方向微分を抽象化した点$p$における形式的な「方向微分」の概念について述べている．</strong></p>
 <h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>点$p$における方向微分$\boldsymbol{v}_c$とは$p$の開近傍で定義された$C^r$級関数$f$に実数$\boldsymbol{v}(f)$を対応させる操作であり，次の性質を持つ．</p>
 <ul>
 <li>関数$f,g$が点$p$の十分小さな開近傍上で一致すれば<script type="math/tex; mode=display">\boldsymbol{v}(f) = \boldsymbol{v}(g)</script></li>
@@ -93,8 +147,7 @@
 <h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><p>もう一度強調するが，${D_p}^r (M)$は局所座標系に無関係な集合である．その上で，あらためて$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を一つ選ぶ（地図帳のページを一つ選ぶ）．すると，$m$個の方向微分</p>
 <script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p</script><p>が得られる．これらは${D_p}^r (M)$の元であり，以下の命題が成立する．</p>
 <h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>ベクトル空間${D_p}^r (M)$の元として，$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$は線形独立である．</p>
-<p>証明は省略するが，いわゆる（一次元配列としての）「ベクトル」が線形独立であることを証明するときと同じ方針である．</p>
-<p>線形独立な基底が得られたので，それらが張る空間を考えることができる．</p>
+<p>証明は省略する．線形独立な基底が得られたので，それらが張る空間を考えることができる．</p>
 <h3 id="接ベクトル空間の定義"><a href="#接ベクトル空間の定義" class="headerlink" title="接ベクトル空間の定義"></a>接ベクトル空間の定義</h3><p>$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$の張る${D_p}^r (M)$の部分ベクトル空間を，点$p$における$M$の<strong>接ベクトル空間</strong>とよび，</p>
 <script type="math/tex; mode=display">T_p(M)</script><p>という記号で表す．</p>
 <p>この空間に属するベクトルを，点$p$における$M$の<strong>接ベクトル</strong>という．この定義によれば，点$p$での$M$の接ベクトルとは実数$(a_1,a_2,\ldots,a_m)$に対して</p>
@@ -493,58 +546,6 @@
 
 
 
-  <article id="post-ビット全探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-06T03:57:51.000Z"><a href="/2020/02/06/ビット全探索/">2020-02-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/06/ビット全探索/">ビット全探索</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>スイッチのON/OFFの組み合わせなど，「有るか無いか」の二択の組み合わせを全通り試すときにビット全探索を行う．<br>「有る」状態を1，「無い」状態を0で表すとすると，ある組み合わせの状態は2進数で表現されることが分かる．<br>例えばスイッチが一列に4つあってその状態が「1100」のとき，左の二つはON，右の二つはOFFであることを示している．<br>スイッチ一つにつき2通りの状態があるので，スイッチが$N$個ある場合その組み合わせは$2^N$通りである．<br>そこから分かるように，ビット全探索では計算量が指数関数的に増えていくため小規模の問題にしか対処できない．<br>競プロの制限時間に間に合うのは$N=20$ぐらい（$ 2^{20}$はだいたい$10^6$）．<br>逆に言えば，入力の制約で$N$が10とか20のときはビット全探索を解法とする問題である可能性が高い．</p>
-<h2 id="ビット演算子"><a href="#ビット演算子" class="headerlink" title="ビット演算子"></a>ビット演算子</h2><p>2進数を扱う為にビット演算子を知っておく必要がある．ビット全探索で使うのはAND演算子とシフト演算．</p>
-<h3 id="AND演算子"><a href="#AND演算子" class="headerlink" title="AND演算子"></a>AND演算子</h3><p>両方が1のときに1，それ以外で0を返す演算子．<br>ある2進数のそれぞれの桁が0か1かを調べるのに重宝する．上の問題で言うとどのスイッチがついているかを調べられる．<br>AND演算子による演算を論理積という．</p>
-<h3 id="OR演算子"><a href="#OR演算子" class="headerlink" title="OR演算子"></a>OR演算子</h3><p>両方が0のときに0，それ以外で1を返す演算子．OR演算子による演算を論理和という．</p>
-<h3 id="XOR演算子"><a href="#XOR演算子" class="headerlink" title="XOR演算子"></a>XOR演算子</h3><p>両方が異なる値のときに1,それ以外で0を返す演算子．XOR演算子による演算を排他的論理和という．</p>
-<h3 id="NOT演算子"><a href="#NOT演算子" class="headerlink" title="NOT演算子"></a>NOT演算子</h3><p>0を1に，1を0に反転する演算子．NOT演算子による演算を論理否定という．</p>
-<h3 id="シフト演算（左）"><a href="#シフト演算（左）" class="headerlink" title="シフト演算（左）"></a>シフト演算（左）</h3><p>ある2進数の全ての桁を左にずらす．最下位の桁には0が入る．<br>右のシフト演算もある．</p>
-<h2 id="ビット全探索の実装"><a href="#ビット全探索の実装" class="headerlink" title="ビット全探索の実装"></a>ビット全探索の実装</h2><p>例題を解きながら理解するのが一番早い．<br><a href="https://atcoder.jp/contests/abc079/tasks/abc079_c" target="_blank" rel="noopener">AtCoder ABC079 C問題</a></p>
-<p>先にコードを掲載し，その後一行ずつ解説していく．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">S  = input()</span><br><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">    formula = S[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> digit <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br><span class="line">            formula += <span class="string">"+"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            formula += <span class="string">"-"</span></span><br><span class="line">        formula += S[digit+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> eval(formula) == <span class="number">7</span>:</span><br><span class="line">        print(formula+<span class="string">"=7"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure><br>$op1, op2, op3$の3つの箱それぞれに「+」か「-」を入れる．1で+を，0で-を表すことにする．</p>
-<h4 id="1行目"><a href="#1行目" class="headerlink" title="1行目"></a>1行目</h4><p>入力の受け取り．</p>
-<h4 id="2行目"><a href="#2行目" class="headerlink" title="2行目"></a>2行目</h4><p>今回の問題では3か所の箱に+か-を入れるので，全部で8通りの組み合わせがある．ここで注意するのは，range(8)のときに取り得るのは0~7の値であるということ．<br>つまり，2進数表記で000~111となる3桁の数字を取り扱うということを意識する必要がある．すなわち，7までの間に3つの箱に0か1を入れる組み合わせの全通りが登場するということを言っている．<br>余談だが，競プロで他の人の回答を見ると<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;len(S)<span class="number">-1</span>):</span><br></pre></td></tr></table></figure><br>と書かれていることもある．言ってることはrange(8)と同じである．<br>1を$len(S)-1=3$だけ左にビットをシフトすると2進数で「1000」，つまり8の2進数表記となる．</p>
-<h4 id="3行目"><a href="#3行目" class="headerlink" title="3行目"></a>3行目</h4><p>変数formulaに式を格納していくことにする．初めの数字をそのまま入れる．</p>
-<h4 id="4行目"><a href="#4行目" class="headerlink" title="4行目"></a>4行目</h4><p>このforループ内でそれぞれの箱に+と-のどちらを入れるかを決める．3つの箱があるので3回まわす．</p>
-<h4 id="5行目"><a href="#5行目" class="headerlink" title="5行目"></a>5行目</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br></pre></td></tr></table></figure>
-<p>という書き方は，「値operator_state &amp; (1 &lt;&lt; digit)が0でないとき」を意味する．この値は何を計算した結果なのだろうか．<br>例えばoperator_stateが2のとき，2進数で010である．この「010」の各桁の数字が0か1かをfor文を回して調べる．<br>まず，digitが0のときに「010」の一番右の桁が1か0かを調べる(人が見れば明らかだがコンピュータは認識できない)．<br>1&lt;&lt;0 = 1 = 001 と 010 の論理積をとると0なので，010の一番右の桁は0であると認識させることができる．<br>次に,digitが1のときに「010」の右から二番目の桁が1か0かを調べる．1&lt;&lt;1 = 2 = 010 と 010の論理積をとると2(≠0)なので，010の右から二番目の桁は1であると認識させることができる．<br>digitが2のときも同様．</p>
-<h4 id="6行目"><a href="#6行目" class="headerlink" title="6行目"></a>6行目</h4><p>その桁が1であるとき，箱に+を入れる．</p>
-<h4 id="7-8行目"><a href="#7-8行目" class="headerlink" title="7,8行目"></a>7,8行目</h4><p>5,6行目と同様の考え方をすればよい．</p>
-<h4 id="9行目"><a href="#9行目" class="headerlink" title="9行目"></a>9行目</h4><p>与えられた入力を式formulaに代入する．</p>
-<h4 id="10-11-12行目"><a href="#10-11-12行目" class="headerlink" title="10,11,12行目"></a>10,11,12行目</h4><p>関数eval()を利用すると文字列として保存されている数式を実際に計算させることができる．それが7であればその式を出力しbreakする．</p>
-<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc128/tasks/abc128_c" target="_blank" rel="noopener">AtCoder ABC128 C問題</a><br><a href="https://atcoder.jp/contests/abc147/tasks/abc147_c" target="_blank" rel="noopener">AtCoder ABC147 C問題</a><br>新基準のC問題としては若干難易度が高い．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -567,7 +568,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/数学/">数学</a><small>6</small></li>
+    <li><a href="/categories/数学/">数学</a><small>7</small></li>
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
@@ -584,7 +585,7 @@
   
     <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
   
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>6</small></li>
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>7</small></li>
   
     <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
@@ -615,23 +616,7 @@
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
 </script>
@@ -649,5 +634,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>

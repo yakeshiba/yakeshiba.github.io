@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>方向微分の空間としての接ベクトル空間（２） | うらじろ</title>
+  <meta name="author" content="kebayashi">
+  
+  <meta name="description" content="以下の文献を参考にし，自分用にメモする．松本幸夫，多様体の基礎，東京大学出版会，2013
+多様体の基礎のキソとは異なる視点で接空間を定義する．適当に教科書を開いてみると大体このアプローチで書かれている．
+前回の記事と合わせて一つの記事という認識である．
+曲線$c$に沿った方向微分$C^r$級多様体$">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="方向微分の空間としての接ベクトル空間（２）"/>
+  <meta property="og:site_name" content="うらじろ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="うらじろ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">うらじろ</a></h1>
+  <h2><a href="/">ノートの代わり</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-方向微分の空間としての接ベクトル空間（２）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-18T10:43:41.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（２）/">2020-02-18</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">方向微分の空間としての接ベクトル空間（２）</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013</p>
+<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当に教科書を開いてみると大体このアプローチで書かれている．</p>
+<p>前回の記事と合わせて一つの記事という認識である．</p>
+<h2 id="曲線-c-に沿った方向微分"><a href="#曲線-c-に沿った方向微分" class="headerlink" title="曲線$c$に沿った方向微分"></a>曲線$c$に沿った方向微分</h2><p>$C^r$級多様体$M$の点$p$を通る$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow M,c(0)=p$が与えられているとする．</p>
+<p>$c$のパラメータ$t=0$における方向微分$\boldsymbol{v}_c$，つまり$c$に沿った方向微分を考える．$\boldsymbol{v}_c$はもちろん$p$における方向微分の集合${D_p}^r (M)$の元であるが，実は次の命題が成り立つ．</p>
+<h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>$\boldsymbol{v}_c$は$p$における接ベクトル空間$T_p(M)$の元である．すなわち$\boldsymbol{v}_c$は接ベクトルである．</p>
+<p>証明は省略する．方針としては，点$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を任意に固定し，$\boldsymbol{v}_c$が$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$という方向微分の線形結合として表されることを証明すればよい．</p>
+<p>前回の記事で述べたように，方向微分の値$\boldsymbol{v}_c$は$f,c$の形によって決まり，$p$のまわりの局所座標系の取り方によらない．したがって，$\boldsymbol{v}_c$は局所座標系の取り方によらず，$c$のみで決まる接ベクトルである．</p>
+<p>ところで，上記の証明により$\boldsymbol{v}_c$が$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$という方向微分の線形結合として表されることが分かっているものとして$\boldsymbol{v}_c$を具体的に書くと</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>である．これは，方向微分を基底とする空間（つまり接ベクトル空間）での$\boldsymbol{v}_c$の座標が</p>
+<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>であると言っている（係数と座標の対応が分からなければ，標準基底の張る三次元ユークリッド空間で考えるとよい）．よく見ると，曲線$c$を$(x_1,x_2\ldots,x_m)$で座標表示して単純に微分する方法で得た速度ベクトル（ユークリッド空間での速度ベクトル）と一致している．このことから，$\boldsymbol{v}_c$は<strong>曲線$c$の$t=0$における速度ベクトル</strong>と呼ばれるべきものであると分かる．</p>
+<p>前回の記事の「多様体上の速度ベクトル」の項で，このような速度ベクトルは局所座標系の取り方に依存してしまう（のでふさわしくない）と述べた．これは局所座標系$(x_1,x_2\ldots,x_m)$に依存する基底$\langle \left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p\rangle$で表したときの係数を見ているからである．$\boldsymbol{v}_c$そのものは</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>という局所座標系に依らない存在であるが，<strong>基底が局所座標系によって変化するので，その係数である</strong></p>
+<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p><strong>が局所座標系によって変化するのは当然である．つまり縮尺の違う地図上に描かれている速度ベクトル（矢印）を目で見たときにその長さ（あるいは矢印の指す，その地図上での座標の値）が異なっているのは当然であるが，その矢印が示す運動の「速さ」の絶対的な値は縮尺に関係なく一定であることを言っている．</strong><br>というわけで，速度ベクトルの実体は「$\boldsymbol{v}_c$」である．ここまでの議論により，速度ベクトルを局所座標系の取り方に依らない存在として定式化できた．</p>
+<h2 id="前回と今回の記事のまとめ"><a href="#前回と今回の記事のまとめ" class="headerlink" title="前回と今回の記事のまとめ"></a>前回と今回の記事のまとめ</h2><p>ここまでの話を整理する．</p>
+<h3 id="曲線-c-上の速度ベクトルの定義"><a href="#曲線-c-上の速度ベクトルの定義" class="headerlink" title="曲線$c$上の速度ベクトルの定義"></a>曲線$c$上の速度ベクトルの定義</h3><p>$c:(-\epsilon,\epsilon)\rightarrow M$を$C^r$級曲線とし，$c(0)=p$であるとする．曲線$c$の$t=0$における速度ベクトルとは</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_{c}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>で定義される接ベクトル$\boldsymbol{v}_c \in T_p(M)$のことである．$f$は点$p$のまわりで定義された任意の$C^r$級関数である．</p>
+<p>以後，$\boldsymbol{v}_c$が速度ベクトルであることを意識しやすいように</p>
+<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}</script><p>という記号で表すことにする．上の定義をこの表記で書くと</p>
+<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>である．<br>また，ここまで$t=0$として考えてきたが，$0$に特別な意味はない．$c:(a-\epsilon,a+\epsilon)\rightarrow M$という$C^r$級曲線が$t=a$のときに点$p$を通るとすると，$t=a$における速度ベクトルは</p>
+<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=a} = \boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(a)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>で与えられる．</p>
+<p><strong>$m$次元多様体の速度ベクトルは実数で，それを$m$個の方向微分係数の線形和として表現するとき，それぞれの「方向微分係数の係数（重み）」が接ベクトル空間の元（$m$次元ベクトル）の各成分である．</strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/数学/">数学</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/微分幾何学/">微分幾何学</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/18/%E6%96%B9%E5%90%91%E5%BE%AE%E5%88%86%E3%81%AE%E7%A9%BA%E9%96%93%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E6%8E%A5%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E7%A9%BA%E9%96%93%EF%BC%88%EF%BC%92%EF%BC%89/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="検索">
+    <input type="hidden" name="as_sitesearch" value="yakeshiba.github.io">
+  </form>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">カテゴリー</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/数学/">数学</a><small>7</small></li>
+  
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
+  
+    <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
+  
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>7</small></li>
+  
+    <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 kebayashi
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>

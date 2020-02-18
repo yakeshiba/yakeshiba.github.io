@@ -47,13 +47,13 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-方向微分の空間としての接空間" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-方向微分の空間としての接ベクトル空間（１）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-18T05:45:00.000Z"><a href="/2020/02/18/方向微分の空間としての接空間/">2020-02-18</a></time>
+        <time class="dt-published" datetime="2020-02-18T05:45:00.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">2020-02-18</a></time>
       
       
   
@@ -68,7 +68,7 @@
 <h2 id="ユークリッド空間での速度ベクトル"><a href="#ユークリッド空間での速度ベクトル" class="headerlink" title="ユークリッド空間での速度ベクトル"></a>ユークリッド空間での速度ベクトル</h2><p>くどいようだが，もう一度ユークリッド空間$\mathbb{R}^m$での速度ベクトルを考える．$-\epsilon&lt; t &lt; \epsilon$の範囲を動くパラメータ$t$で表される$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}^m$を座標表示したものが$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$であるとする．このときの$t=0$における速度ベクトルは</p>
 <script type="math/tex; mode=display">\boldsymbol{v} = \frac{dc(0)}{dt} = \left(\frac{dx_1(0)}{dt},\frac{dx_2(0)}{dt},\ldots,\frac{dx_m(0)}{dt}\right)</script><p>で与えられる．</p>
 <h2 id="多様体上の速度ベクトル"><a href="#多様体上の速度ベクトル" class="headerlink" title="多様体上の速度ベクトル"></a>多様体上の速度ベクトル</h2><p>多様体$M$を$m$次元$C^r$級であるとする．また，$M$上の点$p$を通る$C^r$級曲線を$c$とする．</p>
-<p>まず，$p$を含む座標近傍$(U;x_1,\ldots,x_m)$をとり，曲線$c$を$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$と局所座標表示する（つまりこれは地図帳のあるページ上の座標である）．また，これとは異なる局所座標系をとり，同じ曲線$c$を$c(t) = (y_1(t),y_2(t),\ldots y_m(t))$と座標表示する（これはさっきと別のページ上の座標であり，各成分の値は異なる）．これら二つの座標系における速度ベクトルをユークリッド空間のそれと同じように求めると，それぞれ別のベクトルが求まる．つまり速度ベクトルが座標系の取り方に依存しているといえる．今は「多様体の速度ベクトル」という多様体上のある一点に対してただ一つ対応するものを考えたいのに，その値が局所座標系の取り方に依存しているのは喜ばしいことではない．つまり今求まったような数ベクトルたちを$c$の速度ベクトルであると考えるわけにはいかないのである．</p>
+<p>まず，$p$を含む座標近傍$(U;x_1,\ldots,x_m)$をとり，曲線$c$を$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$と局所座標表示する（つまりこれは地図帳のあるページ上の座標である）．また，これとは異なる局所座標系をとり，同じ曲線$c$を$c(t) = (y_1(t),y_2(t),\ldots y_m(t))$と座標表示する（これはさっきと別のページ上の座標であり，各成分の値は異なる）．これら二つの座標系（縮尺の異なる二つの地図）における速度ベクトルをユークリッド空間のそれと同じように求めると，それぞれ別のベクトルが求まる．つまり速度ベクトルが座標系の取り方に依存しているといえる．今は「多様体の速度ベクトル」という多様体上のある一点に対してただ一つ対応するものを考えたいのに，それが局所座標系の取り方によって変化するのは喜ばしいことではない．</p>
 <p>以上のことを踏まえると，「$c$の速度ベクトル」は局所座標系の取り方に無関係なものとして定式化されている必要があるとわかる．この問題の解決のために「$c$に沿う微分操作」を考える．<br>点$p$の開近傍（$p$を含む開集合）$U$で定義された任意の$C^r$級関数$f$を考える．パラメータ$t$の曲線$c:(-\epsilon,\epsilon)\rightarrow U$と$f:U\rightarrow\mathbb{R}$の合成関数$f(c(t))$を作ると，これは$t(-\epsilon &lt; t &lt; \epsilon)$を変数とする$C^r$級関数になる($C^r$級関数と$C^r$級関数の合成関数は$C^r$級である)．この合成関数がやっているのは「$f$を曲線$c$上に制限された一変数関数にする」ことである．ここで$f(c(t))$が$p$の周りの局所座標系（地図帳のページ）に関係なく$f$と$c$だけで決まる一変数関数であるということを強調したい．<br>次に，$f(c(t))$の$t=0$における通常の微分係数</p>
 <script type="math/tex; mode=display">\frac{df(c(0))}{dt} = \displaystyle \lim_{t \to 0} \frac{f(c(t))-f(c(0))}{t}</script><p>を考える．これはひとつの実数である．もとの関数$f(c(t))$が局所座標系に無関係だから，この微分係数も局所座標系と無関係に$f$と$c$だけで決まる数である．関数$f$にこの微分係数を関連付ける対応</p>
 <script type="math/tex; mode=display">f\mapsto \frac{df(c(0))}{dt}</script><p>のことを$c$に沿う($t=0$での)<strong>方向微分</strong>とよび，記号$\boldsymbol{v}_c$で表すことにする．先ほど通常の微分係数と言ってたものを，関数$f$に関するものであることを強調して</p>
@@ -79,7 +79,7 @@
 <li>上と同じ$f,g$と実数$a,b$に関して<script type="math/tex; mode=display">\boldsymbol{v}_c(af+bg) = a\boldsymbol{v}_c(f)+b\boldsymbol{v}_c(g)</script></li>
 <li>上と同じ$f,g$に関して$fg$をそれらの積とすれば<script type="math/tex; mode=display">\boldsymbol{v}_c(fg) = \boldsymbol{v}_c(f)g(p)+f(p)\boldsymbol{v}_c(g)</script></li>
 </ul>
-<h2 id="点-p-における方向微分"><a href="#点-p-における方向微分" class="headerlink" title="点$p$における方向微分"></a>点$p$における方向微分</h2><p><strong>以下，本記事は曲線$c$に関する方向微分を抽象化した点$p$における形式的な「方向微分」の概念について述べている（最重要）．</strong></p>
+<h2 id="点-p-における方向微分"><a href="#点-p-における方向微分" class="headerlink" title="点$p$における方向微分"></a>点$p$における方向微分</h2><p><strong>以下，本記事は曲線$c$に関する方向微分を抽象化した点$p$における形式的な「方向微分」の概念について述べている．</strong></p>
 <h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>点$p$における方向微分$\boldsymbol{v}_c$とは$p$の開近傍で定義された$C^r$級関数$f$に実数$\boldsymbol{v}(f)$を対応させる操作であり，次の性質を持つ．</p>
 <ul>
 <li>関数$f,g$が点$p$の十分小さな開近傍上で一致すれば<script type="math/tex; mode=display">\boldsymbol{v}(f) = \boldsymbol{v}(g)</script></li>
@@ -96,8 +96,7 @@
 <h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><p>もう一度強調するが，${D_p}^r (M)$は局所座標系に無関係な集合である．その上で，あらためて$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を一つ選ぶ（地図帳のページを一つ選ぶ）．すると，$m$個の方向微分</p>
 <script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p</script><p>が得られる．これらは${D_p}^r (M)$の元であり，以下の命題が成立する．</p>
 <h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>ベクトル空間${D_p}^r (M)$の元として，$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$は線形独立である．</p>
-<p>証明は省略するが，いわゆる（一次元配列としての）「ベクトル」が線形独立であることを証明するときと同じ方針である．</p>
-<p>線形独立な基底が得られたので，それらが張る空間を考えることができる．</p>
+<p>証明は省略する．線形独立な基底が得られたので，それらが張る空間を考えることができる．</p>
 <h3 id="接ベクトル空間の定義"><a href="#接ベクトル空間の定義" class="headerlink" title="接ベクトル空間の定義"></a>接ベクトル空間の定義</h3><p>$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$の張る${D_p}^r (M)$の部分ベクトル空間を，点$p$における$M$の<strong>接ベクトル空間</strong>とよび，</p>
 <script type="math/tex; mode=display">T_p(M)</script><p>という記号で表す．</p>
 <p>この空間に属するベクトルを，点$p$における$M$の<strong>接ベクトル</strong>という．この定義によれば，点$p$での$M$の接ベクトルとは実数$(a_1,a_2,\ldots,a_m)$に対して</p>
@@ -164,7 +163,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/18/%E6%96%B9%E5%90%91%E5%BE%AE%E5%88%86%E3%81%AE%E7%A9%BA%E9%96%93%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E6%8E%A5%E7%A9%BA%E9%96%93/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/18/%E6%96%B9%E5%90%91%E5%BE%AE%E5%88%86%E3%81%AE%E7%A9%BA%E9%96%93%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AE%E6%8E%A5%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E7%A9%BA%E9%96%93%EF%BC%88%EF%BC%91%EF%BC%89/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -184,7 +183,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/数学/">数学</a><small>6</small></li>
+    <li><a href="/categories/数学/">数学</a><small>7</small></li>
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
@@ -201,7 +200,7 @@
   
     <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
   
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>6</small></li>
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>7</small></li>
   
     <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
@@ -232,23 +231,7 @@
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
 </script>
@@ -266,5 +249,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>
