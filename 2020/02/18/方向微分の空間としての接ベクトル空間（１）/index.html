@@ -7,8 +7,8 @@
   <meta name="author" content="kebayashi">
   
   <meta name="description" content="以下の文献を参考にし，自分用にメモする．松本幸夫，多様体の基礎，東京大学出版会，2013
-多様体の基礎のキソとは異なる視点で接空間を定義する．適当に教科書を開いてみると大体このアプローチで書かれている．
-ユークリッド空間での速度ベクトルくどいようだが，もう一度ユークリッド空間$\mathbb{R}^">
+多様体の基礎のキソとは異なる視点で接空間を定義する．適当にいろんな教科書を開いてみると大体このアプローチで書かれている．
+ユークリッド空間での速度ベクトルくどいようだが，もう一度ユークリッド空間$\mathbb">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -64,7 +64,7 @@
     <div class="e-content entry" itemprop="articleBody">
       
         <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013</p>
-<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当に教科書を開いてみると大体このアプローチで書かれている．</p>
+<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当にいろんな教科書を開いてみると大体このアプローチで書かれている．</p>
 <h2 id="ユークリッド空間での速度ベクトル"><a href="#ユークリッド空間での速度ベクトル" class="headerlink" title="ユークリッド空間での速度ベクトル"></a>ユークリッド空間での速度ベクトル</h2><p>くどいようだが，もう一度ユークリッド空間$\mathbb{R}^m$での速度ベクトルを考える．$-\epsilon&lt; t &lt; \epsilon$の範囲を動くパラメータ$t$で表される$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}^m$を座標表示したものが$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$であるとする．このときの$t=0$における速度ベクトルは</p>
 <script type="math/tex; mode=display">\boldsymbol{v} = \frac{dc(0)}{dt} = \left(\frac{dx_1(0)}{dt},\frac{dx_2(0)}{dt},\ldots,\frac{dx_m(0)}{dt}\right)</script><p>で与えられる．</p>
 <h2 id="多様体上の速度ベクトル"><a href="#多様体上の速度ベクトル" class="headerlink" title="多様体上の速度ベクトル"></a>多様体上の速度ベクトル</h2><p>多様体$M$を$m$次元$C^r$級であるとする．また，$M$上の点$p$を通る$C^r$級曲線を$c$とする．</p>
@@ -231,7 +231,23 @@
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
 </script>
@@ -249,6 +265,5 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
 </body>
 </html>
