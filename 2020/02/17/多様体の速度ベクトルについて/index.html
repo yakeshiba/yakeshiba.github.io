@@ -3,17 +3,17 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>多様体の接空間 | うらじろ</title>
+  <title>多様体の速度ベクトルについて | うらじろ</title>
   <meta name="author" content="kebayashi">
   
   <meta name="description" content="以下のサイトを読んでまとめる．Tomoki Kawahira：多様体の基礎のキソ
-基礎のキソ5章で接空間について記されているのでそれを読んで整理する．内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．
-多様体を学ぶ上で重要な概念が「接空間」である．別名は接ベクトル空間．曲線の接線や">
+基礎のキソ5章で速度ベクトルについて記されているのでそれを読んで整理する．内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．
+多様体を学ぶ上で重要な概念が「接空間」である．別名は接ベクトル空間．曲線の">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="多様体の接空間"/>
+  <meta property="og:title" content="多様体の速度ベクトルについて"/>
   <meta property="og:site_name" content="うらじろ"/>
 
   
@@ -47,24 +47,24 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-多様体の接空間" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-多様体の速度ベクトルについて" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-17T08:27:33.000Z"><a href="/2020/02/17/多様体の接空間/">2020-02-17</a></time>
+        <time class="dt-published" datetime="2020-02-17T08:27:33.000Z"><a href="/2020/02/17/多様体の速度ベクトルについて/">2020-02-17</a></time>
       
       
   
-    <h1 class="p-name title" itemprop="headline name">多様体の接空間</h1>
+    <h1 class="p-name title" itemprop="headline name">多様体の速度ベクトルについて</h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
         <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>基礎のキソ5章で接空間について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
+<p>基礎のキソ5章で速度ベクトルについて記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
 <p>多様体を学ぶ上で重要な概念が「接空間」である．別名は接ベクトル空間．曲線の接線や曲面の接平面の単なる拡張とは<strong>異なる</strong>概念である（単なる拡張とみなすだけでは不十分であるという言い方のほうが正確である）．それらの拡張としての接平面は，対象の多様体が高次元のユークリッド空間の部分集合として与えられているときのみの限定的な存在である．</p>
 <p>「基礎のキソ」ではよくある教科書とは異なるアプローチで接平面を導入している（基礎のキソの著者が独自の解釈で書いているわけでなく，同じアプローチをしている教科書も存在する）．</p>
 <h2 id="速度ベクトル空間"><a href="#速度ベクトル空間" class="headerlink" title="速度ベクトル空間"></a>速度ベクトル空間</h2><p>多様体内で（多様体「上」というと曲面をイメージしてしまうのでこのような表現になっている）の速度ベクトルというものを考えたい．空間（必ずしもユークリッド空間ではない）の中での物体の運動を知りたいという要望はいくらでもあるので，その速度ベクトルの情報を得ようと考えるのは自然である．<br>ユークリッド空間のある点における速度ベクトルを次のように定義する．</p>
@@ -86,7 +86,7 @@
 <h3 id="速度ベクトルの表現"><a href="#速度ベクトルの表現" class="headerlink" title="速度ベクトルの表現"></a>速度ベクトルの表現</h3><p>点$p\in M$を固定し，時刻$t=0$に$p$を通過する$C^1$級曲線<script type="math/tex">x:[-1,1]\rightarrow M,t\mapsto x(t)</script>を考える．点$p=x(0)$を東京，曲線$x$を飛行機の経路だと思えばよい．<br>次に地図帳$A$の点$p$が記録されているページを探す．そのページに載っている点$p$の像を</p>
 <script type="math/tex; mode=display">\boldsymbol{p}=\phi(p)\in\mathbb{U}_{\phi}</script><p>と表す（イメージのしやすさ的に，例として<script type="math/tex">\mathbb{U}_{\phi}</script>を<script type="math/tex">\mathbb{R}^2</script>で考えるとよい）．このとき，地図帳の$\phi$ページ目の<script type="math/tex">\mathbb{U}_\phi</script>の中には$C^1$級曲線$x(t)$の時刻$t=0$前後の様子が</p>
 <script type="math/tex; mode=display">\boldsymbol{x}(t):=\phi(x(t))(t\approx0)</script><p>として記録されているはずである（$x(t)$は多様体$M$上で定義された曲線．それを$\phi$ページ目に写したものが<script type="math/tex">\boldsymbol{x}(t)</script>である）．<br>以下，$\epsilon$を十分小さい正の数として固定し，<script type="math/tex">t=0</script>を含む時刻の区間<script type="math/tex">\mathbb{I}=[- \epsilon,\epsilon]</script>について<script type="math/tex">x(\mathbb{I})\subset U_\phi</script>であると仮定する．つまり地図帳の$\phi$ページ目の飛行経路が<script type="math/tex">\boldsymbol{x}(\mathbb{I})\subset\mathbb{U}_{\phi}</script>として記録されているような状況である．<br>このとき，<script type="math/tex">C^1</script>級曲線<script type="math/tex">\boldsymbol{x}:\mathbb{I}\rightarrow \mathbb{U}_{\phi}</script>の時刻０における速度ベクトル</p>
-<script type="math/tex; mode=display">\boldsymbol{v}=\frac{d\boldsymbol{x}(0)}{dt}</script><p>が計算できる．これは<script type="math/tex">\boldsymbol{p}\in\mathbb{U}_{\phi}\subset\mathbb{R}^n</script>における速度ベクトル空間<script type="math/tex">T_{\boldsymbol{p}}\mathbb{U}_\phi = \mathbb{R}^n</script>の元であり，すなわち地図帳の$\phi$ページ目の座標系での$\boldsymbol{p}$における速度を矢印として記したものと考えられる．</p>
+<script type="math/tex; mode=display">\boldsymbol{v}=\frac{d\boldsymbol{x}(0)}{dt}=\displaystyle \lim_{\Delta t \to 0} \frac{\boldsymbol{x}(\Delta t)-\boldsymbol{x}(0)}{\Delta t}</script><p>が計算できる．これは<script type="math/tex">\boldsymbol{p}\in\mathbb{U}_{\phi}\subset\mathbb{R}^n</script>における速度ベクトル空間<script type="math/tex">T_{\boldsymbol{p}}\mathbb{U}_\phi = \mathbb{R}^n</script>の元であり，すなわち地図帳の$\phi$ページ目の座標系での$\boldsymbol{p}$における速度を矢印として記したものと考えられる．</p>
 <h3 id="局所座標への依存性"><a href="#局所座標への依存性" class="headerlink" title="局所座標への依存性"></a>局所座標への依存性</h3><p>地図（ページ）ごとに縮尺や図法が違うため，同じ飛行経路でも矢印の向きや長さが異なるのであった．とはいえ同じ運動（飛行経路）を表している以上，異なる地図に書かれた矢印同士に何か関連はあるはずだ．</p>
 <p>複数のページに同じ経路が書かれている状況をつくる．いま，$\phi$とは別のページ<script type="math/tex">\psi\in A</script>が存在して<script type="math/tex">p\in U_\psi</script>であったと仮定する．このとき<script type="math/tex">x(\mathbb{I})\subset U_\phi\cap U_\psi</script>としてよい．また，多様体$M$上の飛行経路$x(t)(t\in\mathbb{I})$を$\psi$で観測したとき，<script type="math/tex">\mathbb{U}_\psi</script>内では</p>
 <script type="math/tex; mode=display">\boldsymbol{y}(t) := \psi(x(t)),\boldsymbol{q} = \psi(p)=\boldsymbol{y}(0)</script><p>と表されるとする．このとき$\phi$ページ目の速度ベクトル$\boldsymbol{v}$と同様に，$\psi$ページ目の座標系での速度ベクトル</p>
@@ -153,7 +153,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/17/%E5%A4%9A%E6%A7%98%E4%BD%93%E3%81%AE%E6%8E%A5%E7%A9%BA%E9%96%93/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/17/%E5%A4%9A%E6%A7%98%E4%BD%93%E3%81%AE%E9%80%9F%E5%BA%A6%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -173,7 +173,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/数学/">数学</a><small>5</small></li>
+    <li><a href="/categories/数学/">数学</a><small>6</small></li>
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
@@ -190,7 +190,7 @@
   
     <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
   
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>5</small></li>
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>6</small></li>
   
     <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
