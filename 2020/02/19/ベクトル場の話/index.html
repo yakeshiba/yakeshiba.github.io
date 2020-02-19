@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>ベクトル場の話 | うらじろ</title>
+  <meta name="author" content="kebayashi">
+  
+  <meta name="description" content="以下の文献を参考にし，自分用にメモする．松本幸夫，多様体の基礎，東京大学出版会，2013初瀬弘平，微分幾何学講義，共立出版，1993
+空間の各点にそこを始点とするベクトルが割り当てられている状況が実問題でもしばしば登場する．それがベクトル場の意味するところである．例えば地球の万有引力により生じる力（">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="ベクトル場の話"/>
+  <meta property="og:site_name" content="うらじろ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="うらじろ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">うらじろ</a></h1>
+  <h2><a href="/">ノートの代わり</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-ベクトル場の話" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-19T07:58:14.000Z"><a href="/2020/02/19/ベクトル場の話/">2020-02-19</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">ベクトル場の話</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013<br>初瀬弘平，微分幾何学講義，共立出版，1993</p>
+<p>空間の各点にそこを始点とするベクトルが割り当てられている状況が実問題でもしばしば登場する．それがベクトル場の意味するところである．<br>例えば地球の万有引力により生じる力（重力）も，地球の中心に向かって引かれる矢印で表現できる．地球から離れれば離れるほどその矢印は短くなっていく．この状況では重力をベクトル場として見ているのである．</p>
+<h2 id="多様体上のベクトル場"><a href="#多様体上のベクトル場" class="headerlink" title="多様体上のベクトル場"></a>多様体上のベクトル場</h2><p>先ほどの例（実世界は三次元ユークリッド空間）を一般化し，多様体上のベクトル場を考える．</p>
+<h3 id="ベクトル場の定義"><a href="#ベクトル場の定義" class="headerlink" title="ベクトル場の定義"></a>ベクトル場の定義</h3><p>$M$を$C^r$級多様体$(1\leq r\leq\infty)$とする．$M$の各点$p$に，$p$における接ベクトル$X_p\in T_p(M)$がひとつずつ対応しているとき，その対応</p>
+<script type="math/tex; mode=display">X=\{X_p\}_{p\in M}</script><p>のことを$M$上のベクトル場という．</p>
+<p>つまり$M$上の一点ごとに一つその点での代表的な接ベクトルを選んで，その選ばれた接ベクトルたち全体が形成する矢印の流れ$X$をベクトル場というのである．</p>
+<h2 id="ベクトル場の性質"><a href="#ベクトル場の性質" class="headerlink" title="ベクトル場の性質"></a>ベクトル場の性質</h2><p>異なる二つのベクトル場が与えられたとき，それらを加えて第三の新たなベクトル場を作ることができるとする．<br>つまり<script type="math/tex">X=\{X_p\}_{p\in M},Y=\{Y_p\}_{p\in M}</script>のとき</p>
+<script type="math/tex; mode=display">X + Y = \{X_p + Y_p\}_{p\in M}</script><p>と定義する．<br>また，ベクトル場には関数$f:M\rightarrow\mathbb{R}$を掛けることができるとする．$X$の$f$倍は</p>
+<script type="math/tex; mode=display">fX = \{f(p)X_p\}_{p\in M}</script><p>で定義される．関数を掛けるという表現をしたが，実際に掛けられているのは$f(p)$というスカラー（点$p$での関数値）である．</p>
+<p>交換法則や結合法則も成立する．</p>
+<h2 id="１階の微分作用素としてのベクトル場"><a href="#１階の微分作用素としてのベクトル場" class="headerlink" title="１階の微分作用素としてのベクトル場"></a>１階の微分作用素としてのベクトル場</h2><p>点$p\in M$における接ベクトル$X_p\in T_p(M)$は方向微分（という操作）で，$p$のまわりで定義された$C^r$級関数$f$に実数$X_p(f)$を対応させる操作のことであった．つまり</p>
+<script type="math/tex; mode=display">X_p(f) = \left( a_1\left( \frac{\partial}{\partial x_1} \right)_p + a_2\left( \frac{\partial}{\partial x_2} \right)_p + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)_p \right)f</script><p>である．<br>$X$がベクトル場で$f$が$M$上で定義された$C^r$級関数のとき，対応</p>
+<script type="math/tex; mode=display">p\mapsto X_p(f) \in\mathbb{R}</script><p>を考えれば．$M$上の関数が得られる（ベクトル場が与えられているということは，各点での接ベクトル（偏微分作用素の係数$a_i$）が既に決まっているということである）．この関数を$Xf$で表す．つまり点$p$での値が</p>
+<script type="math/tex; mode=display">(Xf)(p):=X_p(f)</script><p>と求まる関数が$Xf$である．$Xf$を「関数$f$にベクトル場$X$を作用させて得られる関数」という（ベクトル場$X$を作用させるということは，接ベクトルを作用させるということである．さらに言えば，接ベクトルを作用させるということは，偏微分作用素を作用させるということである）．<br>この関数は局所座標系の取り方と無関係である．</p>
+<h2 id="ベクトル場のかっこ積"><a href="#ベクトル場のかっこ積" class="headerlink" title="ベクトル場のかっこ積"></a>ベクトル場のかっこ積</h2><p>以後，断りの無い限り多様体は$C^\infty$級である．</p>
+<h3 id="かっこ積の定義"><a href="#かっこ積の定義" class="headerlink" title="かっこ積の定義"></a>かっこ積の定義</h3><p>多様体$M$上に二つのベクトル場$X,Y$が与えられたとき，それらの<strong>かっこ積</strong>とは</p>
+<script type="math/tex; mode=display">[X,Y]f = X(Yf)-Y(Xf)</script><p>で定義される$M$上の$C^\infty$級ベクトル場$[X,Y]$である．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/数学/">数学</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/微分幾何学/">微分幾何学</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/19/%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E5%A0%B4%E3%81%AE%E8%A9%B1/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="検索">
+    <input type="hidden" name="as_sitesearch" value="yakeshiba.github.io">
+  </form>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">カテゴリー</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/数学/">数学</a><small>9</small></li>
+  
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
+  
+    <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
+  
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>9</small></li>
+  
+    <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 kebayashi
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>

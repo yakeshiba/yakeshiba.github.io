@@ -44,6 +44,55 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-ベクトル場の話" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-19T07:58:14.000Z"><a href="/2020/02/19/ベクトル場の話/">2020-02-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/19/ベクトル場の話/">ベクトル場の話</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013<br>初瀬弘平，微分幾何学講義，共立出版，1993</p>
+<p>空間の各点にそこを始点とするベクトルが割り当てられている状況が実問題でもしばしば登場する．それがベクトル場の意味するところである．<br>例えば地球の万有引力により生じる力（重力）も，地球の中心に向かって引かれる矢印で表現できる．地球から離れれば離れるほどその矢印は短くなっていく．この状況では重力をベクトル場として見ているのである．</p>
+<h2 id="多様体上のベクトル場"><a href="#多様体上のベクトル場" class="headerlink" title="多様体上のベクトル場"></a>多様体上のベクトル場</h2><p>先ほどの例（実世界は三次元ユークリッド空間）を一般化し，多様体上のベクトル場を考える．</p>
+<h3 id="ベクトル場の定義"><a href="#ベクトル場の定義" class="headerlink" title="ベクトル場の定義"></a>ベクトル場の定義</h3><p>$M$を$C^r$級多様体$(1\leq r\leq\infty)$とする．$M$の各点$p$に，$p$における接ベクトル$X_p\in T_p(M)$がひとつずつ対応しているとき，その対応</p>
+<script type="math/tex; mode=display">X=\{X_p\}_{p\in M}</script><p>のことを$M$上のベクトル場という．</p>
+<p>つまり$M$上の一点ごとに一つその点での代表的な接ベクトルを選んで，その選ばれた接ベクトルたち全体が形成する矢印の流れ$X$をベクトル場というのである．</p>
+<h2 id="ベクトル場の性質"><a href="#ベクトル場の性質" class="headerlink" title="ベクトル場の性質"></a>ベクトル場の性質</h2><p>異なる二つのベクトル場が与えられたとき，それらを加えて第三の新たなベクトル場を作ることができるとする．<br>つまり<script type="math/tex">X=\{X_p\}_{p\in M},Y=\{Y_p\}_{p\in M}</script>のとき</p>
+<script type="math/tex; mode=display">X + Y = \{X_p + Y_p\}_{p\in M}</script><p>と定義する．<br>また，ベクトル場には関数$f:M\rightarrow\mathbb{R}$を掛けることができるとする．$X$の$f$倍は</p>
+<script type="math/tex; mode=display">fX = \{f(p)X_p\}_{p\in M}</script><p>で定義される．関数を掛けるという表現をしたが，実際に掛けられているのは$f(p)$というスカラー（点$p$での関数値）である．</p>
+<p>交換法則や結合法則も成立する．</p>
+<h2 id="１階の微分作用素としてのベクトル場"><a href="#１階の微分作用素としてのベクトル場" class="headerlink" title="１階の微分作用素としてのベクトル場"></a>１階の微分作用素としてのベクトル場</h2><p>点$p\in M$における接ベクトル$X_p\in T_p(M)$は方向微分（という操作）で，$p$のまわりで定義された$C^r$級関数$f$に実数$X_p(f)$を対応させる操作のことであった．つまり</p>
+<script type="math/tex; mode=display">X_p(f) = \left( a_1\left( \frac{\partial}{\partial x_1} \right)_p + a_2\left( \frac{\partial}{\partial x_2} \right)_p + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)_p \right)f</script><p>である．<br>$X$がベクトル場で$f$が$M$上で定義された$C^r$級関数のとき，対応</p>
+<script type="math/tex; mode=display">p\mapsto X_p(f) \in\mathbb{R}</script><p>を考えれば．$M$上の関数が得られる（ベクトル場が与えられているということは，各点での接ベクトル（偏微分作用素の係数$a_i$）が既に決まっているということである）．この関数を$Xf$で表す．つまり点$p$での値が</p>
+<script type="math/tex; mode=display">(Xf)(p):=X_p(f)</script><p>と求まる関数が$Xf$である．$Xf$を「関数$f$にベクトル場$X$を作用させて得られる関数」という（ベクトル場$X$を作用させるということは，接ベクトルを作用させるということである．さらに言えば，接ベクトルを作用させるということは，偏微分作用素を作用させるということである）．<br>この関数は局所座標系の取り方と無関係である．</p>
+<h2 id="ベクトル場のかっこ積"><a href="#ベクトル場のかっこ積" class="headerlink" title="ベクトル場のかっこ積"></a>ベクトル場のかっこ積</h2><p>以後，断りの無い限り多様体は$C^\infty$級である．</p>
+<h3 id="かっこ積の定義"><a href="#かっこ積の定義" class="headerlink" title="かっこ積の定義"></a>かっこ積の定義</h3><p>多様体$M$上に二つのベクトル場$X,Y$が与えられたとき，それらの<strong>かっこ積</strong>とは</p>
+<script type="math/tex; mode=display">[X,Y]f = X(Yf)-Y(Xf)</script><p>で定義される$M$上の$C^\infty$級ベクトル場$[X,Y]$である．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-接ベクトルと接ベクトル空間の正体（まとめ）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -79,7 +128,8 @@
 <h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><h3 id="接ベクトル空間は-m-次元の線形空間である．"><a href="#接ベクトル空間は-m-次元の線形空間である．" class="headerlink" title="接ベクトル空間は$m$次元の線形空間である．"></a><strong>接ベクトル空間は$m$次元の線形空間である．</strong></h3><p>$m$次元$C^r$級多様体$M$とその上の点$p$を考える．$p$を含む座標近傍$(U;x_1,x_2,\ldots,x_m)$上で定義された微分作用素</p>
 <script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script><p>は$x_i$軸に関する方向微分（を求める・と呼ばれる作用素）になる．<br>これら$m$個の方向微分は線形独立（証明は普通のベクトルの線形独立性を示すときと同じ方針）であり，これらの線形結合</p>
 <script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\left( \frac{\partial}{\partial x_i} \right)_p</script><p>を，<strong>点$p$における</strong>$M$の接ベクトルという．<br><strong>こいつが表現できる$p$における作用素すべての集合を$T_p(M)$と書き，$p$における$M$の接ベクトル空間という．</strong></p>
-<p>個人的には「ユークリッド空間のような軸のある（それに対応する座標がある）空間が接ベクトル空間で，その座標ひとつひとつが接ベクトル」とか考えるのはよくない気がする．<br>どっちかと言えば「接ベクトル空間」という名前のついた単なる袋があって，その中のボールひとつひとつが接ベクトルであるというイメージ．<br>ただ実際には$m$個の基底があるわけだから接ベクトル空間は$m$次元空間であり，座標でイメージすることもできると思う（その座標の各成分が$a_i$と対応しているのか？ここは謎）．</p>
+<p>個人的には「ユークリッド空間のような軸のある（それに対応する座標がある）空間が接ベクトル空間で，その座標ひとつひとつを指すのが接ベクトル」と考えるのはよくない気がする．<br>どっちかと言えば「接ベクトル空間」という名前のついた単なる袋があって，その中のボールひとつひとつが接ベクトルであるというイメージ．</p>
+<p><del>（ただ，$m$個の基底があるわけだから接ベクトル空間は$m$次元空間であり，つまり軸のある空間でイメージすることもできるってことか？その座標の各成分が$a_i$と対応しているのか？そうすると$(a_1,a_2,\ldots,a_m)$という$m$次元ベクトルが得られるわけだが，これは接ベクトルとは違うはずだ（接ベクトルは微分作用素）．じゃあこれは何なのか？もしくは，特に考える必要もない存在なのか？）</del><br>↓<br>おそらく，入力がベクトルで出力がベクトルの関数をイメージするとよい．<br>基底が<script type="math/tex">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script>で与えられている$m$次元空間内で$(a_1,a_2,\ldots,a_m)$という座標（ベクトル）を指定する．その座標を入力したときの出力にあたるものが接ベクトルという作用素である<br>$(a_1,a_2,\ldots,a_m)$を一つ指定すれば接ベクトルも一つに決まるという関係ではあるが，$m$次ベクトル$(a_1,a_2,\ldots,a_m)$と接ベクトル$a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)$は別の概念である．その空間内での位置を示しているだけのもの（それ単体で完結しているもの）と，その「ベクトル」そのものだけでは意味がなく何かと組み合わせる（作用させる）必要があるものという違いがある．</p>
 <h2 id="写像としての接ベクトルについて"><a href="#写像としての接ベクトルについて" class="headerlink" title="写像としての接ベクトルについて"></a>写像としての接ベクトルについて</h2><p>「微分幾何学講義」では写像$v:C^\infty(p)\rightarrow\mathbb{R}$を接ベクトルと呼ぶのだとしている．<br>つまり関数$f$に対して$v(f) = a\in\mathbb{R}$という関係が成り立つと言っている．この$a$（適当な値）は接ベクトルではない．これは偏微分の結果出てきた単なる実数である．接ベクトルは「偏微分作用素」だから実数とはまた違う概念である．<br><strong>写像の矢印「$\rightarrow$」が示す先の「$\mathbb{R}$」は，この$a$の所属を指している．接ベクトルの所属のことではない．接ベクトルの所属は接ベクトル空間という$m$次元の線形空間である．</strong></p>
 
       
@@ -523,43 +573,6 @@
 
 
 
-  <article id="post-二分探索で要領よく探す" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-08T09:59:18.000Z"><a href="/2020/02/08/二分探索で要領よく探す/">2020-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/08/二分探索で要領よく探す/">二分探索で要領よく探す</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>ソートされた配列の中から目当ての値を探し出す方法の一つに二分探索（Binary Search）という手法がある．探索範囲を二分割しながら求めたい値が存在する領域を狭めつつ，最終的に一つに特定する方法である．</p>
-<h2 id="具体例"><a href="#具体例" class="headerlink" title="具体例"></a>具体例</h2><p>例えば<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">101</span>)]</span><br></pre></td></tr></table></figure><br>という配列の中で左から順に探索する線形探索を適用してみる．3という値がどこにあるか探したいときは順に1,2,3と探していけばすぐ見つかるが，90という値を探したいときは1,2,3,…,89,90と90個もの領域を探索していく必要がある．後半にある値を求めたい場合はこれだと効率が悪い．そこで二分探索を適用する．<br>二分探索は探索領域を中央で二分割することを繰り返す手法である．90という値を探すとき，「1~100の一つの領域」を「1~50,51~100の二つの領域」に分割し，その内の90が所属する方を次の探索領域とする．このとき90がどちらに所属するかを判断するために，配列があらかじめソートされている必要がある．分割基準の50 &lt; 90なので，90は後半の領域に含まれると判断できるのである．これを領域内に含まれる数が90だけになるまで繰り返す．<br>二分探索はソートされている配列にのみ適用できるという制約があるが，一から全ての値を見ながら探していく線形探索（Linear Search）と比べて圧倒的に速い．配列のサイズが$N$のときの計算量は線形探索が$O(N)$,二分探索が$O(logN)$である．</p>
-<h2 id="実装"><a href="#実装" class="headerlink" title="実装"></a>実装</h2><p>以下の問題を例題として実装を考える．<br><a href="https://atcoder.jp/contests/abc146/tasks/abc146_c" target="_blank" rel="noopener">AtCoder ABC146 C問題</a><br>実装上のポイントは「探索領域の端っこの管理」である．例えば，探索領域の左端の値をleft，右端の値をrightという変数で管理することにする．一反復内では探索領域は右か左のどちらか一方向のみから狭くなるので，求めたい値が二分割の内どっちに所属しているかでleftあるいはrightのどちらかを更新することになる．leftとrightの位置関係が入れ替わったときを探索の終了の合図とする．<br>なお，以下の実装は「分割の基準値」について処理した後に「分割の基準値未満の領域」と「分割の基準値より大きい領域」の二つに分けている．上の例だと「基準値50」を処理した後に「1~49の領域」と「51~100の領域」に分けていることになる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">A, B, money = map(int,input().split())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">afford</span><span class="params">(N)</span>:</span><span class="comment">#その整数が買えるか否かを返すbool関数</span></span><br><span class="line">    p = A*N+B*len(str(N))</span><br><span class="line">    <span class="keyword">if</span> p &lt;= money:<span class="comment">#その整数が買えるなら</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索領域の初期値</span></span><br><span class="line">left = <span class="number">0</span></span><br><span class="line">right = <span class="number">10</span>**<span class="number">9</span></span><br><span class="line"><span class="comment">#答えの初期値</span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#二分探索</span></span><br><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">    middle = left+(right-left)//<span class="number">2</span><span class="comment">#探索領域を二分割する．分割の基準となる値をmiddleに代入．</span></span><br><span class="line">    <span class="keyword">if</span> afford(middle):<span class="comment">#middleの値で買えるなら</span></span><br><span class="line">        ans = middle<span class="comment">#とりあえずmiddleが買える中での最高値ってことにする</span></span><br><span class="line">        left = middle+<span class="number">1</span><span class="comment">#もっと大きな値を買えないかを調べるため，探索領域の左端を更新</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = middle<span class="number">-1</span><span class="comment">#もっと小さな値を調べるため，探索領域の右端を更新</span></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure><br>ちなみにこの問題では整数$N$に対して値段が単調増加であるため二分探索を適用できた（大事なこと）．</p>
-<h2 id="Pythonのbisectモジュール"><a href="#Pythonのbisectモジュール" class="headerlink" title="Pythonのbisectモジュール"></a>Pythonのbisectモジュール</h2><p>Pythonで二分探索を使うときによく使われるモジュールがbisectである．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>]<span class="comment">#昇順にソートされたリスト</span></span><br></pre></td></tr></table></figure><br>bisect_leftを使うと昇順リストAに含まれていない値$x$がどこに入るかを教えてくれる.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(A,<span class="number">3</span>)<span class="comment">#x=3のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span></span><br></pre></td></tr></table></figure><br>また，Aに含まれている値$y$を指定するとその値が最初に出てくる場所を教えてくれる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(A,<span class="number">2</span>)<span class="comment">#y=2のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span></span><br></pre></td></tr></table></figure><br>bisect_rightを使うと値$z$以下のAの要素数を教えてくれる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_right(A,<span class="number">4</span>)<span class="comment">#z=4のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_d" target="_blank" rel="noopener">AtCoder ABC143 D問題</a><br>まず二分探索の問題に落とし込む必要がある．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -582,7 +595,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/数学/">数学</a><small>8</small></li>
+    <li><a href="/categories/数学/">数学</a><small>9</small></li>
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
@@ -599,7 +612,7 @@
   
     <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
   
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>8</small></li>
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>9</small></li>
   
     <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
@@ -630,23 +643,7 @@
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
 </script>
@@ -664,5 +661,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>
