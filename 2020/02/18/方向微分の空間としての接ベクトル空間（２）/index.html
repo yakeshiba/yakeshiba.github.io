@@ -77,7 +77,7 @@
 <script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>であると言っている（係数と座標の対応が分からなければ，標準基底の張る三次元ユークリッド空間で考えるとよい）．よく見ると，曲線$c$を$(x_1,x_2\ldots,x_m)$で座標表示して単純に微分する方法で得た速度ベクトル（ユークリッド空間での速度ベクトル）と一致している．このことから，$\boldsymbol{v}_c$は<strong>曲線$c$の$t=0$における速度ベクトル</strong>と呼ばれるべきものであると分かる．</p>
 <p>前回の記事の「多様体上の速度ベクトル」の項で，このような速度ベクトルは局所座標系の取り方に依存してしまう（のでふさわしくない）と述べた．これは局所座標系$(x_1,x_2\ldots,x_m)$に依存する基底$\langle \left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p\rangle$で表したときの係数を見ているからである．$\boldsymbol{v}_c$そのものは</p>
 <script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>という局所座標系に依らない存在であるが，<strong>基底が局所座標系によって変化するので，その係数である</strong></p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p><strong>が局所座標系によって変化するのは当然である．つまり縮尺の違う地図上に描かれている速度ベクトル（矢印）を目で見たときにその長さ（あるいは矢印の指す，その地図上での座標の値）が異なっているのは当然であるが，その矢印が示す運動の「速さ」の絶対的な値は縮尺に関係なく一定であることを言っている．</strong><br>というわけで，速度ベクトルの実体は「$\boldsymbol{v}_c$」である．ここまでの議論により，速度ベクトルを局所座標系の取り方に依らない存在として定式化できた．</p>
+<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p><strong>が局所座標系によって変化するのは当然である．つまり縮尺の違う二つの地図上に描かれている，ある運動（飛行機の航行など）を表す速度ベクトル（矢印）を目で見たときにその長さ（あるいは矢印の指す，その地図上での座標の値）が異なっているのは当然であるが，その矢印が示す運動の「速さ」の絶対的な値は縮尺に関係なく一定であることを言っている．</strong><br>というわけで，速度ベクトルの実体は「$\boldsymbol{v}_c$」である．ここまでの議論により，速度ベクトルを局所座標系の取り方に依らない存在として定式化できた．</p>
 <h2 id="前回と今回の記事のまとめ"><a href="#前回と今回の記事のまとめ" class="headerlink" title="前回と今回の記事のまとめ"></a>前回と今回の記事のまとめ</h2><p>ここまでの話を整理する．</p>
 <h3 id="曲線-c-上の速度ベクトルの定義"><a href="#曲線-c-上の速度ベクトルの定義" class="headerlink" title="曲線$c$上の速度ベクトルの定義"></a>曲線$c$上の速度ベクトルの定義</h3><p>$c:(-\epsilon,\epsilon)\rightarrow M$を$C^r$級曲線とし，$c(0)=p$であるとする．曲線$c$の$t=0$における速度ベクトルとは</p>
 <script type="math/tex; mode=display">\boldsymbol{v}_{c}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>で定義される接ベクトル$\boldsymbol{v}_c \in T_p(M)$のことである．$f$は点$p$のまわりで定義された任意の$C^r$級関数である．</p>
@@ -85,7 +85,7 @@
 <script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}</script><p>という記号で表すことにする．上の定義をこの表記で書くと</p>
 <script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>である．<br>また，ここまで$t=0$として考えてきたが，$0$に特別な意味はない．$c:(a-\epsilon,a+\epsilon)\rightarrow M$という$C^r$級曲線が$t=a$のときに点$p$を通るとすると，$t=a$における速度ベクトルは</p>
 <script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=a} = \boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(a)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>で与えられる．</p>
-<p><strong>$m$次元多様体の速度ベクトル（に相当するもの）の実体は実数（$\mathbb{R}$の元）で，それを$m$個の方向微分係数（いずれも実数）の線形和として表現するとき，それぞれの「方向微分係数の係数（重み）」が接ベクトル空間の元（$m$次元ベクトル）の各成分である．</strong></p>
+<p><del><strong>$m$次元多様体の速度ベクトル（に相当するもの）の実体は実数（$\mathbb{R}$の元）で，それを$m$個の方向微分係数（いずれも実数）の線形和として表現するとき，それぞれの「方向微分係数の係数（重み）」が接ベクトル空間の元（$m$次元ベクトル）の各成分である．</strong></del><br>↓<br><del><strong>接ベクトル（速度ベクトル）は「ベクトル」の名を冠しつつ，実体は実数である．接ベクトル空間は軸が$m$個ある$m$次元空間だが，その元である接ベクトルは実数であり，一次元配列としてのベクトルではない．写像$v:C^{\infty}(p)\rightarrow\mathbb{R}$を点$p$における$M$の接ベクトルと呼ぶ．</strong></del><br>↓<br><del><strong>写す先が実数ってだけで，写像そのもの（接ベクトル）は$m$次元ベクトルなのか？写像と元の関係ってどうなっている？よく分からなくなってきた．</strong></del><br>↓<br><strong>「接ベクトル空間」のWikipediaが有能だった．次の記事としてもう一度結論をまとめる．</strong></p>
 
       
     </div>
@@ -163,7 +163,7 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/数学/">数学</a><small>7</small></li>
+    <li><a href="/categories/数学/">数学</a><small>8</small></li>
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
@@ -180,7 +180,7 @@
   
     <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
   
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>7</small></li>
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>8</small></li>
   
     <li><a href="/tags/線形代数学/">線形代数学</a><small>1</small></li>
   
