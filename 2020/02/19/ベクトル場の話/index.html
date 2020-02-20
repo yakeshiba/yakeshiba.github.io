@@ -71,7 +71,7 @@
 <h2 id="ベクトル場の性質"><a href="#ベクトル場の性質" class="headerlink" title="ベクトル場の性質"></a>ベクトル場の性質</h2><p>異なる二つのベクトル場が与えられたとき，それらを加えて第三の新たなベクトル場を作ることができるとする．<br>つまり<script type="math/tex">X=\{X_p\}_{p\in M},Y=\{Y_p\}_{p\in M}</script>のとき</p>
 <script type="math/tex; mode=display">X + Y = \{X_p + Y_p\}_{p\in M}</script><p>と定義する．<br>また，ベクトル場には関数$f:M\rightarrow\mathbb{R}$を掛けることができるとする．$X$の$f$倍は</p>
 <script type="math/tex; mode=display">fX = \{f(p)X_p\}_{p\in M}</script><p>で定義される．関数を掛けるという表現をしたが，実際に掛けられているのは$f(p)$というスカラー（点$p$での関数値）である．</p>
-<p>交換法則や結合法則も成立する．</p>
+<p>和や積に関して，交換法則や結合法則も成立する．</p>
 <h2 id="１階の微分作用素としてのベクトル場"><a href="#１階の微分作用素としてのベクトル場" class="headerlink" title="１階の微分作用素としてのベクトル場"></a>１階の微分作用素としてのベクトル場</h2><p>点$p\in M$における接ベクトル$X_p\in T_p(M)$は方向微分（という操作）で，$p$のまわりで定義された$C^r$級関数$f$に実数$X_p(f)$を対応させる操作のことであった．つまり</p>
 <script type="math/tex; mode=display">X_p(f) = \left( a_1\left( \frac{\partial}{\partial x_1} \right)_p + a_2\left( \frac{\partial}{\partial x_2} \right)_p + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)_p \right)f</script><p>である．<br>$X$がベクトル場で$f$が$M$上で定義された$C^r$級関数のとき，対応</p>
 <script type="math/tex; mode=display">p\mapsto X_p(f) \in\mathbb{R}</script><p>を考えれば．$M$上の関数が得られる（ベクトル場が与えられているということは，各点での接ベクトル（偏微分作用素の係数$a_i$）が既に決まっているということである）．この関数を$Xf$で表す．つまり点$p$での値が</p>
@@ -204,7 +204,23 @@
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
 </script>
@@ -222,6 +238,5 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
 </body>
 </html>
