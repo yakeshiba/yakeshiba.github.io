@@ -53,6 +53,18 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
+            <time datetime="2020-02-12T10:33:54.000Z"><a href="/2020/02/12/位相空間とは/">2020-02-12</a></time>
+            
+              <h1 class="title"><a href="/2020/02/12/位相空間とは/">位相空間とは</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
             <time datetime="2020-02-11T06:05:21.000Z"><a href="/2020/02/11/双対空間をなんとなく理解する/">2020-02-11</a></time>
             
               <h1 class="title"><a href="/2020/02/11/双対空間をなんとなく理解する/">双対空間をなんとなく理解する</a></h1>
@@ -165,7 +177,7 @@
   
     <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
   
-    <li><a href="/categories/音楽理論/">音楽理論</a><small>1</small></li>
+    <li><a href="/categories/音楽理論/">音楽理論</a><small>2</small></li>
   
   </ul>
 </div>
@@ -178,7 +190,7 @@
   
     <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
   
-    <li><a href="/tags/コード進行/">コード進行</a><small>1</small></li>
+    <li><a href="/tags/コード進行/">コード進行</a><small>2</small></li>
   
     <li><a href="/tags/テンソル/">テンソル</a><small>1</small></li>
   
@@ -215,7 +227,23 @@
 (function($){
   $('.fancybox').fancybox();
 })(jQuery);
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
 </script>
@@ -233,6 +261,5 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
 </body>
 </html>
