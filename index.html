@@ -44,6 +44,44 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-ナップサック問題のコードを読み解く" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-26T16:38:00.000Z"><a href="/2020/02/27/ナップサック問題のコードを読み解く/">2020-02-27</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/27/ナップサック問題のコードを読み解く/">ナップサック問題のコードを読み解く</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>いろんなサイトで解説されているナップサック問題の解法の意味がようやく理解できた気がするので整理する．</p>
+<p>DPまとめコンテスト<br><a href="https://atcoder.jp/contests/dp/tasks/dp_d" target="_blank" rel="noopener">D問題</a></p>
+<h2 id="基本的な考え方"><a href="#基本的な考え方" class="headerlink" title="基本的な考え方"></a>基本的な考え方</h2><p>もともと考えたいナップサック（以下カバン）の耐久を$W$とする．また，品物の数を$N$としてそれぞれの番号を$i=1\ldots,N$とする．</p>
+<p>それを踏まえたうえで，耐久$j$のカバンを仮想的に考える．コードのメイン部分ではその仮想的なカバンに商品を詰めていくことを考えるわけだが，詰めるものを$i$番目までの商品の中から選んだときの価値の<strong>最適解（＝最大値）</strong>を配列dp[i][j]の中に格納していく．</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">N,W = map(int,input().split())</span><br><span class="line">dp = [[-float(<span class="string">'inf'</span>)]*(W+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(N+<span class="number">1</span>)]</span><br><span class="line">weight = [<span class="string">"weight"</span>]<span class="comment">#weight[0]はダミー（実装上の都合）</span></span><br><span class="line">value = [<span class="string">"value"</span>]<span class="comment">#value[0]はダミー</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(N):</span><br><span class="line">    w,v = map(int,input().split())</span><br><span class="line">    weight.append(w)</span><br><span class="line">    value.append(v)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N+<span class="number">1</span>):<span class="comment">#i番目の品物まで考える</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(W+<span class="number">1</span>):<span class="comment">#重さjまで許容できるとき</span></span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            dp[<span class="number">0</span>][j] = <span class="number">0</span><span class="comment">#問題設定より「0番目の商品」は無い</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            dp[i][<span class="number">0</span>] = <span class="number">0</span><span class="comment">#耐久値0のカバンに商品は入れられない</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">if</span> weight[i] &gt; j:<span class="comment">#いま注目しているi番目の商品の重さが「重さjの仮想的なカバン」より重いとき</span></span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j]<span class="comment">#その商品を入れることはできないので，「i-1番目までの商品で考えたときの最適解」と同じになる</span></span><br><span class="line">        <span class="keyword">else</span>:<span class="comment">#i番目の商品を耐久値jのカバンに入れることができるとき</span></span><br><span class="line">            not_choice = dp[i<span class="number">-1</span>][j] <span class="comment">#i番目の商品を入れないなら，「i-1番目までの商品で考えたときの最適解」と同じになる</span></span><br><span class="line">            choice = dp[i<span class="number">-1</span>][j-weight[i]] + value[i]<span class="comment">#i番目の商品を入れるとき，「i-1番目までの商品を耐久j-w[i]のカバンにいれるときの最適解」にv[i]を足すことになる</span></span><br><span class="line">            dp[i][j] = max(choice,not_choice)<span class="comment">#「i番目の商品が含まれる組み合わせ」と「i番目の商品が含まれない組み合わせ」の最適解の大きい方</span></span><br><span class="line">print(dp[N][W])</span><br></pre></td></tr></table></figure>
+<h2 id="実装上の問題"><a href="#実装上の問題" class="headerlink" title="実装上の問題"></a>実装上の問題</h2><p>考え方は上の通りでよいのだが，なんと上記のAtCoderの問題ではTLEしてしまう（Python3）．<br>なので別の方法を考えなければならない．</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">input = sys.stdin.readline</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    N,W = map(int,input().split())</span><br><span class="line">    dp = [<span class="number">-1</span>]*(W+<span class="number">1</span>)<span class="comment">#カバンの残り容量=インデックス</span></span><br><span class="line">    dp[W] = <span class="number">0</span><span class="comment">#カバンの残り容量がWのときは何も商品が入ってない</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(N):</span><br><span class="line">        wt,vl = map(int,input().split())</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(wt,W+<span class="number">1</span>):<span class="comment">#「今注目している商品の容積」よりも残り容量が大きい（or等しい）カバンに突っ込む場合だけ考えればよい．</span></span><br><span class="line">            <span class="keyword">if</span> dp[j] == <span class="number">-1</span>:<span class="comment">#まだ何も入ってないとき</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> dp[j] + vl &gt; dp[j-wt]:<span class="comment">#左辺は「残り容量がjのときの最適解＋今注目している商品の価値」．その商品を入れるとカバンの残り容量はj-wtになる．</span></span><br><span class="line">                dp[j-wt] = dp[j] + vl<span class="comment">#if文を使わないで単にdp[j-wt] = max(dp[j-wt],dp[j]+vl)としても同じ</span></span><br><span class="line">    print(max(dp))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-コード進行テンプレ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -60,7 +98,11 @@
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="ダイアトニック"><a href="#ダイアトニック" class="headerlink" title="ダイアトニック"></a>ダイアトニック</h2><h3 id="超基本"><a href="#超基本" class="headerlink" title="超基本"></a>超基本</h3><p>Ⅰ→Ⅵm→Ⅱm→Ⅴ（１６２５）<br>Ⅰ→Ⅴ→Ⅵm→Ⅲm→Ⅳ→Ⅰ→Ⅱm→Ⅴ（カノン進行）<br>Ⅰ→Ⅳ→Ⅴ→Ⅲm<br>Ⅰ→Ⅲm→Ⅳ→Ⅴ<br>Ⅱm→Ⅲm→Ⅳ→Ⅴ（サビ直前）<br>Ⅱm→Ⅴ→Ⅰ→Ⅵm<br>Ⅳ→Ⅴ→Ⅲm→Ⅵm（王道進行）<br>Ⅳ→Ⅴ→Ⅵm→Ⅵm<br>Ⅳ→Ⅰ→Ⅴ→Ⅵm<br>Ⅵm→Ⅳ→Ⅴ→Ⅰ（小室進行）<br>Ⅵm→Ⅳ→Ⅰ→Ⅴ（洋楽にありがち）<br>Ⅵm→Ⅰ→Ⅳ→Ⅴ<br>Ⅵm→Ⅴ→Ⅳ→Ⅲm</p>
+        <h2 id="基本の進行"><a href="#基本の進行" class="headerlink" title="基本の進行"></a>基本の進行</h2><h3 id="ダイアトニック"><a href="#ダイアトニック" class="headerlink" title="ダイアトニック"></a>ダイアトニック</h3><p>Ⅰ→Ⅵm→Ⅱm→Ⅴ（１６２５）<br>Ⅰ→Ⅴ→Ⅵm→Ⅲm→Ⅳ→Ⅰ→Ⅱm→Ⅴ（カノン進行）<br>Ⅰ→Ⅳ→Ⅴ→Ⅲm<br>Ⅰ→Ⅲm→Ⅳ→Ⅴ<br>Ⅱm→Ⅲm→Ⅳ→Ⅴ（サビ直前）<br>Ⅱm→Ⅴ→Ⅰ→Ⅵm<br>Ⅳ→Ⅴ→Ⅲm→Ⅵm（王道進行）<br>Ⅳ→Ⅴ→Ⅵm→Ⅵm<br>Ⅳ→Ⅰ→Ⅴ→Ⅵm<br>Ⅵm→Ⅳ→Ⅴ→Ⅰ（小室進行）<br>Ⅵm→Ⅳ→Ⅰ→Ⅴ（洋楽にありがち）<br>Ⅵm→Ⅰ→Ⅳ→Ⅴ<br>Ⅵm→Ⅴ→Ⅳ→Ⅲm</p>
+<h2 id="コピーした進行"><a href="#コピーした進行" class="headerlink" title="コピーした進行"></a>コピーした進行</h2><h3 id="ダイアトニック（メジャー）"><a href="#ダイアトニック（メジャー）" class="headerlink" title="ダイアトニック（メジャー）"></a>ダイアトニック（メジャー）</h3><h4 id="AメロBメロ"><a href="#AメロBメロ" class="headerlink" title="AメロBメロ"></a><strong>AメロBメロ</strong></h4><p>Ⅳ→Ⅴ→Ⅲm7→Ⅵm7→Ⅱm7→Ⅴ→Ⅰsus4→Ⅰ<br>Ⅳ→Ⅴ→Ⅲm7→Ⅵ7→Ⅱm7→Ⅲm→Ⅰdim7→Ⅴ#→Ⅴ</p>
+<h4 id="サビ"><a href="#サビ" class="headerlink" title="サビ"></a><strong>サビ</strong></h4><p>Ⅰ→Ⅴ・Ⅴ#dim→Ⅵm7・Ⅴ→Ⅳ#dim→Ⅱm7→Ⅴ→Ⅲm7・Ⅵ→Ⅱm7→Ⅴ#・Ⅴ<br>Ⅰ→Ⅳ→Ⅴ→Ⅴ#dim→Ⅵm→Ⅳ→Ⅴ→Ⅴ（→Ⅰ)</p>
+<h3 id="ダイアトニック（マイナー）"><a href="#ダイアトニック（マイナー）" class="headerlink" title="ダイアトニック（マイナー）"></a>ダイアトニック（マイナー）</h3><h3 id="AメロBメロ-1"><a href="#AメロBメロ-1" class="headerlink" title="AメロBメロ"></a>AメロBメロ</h3><p>Ⅰm→Ⅴm→Ⅳ→Ⅳ→Ⅵ→Ⅶ→Ⅰm→Ⅰm</p>
+<h3 id="サビ-1"><a href="#サビ-1" class="headerlink" title="サビ"></a>サビ</h3><p>Ⅵ→Ⅶ→Ⅰm→Ⅰm→Ⅵ→Ⅴ7→Ⅰm→Ⅰm</p>
 
       
     </div>
@@ -95,6 +137,7 @@
       
         <h3 id="セカンダリードミナント"><a href="#セカンダリードミナント" class="headerlink" title="セカンダリードミナント"></a>セカンダリードミナント</h3><p>平行調のドミナントを第二のドミナントとして使える．これを使った後は平行調のトニックに移行する．<br>F→A7→Dm7におけるA7の役割．</p>
 <h3 id="ブルーススケール"><a href="#ブルーススケール" class="headerlink" title="ブルーススケール"></a>ブルーススケール</h3><p>ブルージーなサウンドを作れる．Jabberloopのシロクマの雰囲気．<br>Ⅰ,Ⅲ♭,Ⅳ♭,Ⅳ,Ⅴ,Ⅶ♭の六音．適当に弾いてもそれっぽいアドリブになる．</p>
+<h3 id="裏コード"><a href="#裏コード" class="headerlink" title="裏コード"></a>裏コード</h3><p>五度圏の正反対の位置にあるセブンスコードのこと．ドミナントセブンスを裏コードに差し替えられる．<br><img src="https://github.com/yakeshiba/pictures/blob/master/%E4%BA%94%E5%BA%A6%E5%9C%8F.PNG?raw=true" alt="五度圏"></p>
 
       
     </div>
@@ -498,62 +541,6 @@
 
 
 
-  <article id="post-多様体の定義とイメージ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-13T14:16:42.000Z"><a href="/2020/02/13/多様体の定義とイメージ/">2020-02-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/13/多様体の定義とイメージ/">多様体の定義とイメージ</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>基礎のキソ4章で多様体について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
-<p>多様体(manifold)は独立した空間の概念で，例えば球面などでイメージされる．多様体の「外」の空間，つまり球面から外れた空間というものは存在しない．イメージとしては地球の「外」，つまり宇宙に相当する空間が存在しないと言っているようなものである．<br>そして，我々は多様体「上」の情報を取り扱うために多様体上の空間を部分的にユークリッド空間として処理する（ユークリッド空間に投影する）必要がある．</p>
-<h2 id="準備（同相写像）"><a href="#準備（同相写像）" class="headerlink" title="準備（同相写像）"></a>準備（同相写像）</h2><p>多様体の定義に同相写像の概念が必要である．</p>
-<h3 id="同相写像の定義"><a href="#同相写像の定義" class="headerlink" title="同相写像の定義"></a>同相写像の定義</h3><p>二つの位相空間$(S,O),(S’,O’)$について，写像<script type="math/tex">f:S\rightarrow S'</script>が同相写像であるとは次の条件を満たすとき．<br>1.　全単射であり，したがって<script type="math/tex">f^{-1}:S'\rightarrow S</script>が写像として定まる．<br>2.　$f$も$f^{-1}$も連続である．</p>
-<h3 id="定義の解釈"><a href="#定義の解釈" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>二つの空間が同相であるというのは，二つの空間を「同じとみなせる」ということ．<br>開集合系，すなわちグループ分け全体の間にも一対一の対応があるから．$(S,O)$と$(S’,O’)$は位相空間という枠組みで解釈し続ける限り，「同じ空間を別の名前で表現している」だけとも言える．つまり写像$f$は空間の名前を$S$から$S’$に変えているだけとみなせる．</p>
-<h2 id="定義と翻訳"><a href="#定義と翻訳" class="headerlink" title="定義と翻訳"></a>定義と翻訳</h2><p>初めに定義を記し，順番に日本語に翻訳する．</p>
-<h3 id="多様体の定義"><a href="#多様体の定義" class="headerlink" title="多様体の定義"></a>多様体の定義</h3><p>1.　$M$を位相空間とする．<br>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．<br>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自身を単に多様体$M$と呼ぶ．<br>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
-<script type="math/tex; mode=display">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>は同相写像であるが，これがすべての<script type="math/tex">\mu,\lambda\in\Lambda</script>について<script type="math/tex">C^\alpha</script>級であるとき，$M$を<script type="math/tex">C^\alpha</script>級多様体と呼ぶ．ただし<script type="math/tex">0\leq\alpha\leq\infty</script>もしくは<script type="math/tex">\alpha=\omega</script>（解析的関数）とする．とくに$C^0$級多様体は位相多様体とも呼ぶ．</p>
-<h3 id="定義の解釈-1"><a href="#定義の解釈-1" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>多様体の大雑把なイメージは古代人にとっての地球（の表面）であるとのこと．自分がいる周辺は（つまり局所的には）広がりを持った空間として認識できるが，全体としてどうなっているのか把握できない存在である．そのイメージをもって定義を解釈していく．</p>
-<h4 id="＜定義１について＞"><a href="#＜定義１について＞" class="headerlink" title="＜定義１について＞"></a><strong>＜定義１について＞</strong></h4><p>1.　$M$を位相空間とする．</p>
-<p>$M$はすでに存在が確定した位相空間だということである．われわれにとっての「宇宙」や「地球」のように，はっきりとそこに存在している．数学的に言えば，<script type="math/tex">\mathbb{R}^n</script>自身やその中の単位球面のように．集合として完全に特定できなくてはならない．<br>↑このように記述があるが，いまいちよくわからない．とにかく$M$の部分集合について位相空間の性質があるってことだけ把握しておけばよいのか？</p>
-<h4 id="＜定義２について＞"><a href="#＜定義２について＞" class="headerlink" title="＜定義２について＞"></a><strong>＜定義２について＞</strong></h4><p>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．</p>
-<p>自分が地表にいるとき，あたりを見渡しても遠くに地平線が見えるだけなので，地球が平面であると錯覚してしまう．あたりを見渡すだけでなく地球の隅々まで歩きつくし，観測することで大局的な形状である球面を認識できるのである．この定義は「歩きつくす」ことを済ませた後の，世界地図（あるいは正確に地図帳）$A$が与えられている状態のことを言っている．</p>
-<p>・(a)について<br>ここは特に「基礎のキソ」の例えがわかりやすい．$M$が未知の惑星だとして，そこに集合<script type="math/tex">\Lambda</script>（たとえば<script type="math/tex">\Lambda=\{1,2,3,\ldots\}</script>）で番号付けされた多数の観測用衛星<script type="math/tex">\{\phi_\lambda\}_{\lambda\in\Lambda}</script>を打ち上げ，惑星$M$の上空に張りつかせる．衛星はそれぞれ決まった領域<script type="math/tex">U_\lambda\subset M</script>の情報を<script type="math/tex">\phi_\lambda(U_\lambda) = \mathbb{U}_\lambda</script>として，つまり<script type="math/tex">\phi_\lambda</script>というカメラを通じて$\mathbb{R}^2$（今は$M$の地表という2次元を観測することにしている）という媒体に記録する．「世界地図」を作るためには惑星の全体を観測する必要があるから，<script type="math/tex">U_\lambda</script>の和集合は$M$でなくてはならない．これが開被覆が要請している条件である．</p>
-<p>・(b)について<br>観測衛星の観測結果を記録する媒体として$\mathbb{R}^n$（観測対象が地表だった先程とは異なりもっと一般的な話をしている？）のコピーを観測衛星の数$\Lambda$だけ用意し，それぞれの通し番号<script type="math/tex">\lambda\in\Lambda</script>に応じた添え字をつけて<script type="math/tex">{\mathbb{R}_\lambda}^n</script>と名前を付ける．これを束ねたのが地図帳である．さらに条件(b)によって<script type="math/tex">{\mathbb{R}_\lambda}^n</script>（地図帳の$\lambda$ページ目）には衛星<script type="math/tex">\phi_\lambda</script>の記録した像<script type="math/tex">\mathbb{U}_\lambda</script>が記録される．この観測と記録が一体化されたシステムが，定義における地図帳$A$の実体である．</p>
-<h4 id="＜定義３について＞"><a href="#＜定義３について＞" class="headerlink" title="＜定義３について＞"></a><strong>＜定義３について＞</strong></h4><p>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自信を単に多様体$M$と呼ぶ．</p>
-<p>定義２でイメージした地図帳$A$を備えた位相空間$M$を多様体と呼ぶ．厳密には空間と地図帳のセットを多様体というが単に空間のことを指して多様体と言う事も多いし，今後は断りがなければそうすることにする．</p>
-<h4 id="＜定義４について＞"><a href="#＜定義４について＞" class="headerlink" title="＜定義４について＞"></a><strong>＜定義４について＞</strong></h4><p>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
-<script type="math/tex; mode=display">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>は同相写像であるが，これがすべての<script type="math/tex">\mu,\lambda\in\Lambda</script>について<script type="math/tex">C^\alpha</script>級であるとき，$M$を<script type="math/tex">C^\alpha</script>級多様体と呼ぶ．ただし<script type="math/tex">0\leq\alpha\leq\infty</script>もしくは<script type="math/tex">\alpha=\omega</script>（解析的関数）とする．とくに$C^0$級多様体は位相多様体とも呼ぶ．</p>
-<p>これも基礎のキソの例が分かりやすい．<br>日本の道路地図を開いて青森から鹿児島まで車で移動したいとする．スタート地点の青森のページを開き，そこから南下していくとすぐにそのページからはみ出してしまう．だから次のページを開いて自分の位置をまた探すわけだが，ふつうは道路地図の各ページは上下左右の端が他のページのそれと重複するようになっていて，その重複部分を通じて他のページとのつながりを読み取ることができ，その結果地図上の自分の位置もわかる．<br>多様体の地図帳にもページ同士のつながりというものがあり，重要な役割を果たす．地図帳$A$のある一つのページだけ見ていても多様体$M$の全貌は分からないので，自分たちでページ同士を切り貼りして全体を追う必要がある．このページを切り貼りするとあのページの横にあるはずだとか，そういったつながりの具合を規定するのがこの定義の条件</p>
-<script type="math/tex; mode=display">\phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>である．</p>
-<p><script type="math/tex">U_\lambda\cap U_\mu</script>は道路地図でいう重複している部分である．このエリアを衛星<script type="math/tex">\phi_\lambda</script>で観測して地図（$\lambda$ページ目）に載せるとき，そこが衛星<script type="math/tex">\phi_\mu</script>で観測したときの地図($\mu$ページ目)のどこに相当するかを示している．その対応関係を<script type="math/tex">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}</script>と書くことにしている．<br>ちなみに記号「$\circ$」は合成関数を示す．合成関数は右の写像から順に解釈していく．<br>まず<script type="math/tex">{\phi_\lambda}^{-1}</script>で観測エリア<script type="math/tex">U_\lambda</script>を「再現」して，そのエリアを衛星<script type="math/tex">\phi_\mu</script>で観測する．このとき<script type="math/tex">\phi_\mu</script>が観測するのは元々自分のエリアじゃないので，自分のエリアと被っている一部分だけを観測することになる．その「一部分」にあたるのが<script type="math/tex">U_\lambda\cap U_\mu</script>である．</p>
-<p>$C^\alpha$級の話は微分に着目しているわけだが，また後で触れることにする．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -578,7 +565,7 @@
   
     <li><a href="/categories/数学/">数学</a><small>10</small></li>
   
-    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>6</small></li>
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>7</small></li>
   
     <li><a href="/categories/音楽理論/">音楽理論</a><small>2</small></li>
   
@@ -591,7 +578,7 @@
   <h3 class="title">タグ</h3>
   <ul class="entry">
   
-    <li><a href="/tags/Python3/">Python3</a><small>6</small></li>
+    <li><a href="/tags/Python3/">Python3</a><small>7</small></li>
   
     <li><a href="/tags/コード進行/">コード進行</a><small>2</small></li>
   

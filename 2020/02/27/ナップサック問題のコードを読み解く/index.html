@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>ナップサック問題のコードを読み解く | うらじろ</title>
+  <meta name="author" content="kebayashi">
+  
+  <meta name="description" content="いろんなサイトで解説されているナップサック問題の解法の意味がようやく理解できた気がするので整理する．
+DPまとめコンテストD問題
+基本的な考え方もともと考えたいナップサック（以下カバン）の耐久を$W$とする．また，品物の数を$N$としてそれぞれの番号を$i=1\ldots,N$とする．
+それを踏まえ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="ナップサック問題のコードを読み解く"/>
+  <meta property="og:site_name" content="うらじろ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="うらじろ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">うらじろ</a></h1>
+  <h2><a href="/">ノートの代わり</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-ナップサック問題のコードを読み解く" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-26T16:38:00.000Z"><a href="/2020/02/27/ナップサック問題のコードを読み解く/">2020-02-27</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">ナップサック問題のコードを読み解く</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>いろんなサイトで解説されているナップサック問題の解法の意味がようやく理解できた気がするので整理する．</p>
+<p>DPまとめコンテスト<br><a href="https://atcoder.jp/contests/dp/tasks/dp_d" target="_blank" rel="noopener">D問題</a></p>
+<h2 id="基本的な考え方"><a href="#基本的な考え方" class="headerlink" title="基本的な考え方"></a>基本的な考え方</h2><p>もともと考えたいナップサック（以下カバン）の耐久を$W$とする．また，品物の数を$N$としてそれぞれの番号を$i=1\ldots,N$とする．</p>
+<p>それを踏まえたうえで，耐久$j$のカバンを仮想的に考える．コードのメイン部分ではその仮想的なカバンに商品を詰めていくことを考えるわけだが，詰めるものを$i$番目までの商品の中から選んだときの価値の<strong>最適解（＝最大値）</strong>を配列dp[i][j]の中に格納していく．</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">N,W = map(int,input().split())</span><br><span class="line">dp = [[-float(<span class="string">'inf'</span>)]*(W+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(N+<span class="number">1</span>)]</span><br><span class="line">weight = [<span class="string">"weight"</span>]<span class="comment">#weight[0]はダミー（実装上の都合）</span></span><br><span class="line">value = [<span class="string">"value"</span>]<span class="comment">#value[0]はダミー</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(N):</span><br><span class="line">    w,v = map(int,input().split())</span><br><span class="line">    weight.append(w)</span><br><span class="line">    value.append(v)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N+<span class="number">1</span>):<span class="comment">#i番目の品物まで考える</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(W+<span class="number">1</span>):<span class="comment">#重さjまで許容できるとき</span></span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            dp[<span class="number">0</span>][j] = <span class="number">0</span><span class="comment">#問題設定より「0番目の商品」は無い</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            dp[i][<span class="number">0</span>] = <span class="number">0</span><span class="comment">#耐久値0のカバンに商品は入れられない</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">if</span> weight[i] &gt; j:<span class="comment">#いま注目しているi番目の商品の重さが「重さjの仮想的なカバン」より重いとき</span></span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j]<span class="comment">#その商品を入れることはできないので，「i-1番目までの商品で考えたときの最適解」と同じになる</span></span><br><span class="line">        <span class="keyword">else</span>:<span class="comment">#i番目の商品を耐久値jのカバンに入れることができるとき</span></span><br><span class="line">            not_choice = dp[i<span class="number">-1</span>][j] <span class="comment">#i番目の商品を入れないなら，「i-1番目までの商品で考えたときの最適解」と同じになる</span></span><br><span class="line">            choice = dp[i<span class="number">-1</span>][j-weight[i]] + value[i]<span class="comment">#i番目の商品を入れるとき，「i-1番目までの商品を耐久j-w[i]のカバンにいれるときの最適解」にv[i]を足すことになる</span></span><br><span class="line">            dp[i][j] = max(choice,not_choice)<span class="comment">#「i番目の商品が含まれる組み合わせ」と「i番目の商品が含まれない組み合わせ」の最適解の大きい方</span></span><br><span class="line">print(dp[N][W])</span><br></pre></td></tr></table></figure>
+<h2 id="実装上の問題"><a href="#実装上の問題" class="headerlink" title="実装上の問題"></a>実装上の問題</h2><p>考え方は上の通りでよいのだが，なんと上記のAtCoderの問題ではTLEしてしまう（Python3）．<br>なので別の方法を考えなければならない．</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">input = sys.stdin.readline</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    N,W = map(int,input().split())</span><br><span class="line">    dp = [<span class="number">-1</span>]*(W+<span class="number">1</span>)<span class="comment">#カバンの残り容量=インデックス</span></span><br><span class="line">    dp[W] = <span class="number">0</span><span class="comment">#カバンの残り容量がWのときは何も商品が入ってない</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(N):</span><br><span class="line">        wt,vl = map(int,input().split())</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(wt,W+<span class="number">1</span>):<span class="comment">#「今注目している商品の容積」よりも残り容量が大きい（or等しい）カバンに突っ込む場合だけ考えればよい．</span></span><br><span class="line">            <span class="keyword">if</span> dp[j] == <span class="number">-1</span>:<span class="comment">#まだ何も入ってないとき</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> dp[j] + vl &gt; dp[j-wt]:<span class="comment">#左辺は「残り容量がjのときの最適解＋今注目している商品の価値」．その商品を入れるとカバンの残り容量はj-wtになる．</span></span><br><span class="line">                dp[j-wt] = dp[j] + vl<span class="comment">#if文を使わないで単にdp[j-wt] = max(dp[j-wt],dp[j]+vl)としても同じ</span></span><br><span class="line">    print(max(dp))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/競技プログラミング/">競技プログラミング</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Python3/">Python3</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/02/27/%E3%83%8A%E3%83%83%E3%83%97%E3%82%B5%E3%83%83%E3%82%AF%E5%95%8F%E9%A1%8C%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%81%BF%E8%A7%A3%E3%81%8F/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="検索">
+    <input type="hidden" name="as_sitesearch" value="yakeshiba.github.io">
+  </form>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">カテゴリー</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/数学/">数学</a><small>10</small></li>
+  
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>7</small></li>
+  
+    <li><a href="/categories/音楽理論/">音楽理論</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Python3/">Python3</a><small>7</small></li>
+  
+    <li><a href="/tags/コード進行/">コード進行</a><small>2</small></li>
+  
+    <li><a href="/tags/テンソル/">テンソル</a><small>1</small></li>
+  
+    <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
+  
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>9</small></li>
+  
+    <li><a href="/tags/線形代数学/">線形代数学</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 kebayashi
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
