@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>木構造の深さ優先探索 | うらじろ</title>
+  <meta name="author" content="kebayashi">
+  
+  <meta name="description" content="・ある木構造の繋がりあう頂点の組が入力が与えられたとき，その木をPythonでどうやって管理するのか．・木構造の深さ優先探索の実装はどうなるか．ABC146 D問題木構造なので頂点が円形にループするような辺の接続は存在しない12345678910111213141516171819202122232">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="木構造の深さ優先探索"/>
+  <meta property="og:site_name" content="うらじろ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="うらじろ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">うらじろ</a></h1>
+  <h2><a href="/">ノートの代わり</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-木構造の深さ優先探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-03-06T08:45:47.000Z"><a href="/2020/03/06/木構造の深さ優先探索/">2020-03-06</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">木構造の深さ優先探索</h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>・ある木構造の繋がりあう頂点の組が入力が与えられたとき，その木をPythonでどうやって管理するのか．<br>・木構造の深さ優先探索の実装はどうなるか．<br><a href="https://atcoder.jp/contests/abc146/tasks/abc146_d" target="_blank" rel="noopener">ABC146 D問題</a><br><strong>木構造なので頂点が円形にループするような辺の接続は存在しない</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">input = sys.stdin.readline</span><br><span class="line">sys.setrecursionlimit(<span class="number">10</span>**<span class="number">9</span>)<span class="comment">#Pythonでは（デフォルトだと）再帰ループの回数に制限がかかっている．深さ優先探索の実装に再帰を用いているので，毎回念のため上限を撤回する．この問題だとデフォルトの上限では足りない．</span></span><br><span class="line"></span><br><span class="line">N = int(input())</span><br><span class="line">E = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(N)]<span class="comment">#木構造を管理するリスト</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N<span class="number">-1</span>):</span><br><span class="line">    a,b = map(int,input().split())</span><br><span class="line">    a,b = a<span class="number">-1</span>,b<span class="number">-1</span><span class="comment">#インデックスは０スタートなので引いておく</span></span><br><span class="line">    E[a].append([b,i])<span class="comment">#頂点aが頂点bと辺iで繋がっている</span></span><br><span class="line"></span><br><span class="line">ans = [<span class="literal">None</span>]*(N<span class="number">-1</span>)<span class="comment">#i番目の辺に塗られる色の番号</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">paint</span><span class="params">(now,color)</span>:</span><span class="comment">#now:今注目している頂点,color:遷移（後述）元と繋がっている辺の色番号</span></span><br><span class="line">    painting = <span class="number">1</span><span class="comment">#今から塗ろうとしている色</span></span><br><span class="line">    <span class="keyword">for</span> to, en <span class="keyword">in</span> E[now]:<span class="comment">#頂点nowから繋がっている別の頂点to，つないでいる辺en(edge_number)</span></span><br><span class="line">        <span class="keyword">if</span> painting == color:<span class="comment">#今から塗ろうとしている色が「遷移元と繋がる辺」の色だったら</span></span><br><span class="line">            painting += <span class="number">1</span><span class="comment">#その色をスキップする（被ってる色は使えないので次の色にする）．</span></span><br><span class="line">        ans[en] = painting<span class="comment">#その辺の色を決定</span></span><br><span class="line">        paint(to,painting)<span class="comment">#ここが深さ優先探索．ここで別の頂点に遷移する．</span></span><br><span class="line">                          <span class="comment">#「この関数（ループ）を起動した時点で注目していた頂点now」と繋がっている別の頂点toに注目を移す</span></span><br><span class="line">                          <span class="comment">#その際にnowとtoをつなぐ辺の色(painting)を渡してあげる（この色はもう使うなよと伝えている）</span></span><br><span class="line">        painting += <span class="number">1</span><span class="comment">#「「この関数（ループ）を起動した時点で注目していた頂点now」から出ている次の辺」に塗る色を更新する</span></span><br><span class="line">                     <span class="comment">#深さ優先探索で行き止まり（葉）に突き当たったらここの処理に到着する</span></span><br><span class="line"></span><br><span class="line">paint(<span class="number">0</span>,<span class="number">0</span>)<span class="comment">#初期化．第一引数は適当なスタート地点（深さ優先探索は木の上にも下にも行けるから，どこがスタートでも問題ない）</span></span><br><span class="line">          <span class="comment">#第二引数の0は遷移元と繋がる辺の色（最初はまだどこからも遷移してないので何も塗ってない．だからその色番号を0としておく．正の数じゃなきゃなんでも良い）．</span></span><br><span class="line">print(max(ans))</span><br><span class="line">print(*ans, sep=<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/競技プログラミング/">競技プログラミング</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Python3/">Python3</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">コメント</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/03/06/%E6%9C%A8%E6%A7%8B%E9%80%A0%E3%81%AE%E6%B7%B1%E3%81%95%E5%84%AA%E5%85%88%E6%8E%A2%E7%B4%A2/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="検索">
+    <input type="hidden" name="as_sitesearch" value="yakeshiba.github.io">
+  </form>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">カテゴリー</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/メモ/">メモ</a><small>2</small></li>
+  
+    <li><a href="/categories/数学/">数学</a><small>10</small></li>
+  
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>8</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">タグ</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Python3/">Python3</a><small>8</small></li>
+  
+    <li><a href="/tags/テンソル/">テンソル</a><small>1</small></li>
+  
+    <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
+  
+    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>9</small></li>
+  
+    <li><a href="/tags/線形代数学/">線形代数学</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 kebayashi
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
