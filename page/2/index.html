@@ -44,6 +44,81 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-方向微分の空間としての接ベクトル空間（１）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-18T05:45:00.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">2020-02-18</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">方向微分の空間としての接ベクトル空間（１）</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013</p>
+<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当にいろんな教科書を開いてみると大体このアプローチで書かれている．</p>
+<h2 id="ユークリッド空間での速度ベクトル"><a href="#ユークリッド空間での速度ベクトル" class="headerlink" title="ユークリッド空間での速度ベクトル"></a>ユークリッド空間での速度ベクトル</h2><p>くどいようだが，もう一度ユークリッド空間$\mathbb{R}^m$での速度ベクトルを考える．$-\epsilon&lt; t &lt; \epsilon$の範囲を動くパラメータ$t$で表される$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}^m$を座標表示したものが$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$であるとする．このときの$t=0$における速度ベクトルは</p>
+<script type="math/tex; mode=display">\boldsymbol{v} = \frac{dc(0)}{dt} = \left(\frac{dx_1(0)}{dt},\frac{dx_2(0)}{dt},\ldots,\frac{dx_m(0)}{dt}\right)</script><p>で与えられる．</p>
+<h2 id="多様体上の速度ベクトル"><a href="#多様体上の速度ベクトル" class="headerlink" title="多様体上の速度ベクトル"></a>多様体上の速度ベクトル</h2><p>多様体$M$を$m$次元$C^r$級であるとする．また，$M$上の点$p$を通る$C^r$級曲線を$c$とする．</p>
+<p>まず，$p$を含む座標近傍$(U;x_1,\ldots,x_m)$をとり，曲線$c$を$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$と局所座標表示する（つまりこれは地図帳のあるページ上の座標である）．また，これとは異なる局所座標系をとり，同じ曲線$c$を$c(t) = (y_1(t),y_2(t),\ldots y_m(t))$と座標表示する（これはさっきと別のページ上の座標であり，各成分の値は異なる）．これら二つの座標系（縮尺の異なる二つの地図）における速度ベクトルをユークリッド空間のそれと同じように求めると，それぞれ別のベクトルが求まる．つまり速度ベクトルが座標系の取り方に依存しているといえる．今は「多様体の速度ベクトル」という多様体上のある一点に対してただ一つ対応するものを考えたいのに，それが局所座標系の取り方によって変化するのは喜ばしいことではない．</p>
+<p>以上のことを踏まえると，「$c$の速度ベクトル」は局所座標系の取り方に無関係なものとして定式化されている必要があるとわかる．この問題の解決のために「$c$に沿う微分操作」を考える．<br>点$p$の開近傍（$p$を含む開集合）$U$で定義された任意の$C^r$級関数$f$を考える．パラメータ$t$の曲線$c:(-\epsilon,\epsilon)\rightarrow U$と$f:U\rightarrow\mathbb{R}$の合成関数$f(c(t))$を作ると，これは$t(-\epsilon &lt; t &lt; \epsilon)$を変数とする$C^r$級関数になる($C^r$級関数と$C^r$級関数の合成関数は$C^r$級である)．この合成関数がやっているのは「$f$を曲線$c$上に制限された一変数関数にする」ことである．ここで$f(c(t))$が$p$の周りの局所座標系（地図帳のページ）に関係なく$f$と$c$だけで決まる一変数関数であるということを強調したい．<br>次に，$f(c(t))$の$t=0$における通常の微分係数</p>
+<script type="math/tex; mode=display">\frac{df(c(0))}{dt} = \displaystyle \lim_{t \to 0} \frac{f(c(t))-f(c(0))}{t}</script><p>を考える．これはひとつの実数である．もとの関数$f(c(t))$が局所座標系に無関係だから，この微分係数も局所座標系と無関係に$f$と$c$だけで決まる数である．関数$f$にこの微分係数を関連付ける対応</p>
+<script type="math/tex; mode=display">f\mapsto \frac{df(c(0))}{dt}</script><p>のことを$c$に沿う($t=0$での)<strong>方向微分</strong>とよび，記号$\boldsymbol{v}_c$で表すことにする．先ほど通常の微分係数と言ってたものを，関数$f$に関するものであることを強調して</p>
+<script type="math/tex; mode=display">\boldsymbol{v}_c(f)</script><p>と表す．<br>これが多様体上での「速度ベクトル」に相当するものである．</p>
+<h2 id="方向微分の性質"><a href="#方向微分の性質" class="headerlink" title="方向微分の性質"></a>方向微分の性質</h2><p>曲線$c$に沿う方向微分$\boldsymbol{v}_c$は次の性質をもつ．</p>
+<ul>
+<li>点$p$の開近傍で定義された$C^r$級関数を$f,g$とする．$p$の属する十分小さな開近傍上で$f=g$ならば<script type="math/tex; mode=display">\boldsymbol{v}_c(f) = \boldsymbol{v}_c(g)</script></li>
+<li>上と同じ$f,g$と実数$a,b$に関して<script type="math/tex; mode=display">\boldsymbol{v}_c(af+bg) = a\boldsymbol{v}_c(f)+b\boldsymbol{v}_c(g)</script></li>
+<li>上と同じ$f,g$に関して$fg$をそれらの積とすれば<script type="math/tex; mode=display">\boldsymbol{v}_c(fg) = \boldsymbol{v}_c(f)g(p)+f(p)\boldsymbol{v}_c(g)</script></li>
+</ul>
+<h2 id="点-p-における方向微分"><a href="#点-p-における方向微分" class="headerlink" title="点$p$における方向微分"></a>点$p$における方向微分</h2><p><strong>以下，本記事は曲線$c$に関する方向微分を抽象化した点$p$における形式的な「方向微分」の概念について述べている．</strong></p>
+<h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>点$p$における方向微分$\boldsymbol{v}_c$とは$p$の開近傍で定義された$C^r$級関数$f$に実数$\boldsymbol{v}(f)$を対応させる操作であり，次の性質を持つ．</p>
+<ul>
+<li>関数$f,g$が点$p$の十分小さな開近傍上で一致すれば<script type="math/tex; mode=display">\boldsymbol{v}(f) = \boldsymbol{v}(g)</script></li>
+<li>$a,b,\in\mathbb{R}$に対して<script type="math/tex; mode=display">\boldsymbol{v}(af+bg) = a\boldsymbol{v}(f)+b\boldsymbol{v}(g)</script></li>
+<li>関数$f,g$の積を考えるとき<script type="math/tex; mode=display">\boldsymbol{v}(fg) = \boldsymbol{v}(f)g(p)+f(p)\boldsymbol{v}(g)</script></li>
+</ul>
+<p>既に述べたように$c$に関する方向微分$\boldsymbol{v}_c$もこれらの性質を持っているので，この定義の意味での「方向微分」でもある．<br>他の例を挙げてみる．</p>
+<h3 id="方向微分の例"><a href="#方向微分の例" class="headerlink" title="方向微分の例"></a>方向微分の例</h3><p>点$p$を含む座標近傍$(U;x_1,x_2,\ldots , x_m)$を一つ固定する．$p$の周りで定義された$C^r$級関数$f$に，$p$における$x_i$方向の偏微分係数</p>
+<script type="math/tex; mode=display">\frac{\partial f}{\partial x_i} (p) \in \mathbb{R}</script><p>を対応させる操作を$\left( \frac{\partial}{\partial x_i} \right)_p$と書く．すなわち</p>
+<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_i} \right)_p : f\mapsto \frac{\partial f}{\partial x_i} (p)</script><p>である．このとき$\left( \frac{\partial}{\partial x_i} \right)_p$は$p$における方向微分の三つの性質（上記）を持つ．合成関数の偏微分（連鎖律）などで容易に確認できる．<strong>この方向微分の実体はいわゆる「ベクトル」ではなく「実数」である</strong>．</p>
+<h2 id="点-p-における方向微分の集合"><a href="#点-p-における方向微分の集合" class="headerlink" title="点$p$における方向微分の集合"></a>点$p$における方向微分の集合</h2><p>例で見たように，点$p$における（形式的な）方向微分には色々なものが考えられる．いま，点$p$における方向微分全ての集合を考え，それを</p>
+<script type="math/tex; mode=display">{D_p}^r (M)</script><p>と表すことにする．$D$は微分操作(Derivation)，$M$は考えている多様体，$p$は点，$r$は考えている$M$上の関数が$C^r$級であることを示している．<br>集合${D_p}^r (M)$の個々の元は$\boldsymbol{v}_c$や$\left( \frac{\partial}{\partial x_i} \right)_p$などの方向微分である．そして，二つの方向微分$\boldsymbol{u},\boldsymbol{v}$は$p$まわりで定義された任意の$C^r$級関数$f$について$\boldsymbol{u}(f) = \boldsymbol{v}(f)$であるとき，そしてそのときに限り，集合${D_p}^r (M)$の中で同じ元を表すものとする．<br>重要なのは${D_p}^r (M)$が点$p$のまわりの局所座標系（地図帳のページ）の概念を用いずに定義されていることである．${D_p}^r (M)$の中には$\left( \frac{\partial}{\partial x_i} \right)_p$のように局所座標系$(x_i,x_2,\ldots,x_m)$を選んだ上で決まる元もあるが，この集合そのものは「$p$における方向微分の全体の集合」として与えられており，「集合${D_p}^r (M)$をつくろう！」と思った段階では局所座標系のことを気にしていない．</p>
+<p>また，${D_p}^r (M)$は$\mathbb{R}$上のベクトル空間である（証明は省略する．ベクトル空間の和やスカラー倍の成立を確認すればよい）．</p>
+<h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><p>もう一度強調するが，${D_p}^r (M)$は局所座標系に無関係な集合である．その上で，あらためて$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を一つ選ぶ（地図帳のページを一つ選ぶ）．すると，$m$個の方向微分</p>
+<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p</script><p>が得られる．これらは${D_p}^r (M)$の元であり，以下の命題が成立する．</p>
+<h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>ベクトル空間${D_p}^r (M)$の元として，$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$は線形独立である．</p>
+<p>証明は省略する．線形独立な基底が得られたので，それらが張る空間を考えることができる．</p>
+<h3 id="接ベクトル空間の定義"><a href="#接ベクトル空間の定義" class="headerlink" title="接ベクトル空間の定義"></a>接ベクトル空間の定義</h3><p>$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$の張る${D_p}^r (M)$の部分ベクトル空間を，点$p$における$M$の<strong>接ベクトル空間</strong>とよび，</p>
+<script type="math/tex; mode=display">T_p(M)</script><p>という記号で表す．</p>
+<p>この空間に属するベクトルを，点$p$における$M$の<strong>接ベクトル</strong>という．この定義によれば，点$p$での$M$の接ベクトルとは実数$(a_1,a_2,\ldots,a_m)$に対して</p>
+<script type="math/tex; mode=display">\boldsymbol{v} = a_1\left( \frac{\partial}{\partial x_1} \right)_p + a_2\left( \frac{\partial}{\partial x_2} \right)_p + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)_p</script><p>を満たすような方向微分$\boldsymbol{v}$のことである．<br>また，これらの基底たち自身も点$p$における接ベクトルである．</p>
+<p>接ベクトル空間の基底が$m$個あるのだから，空間の次元は$m$次元である．つまり$T_p(M)$は，いま考えている多様体$M$と同次元である．</p>
+<p>接ベクトル空間$T_p(M)$は$(x_1,x_2,\ldots,x_m)$を選んだうえで<br>定義されるので，局所座標系に依存する概念のように見える．が，実際には局所座標系とは無関係に決まるベクトル空間である（基底一つ一つは局所座標系に依存する）．つまり$(x_1,x_2,\ldots,x_m)$と異なる座標系$(y_1,y_2,\ldots,y_m)$の方向微分</p>
+<script type="math/tex; mode=display">\left( \frac{\partial}{\partial y_1} \right)_p,\left( \frac{\partial}{\partial y_2} \right)_p,\ldots,\left( \frac{\partial}{\partial y_m} \right)_p</script><p>の張る${D_p}^r (M)$の部分ベクトル空間は，$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$の張る空間と一致する（証明は省略する．基底の変換を行う）．<br>この事実により，前回の「基礎のキソ」の速度ベクトルに関する記事の最後，微分の行列$D\Phi(\boldsymbol{p})$が実は基底の変換を行っていたのだと理解できる．</p>
+<p>ここまでの内容をまとめる．$C^r$級多様体$M$の一点$p$を固定すると，$p$における方向微分の全体のなすベクトル空間${D_p}^r (M)$が決まる．これは局所座標系に無関係である．${D_p}^r (M)$の部分ベクトル空間として，接ベクトル空間$T_p(M)$が定まる．この空間も局所座標系の取り方に依らない．</p>
+<p><strong>以上が点$p$に関する形式的な方向微分の抽象的な考察である．次回は$C^r$級多様体$M$の点$p$を通る$C^r$級曲線$c$の話に戻る．</strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-多様体の速度ベクトルについて" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -469,44 +544,6 @@
 
 
 
-  <article id="post-DP超入門（カエル問題）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-05T03:06:01.000Z"><a href="/2020/02/05/DP超入門（カエル問題）/">2020-02-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/05/DP超入門（カエル問題）/">DP超入門（カエル問題)</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>DP（動的計画法）は，一度計算した結果を表（あるいはリスト）に保存しておくことで同じ計算を何度も繰り返さなくていいように工夫する技法である．DPの考え方に基づく具体的な実装手法のことを<br>メモ化と呼ぶ．検索するとフィボナッチ数列を例題とする解説が色々出てくる．</p>
-<p>実際に問題を解くほうがイメージしやすい．AtCoder公式にてDPの練習に特化したコンテストが公開されているので，<br>その中でも最も基本的な問題を解いてみる．</p>
-<p>DPまとめコンテスト<br><a href="https://atcoder.jp/contests/dp/tasks/dp_a" target="_blank" rel="noopener">A問題</a><br><a href="https://atcoder.jp/contests/dp/tasks/dp_b" target="_blank" rel="noopener">B問題</a><br>経路のコストの最小値を求める問題はDPを適用すべき典型例らしい．</p>
-<p>全ての経路について逐一合計コストを計算しているといつまで経っても計算が終わらない．そこでDPの考え方を利用する．<br>今求めたいのは最小値なので，ある足場について「その足場にたどり着くために必要なコストの最小値」を記録しておき，<br>その値を利用して「『その足場から行ける足場』へたどり着くために必要なコストの最小値」を求める．これを最後の足場まで繰り返す．</p>
-<p>ただし，実際に実装するときは，ある足場から出発するとして「一つ先に行くコスト，二つ先に行くコスト…」と考えるより，<br>ある足場に既に来たとして「一つ前から来るコスト，二つ前から来るコスト…」と考えるのがコツである．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">N = int(input())</span><br><span class="line">h = list(map(int,input().split()))</span><br><span class="line"></span><br><span class="line">dp_table = [float(<span class="string">'inf'</span>)]*N <span class="comment">#計算結果を保存しておくリスト．</span></span><br><span class="line"></span><br><span class="line">dp_table[<span class="number">0</span>] = <span class="number">0</span><span class="comment">#最初の足場</span></span><br><span class="line">dp_table[<span class="number">1</span>] = abs(h[<span class="number">1</span>]-h[<span class="number">0</span>])<span class="comment">#この足場に行く方法は一つだけ</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,N):<span class="comment">#i番目の足場に辿り着くまでにかかった最小コストを計算する</span></span><br><span class="line">    step1 = abs(h[i]-h[i<span class="number">-1</span>])+dp_table[i<span class="number">-1</span>]<span class="comment">#一つ前の足場から来た場合の累計コスト</span></span><br><span class="line">    step2 = abs(h[i]-h[i<span class="number">-2</span>])+dp_table[i<span class="number">-2</span>]<span class="comment">#二つ目の足場から来た場合の累計コスト</span></span><br><span class="line">    dp_table[i] = min(step1,step2)<span class="comment">#小さい方を記録</span></span><br><span class="line"></span><br><span class="line">print(dp_table[N<span class="number">-1</span>])</span><br></pre></td></tr></table></figure><br>B問題も同じように考える．以下のコードは制限時間の関係でnumpyを利用している（リストよりnumpyのarrayの方が処理が速い）．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">N, K = map(int,input().split())</span><br><span class="line">h = list(map(int,input().split()))</span><br><span class="line">h = np.array(h)</span><br><span class="line"></span><br><span class="line">dp_table = np.zeros(N, dtype=int)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,N):</span><br><span class="line">    <span class="comment">#「足場iの出発点となり得る全ての足場」から来るときのコストの内の最小値を求める</span></span><br><span class="line">    dp_table[i] = (dp_table[max(<span class="number">0</span>,i-K):i] + np.abs(h[i] - h[max(<span class="number">0</span>,i-K):i])).min()</span><br><span class="line">print(dp_table[N<span class="number">-1</span>])</span><br></pre></td></tr></table></figure></p>
-<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc129/tasks/abc129_c" target="_blank" rel="noopener">Atcoder ABC129 C問題</a><br>ちょどよい難易度．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -535,7 +572,7 @@
   
     <li><a href="/categories/数学/">数学</a><small>10</small></li>
   
-    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>9</small></li>
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>10</small></li>
   
   </ul>
 </div>
@@ -545,6 +582,8 @@
 <div class="widget tag">
   <h3 class="title">タグ</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Python/">Python</a><small>1</small></li>
   
     <li><a href="/tags/Python3/">Python3</a><small>9</small></li>
   
