@@ -44,60 +44,6 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article id="post-接ベクトルと接ベクトル空間の正体（まとめ）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-19T06:11:45.000Z"><a href="/2020/02/19/接ベクトルと接ベクトル空間の正体（まとめ）/">2020-02-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/19/接ベクトルと接ベクトル空間の正体（まとめ）/">接ベクトルと接ベクトル空間の正体（まとめ）</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下の文献やサイトを参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013<br>初瀬弘平，微分幾何学講義，共立出版，1993<br><a href="https://ja.wikipedia.org/wiki/%E6%8E%A5%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E7%A9%BA%E9%96%93" target="_blank" rel="noopener">Wikipedia-接ベクトル空間</a></p>
-<p>前回の記事の内容がまとめきれず（理解しきれず）混乱していたのでまとめなおす．</p>
-<h2 id="接ベクトル"><a href="#接ベクトル" class="headerlink" title="接ベクトル"></a>接ベクトル</h2><h3 id="接ベクトルは作用素である．"><a href="#接ベクトルは作用素である．" class="headerlink" title="接ベクトルは作用素である．"></a><strong>接ベクトルは作用素である．</strong></h3><p>前回の記事と同じ曲線$c$，関数$f$，局所座標系$(x_1,x_2,\ldots,x_m)$を考える．<br>局所座標系の点$p(t=0)$における$c(t)$の速度ベクトルは</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>である．これは局所座標系の取り方に依存する．</p>
-<p>一方，局所座標系に依らない関数</p>
-<script type="math/tex; mode=display">f\circ c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}</script><p>を$t$で微分した</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(t)</script><p>は局所座標系に依存しない．これの$p$における値は</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(0) = \frac{\partial f}{\partial x_1} \frac{dx_1}{dt}(0) + \frac{\partial f}{\partial x_2} \frac{dx_2}{dt}(0) + \cdots + \frac{\partial f}{\partial x_m} \frac{dx_m}{dt}(0)</script><p>となる．<br>この式を局所座標系の速度ベクトル（一番はじめのやつ）と比べてみると，この局所座標系に依らない値は$f$のgradient</p>
-<script type="math/tex; mode=display">\frac{df}{dx} := \left( \frac{\partial f}{\partial x_1}(p),\frac{\partial f}{\partial x_2}(p),\ldots,\frac{\partial f}{\partial x_m}(p) \right)</script><p>と速度ベクトルとの内積とみなせる（局所座標系に依存する速度ベクトルを，その座標系の勾配で補正して依存性を打ち消してやる感じ）．<br>今の「内積」を</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(0) = \left( \frac{dx_1}{dt}(0)\frac{\partial}{\partial x_1}  + \frac{dx_2}{dt}(0)\frac{\partial}{\partial x_2}  + \cdots + \frac{dx_m}{dt}(0)\frac{\partial}{\partial x_m}\right) f</script><p>と変形すると「$f$」と「$f$に作用する偏微分作用素」に分けられる．<strong>この作用素を接ベクトルとする．</strong></p>
-<p>つまり，局所座標系に依存しない速度ベクトルのようなものを探した結果，局所座標系での速度ベクトル</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>を</p>
-<script type="math/tex; mode=display">\left( a_1,a_2,\ldots,a_m \right)</script><p>とおいたとき</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\frac{\partial}{\partial x_i}</script><p>という形をした微分作用素の線形結合（接ベクトル）を用いることになったというわけである．<br>「作用素のベクトル」という抽象的な概念なので混乱しやすいが，</p>
-<script type="math/tex; mode=display">\frac{df}{dx} := \left( \frac{\partial f}{\partial x_1}(p),\frac{\partial f}{\partial x_2}(p),\ldots,\frac{\partial f}{\partial x_m}(p) \right)</script><p><strong>という$m$次ベクトルは$f$の勾配であり，接ベクトルではない．接ベクトルというのは</strong></p>
-<script type="math/tex; mode=display">\boldsymbol{v} = a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)</script><p><strong>という作用素のことである．$\boldsymbol{v}$で表現するせいで余計分かりにくい気がする．</strong></p>
-<h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><h3 id="接ベクトル空間は-m-次元の線形空間である．"><a href="#接ベクトル空間は-m-次元の線形空間である．" class="headerlink" title="接ベクトル空間は$m$次元の線形空間である．"></a><strong>接ベクトル空間は$m$次元の線形空間である．</strong></h3><p>$m$次元$C^r$級多様体$M$とその上の点$p$を考える．$p$を含む座標近傍$(U;x_1,x_2,\ldots,x_m)$上で定義された微分作用素</p>
-<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script><p>は$x_i$軸に関する方向微分（を求める・と呼ばれる作用素）になる．<br>これら$m$個の方向微分は線形独立（証明は普通のベクトルの線形独立性を示すときと同じ方針）であり，これらの線形結合</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\left( \frac{\partial}{\partial x_i} \right)_p</script><p>を，<strong>点$p$における</strong>$M$の接ベクトルという．<br><strong>こいつが表現できる$p$における作用素すべての集合を$T_p(M)$と書き，$p$における$M$の接ベクトル空間という．</strong></p>
-<p>個人的には「ユークリッド空間のような軸のある（それに対応する座標がある）空間が接ベクトル空間で，その座標ひとつひとつを指すのが接ベクトル」と考えるのはよくない気がする．<br>どっちかと言えば「接ベクトル空間」という名前のついた単なる袋があって，その中のボールひとつひとつが接ベクトルであるというイメージ．</p>
-<p><del>（ただ，$m$個の基底があるわけだから接ベクトル空間は$m$次元空間であり，つまり軸のある空間でイメージすることもできるってことか？その座標の各成分が$a_i$と対応しているのか？そうすると$(a_1,a_2,\ldots,a_m)$という$m$次元ベクトルが得られるわけだが，これは接ベクトルとは違うはずだ（接ベクトルは微分作用素）．じゃあこれは何なのか？もしくは，特に考える必要もない存在なのか？）</del><br>↓<br>おそらく，入力がベクトルで出力がベクトルの関数をイメージするとよい．<br>基底が<script type="math/tex">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script>で与えられている$m$次元空間内で$(a_1,a_2,\ldots,a_m)$という座標（ベクトル）を指定する．その座標を入力したときの出力にあたるものが接ベクトルという作用素である<br>$(a_1,a_2,\ldots,a_m)$を一つ指定すれば接ベクトルも一つに決まるという関係ではあるが，$m$次ベクトル$(a_1,a_2,\ldots,a_m)$と接ベクトル$a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)$は別の概念である．その空間内での位置を示しているだけのもの（それ単体で完結しているもの）と，その「ベクトル」そのものだけでは意味がなく何かと組み合わせる（作用させる）必要があるものという違いがある．</p>
-<h2 id="写像としての接ベクトルについて"><a href="#写像としての接ベクトルについて" class="headerlink" title="写像としての接ベクトルについて"></a>写像としての接ベクトルについて</h2><p>「微分幾何学講義」では写像$v:C^\infty(p)\rightarrow\mathbb{R}$を接ベクトルと呼ぶのだとしている．<br>つまり関数$f$に対して$v(f) = a\in\mathbb{R}$という関係が成り立つと言っている．この$a$（適当な値）は接ベクトルではない．これは偏微分の結果出てきた単なる実数である．接ベクトルは「偏微分作用素」だから実数とはまた違う概念である．<br><strong>写像の矢印「$\rightarrow$」が示す先の「$\mathbb{R}$」は，この$a$の所属を指している．接ベクトルの所属のことではない．接ベクトルの所属は接ベクトル空間という$m$次元の線形空間である．</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
   <article id="post-方向微分の空間としての接ベクトル空間（２）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -561,6 +507,45 @@
 
 
 
+  <article id="post-深さ優先探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-07T02:07:06.000Z"><a href="/2020/02/07/深さ優先探索/">2020-02-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/07/深さ優先探索/">深さ優先探索・幅優先探索</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>深さ優先探索(DFS:Depth-First Search)と幅優先探索(BFS:Breadth-First Search)はいずれも全探索手法の一つである．<br>これらの手法について調べると，しばしば迷路の進み方を例題として解説されている．迷路で分かれ道に出会ったときに一つの道を選んで行けるところまで行くのが深さ優先探索で，全ての道について一歩ずつ満遍なく進んでいくのが幅優先探索である．<br>これらの探索手法を用いるために，とある工夫されたデータ構造を知っておく必要がある．いわゆるキュー(queue)とスタック(stack)である．</p>
+<h2 id="キューとスタック"><a href="#キューとスタック" class="headerlink" title="キューとスタック"></a>キューとスタック</h2><h3 id="キュー"><a href="#キュー" class="headerlink" title="キュー"></a>キュー</h3><p>あるリストに対して先に加えられたデータから先に取り出す（FIFO:First In First Out）操作を行うとき，そのリストをキュー(queue)と呼ぶ．<br>キューにデータを加えることをエンキュー(enqueue)，取り出すことをデキュー(dequeue)と呼ぶ．</p>
+<h3 id="スタック"><a href="#スタック" class="headerlink" title="スタック"></a>スタック</h3><p>あるリストに対して最後に加えられたデータから優先して取り出す(LIFO:Last In First Out)操作を行うとき，そのリストをスタック(stack)と呼ぶ．<br>スタックにデータを加えることをプッシュ(push)，取り出すことをポップ(pop)と呼ぶ．</p>
+<h3 id="Pythonのdequeモジュール"><a href="#Pythonのdequeモジュール" class="headerlink" title="Pythonのdequeモジュール"></a>Pythonのdequeモジュール</h3><p>Pythonでキューとスタックを扱うときに便利なモジュールがdequeである．<br>これを用いて通常のリストよりも要素の取り出しと追加を効率よく行えるdequeオブジェクトを生成する．<br>ただし，与えられた（両端以外の）インデックスに対応する要素を取り出すことに関しては通常のリストの方が優れているらしいので，端っこ以外の値に頻繁にアクセスするなら普通のリストの方が良いらしい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])<span class="comment">#dequeオブジェクトの生成</span></span><br></pre></td></tr></table></figure><br>キューとして扱う場合はd.popleft()で取り出し，d.append()で追加する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">d.popleft()<span class="comment">#1が取り出される</span></span><br><span class="line">d.append(<span class="number">6</span>)<span class="comment">#右端に6が追加される</span></span><br></pre></td></tr></table></figure><br>スタックとして扱う場合はd.pop()で取り出し，d.append()で追加する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">d.pop()<span class="comment">#5が取り出される</span></span><br><span class="line">d.append(<span class="number">6</span>)<span class="comment">#右端に6が追加される</span></span><br></pre></td></tr></table></figure><br>他にも便利な機能があるので調べる価値あり．</p>
+<h2 id="深さ優先探索"><a href="#深さ優先探索" class="headerlink" title="深さ優先探索"></a>深さ優先探索</h2><p>深さ優先探索に必要なデータ構造はスタックの方．新たな探索地点が追加されたら，そこを優先的に調べる（どんどん奥に進んでいく）．<br><a href="https://atcoder.jp/contests/atc001/tasks/dfs_a" target="_blank" rel="noopener">AtCoder ATC001 A問題</a><br>AtCoder公式の解説が問題ページに掲載されているのでそっちを見た方がいい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#入力の受け取り</span></span><br><span class="line">H, W = map(int,input().split())</span><br><span class="line">maze = [list(input()) <span class="keyword">for</span> _ <span class="keyword">in</span> range(H)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#スタート地点の決定（多分ほんとは入力を受け取る段階でやったほうがいい）</span></span><br><span class="line">start = <span class="literal">None</span><span class="comment">#スタート地点の位置を入れる変数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(H):<span class="comment">#スタート地点の探索</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(W):</span><br><span class="line">        <span class="keyword">if</span> maze[i][j] == <span class="string">"s"</span>:</span><br><span class="line">            start = (i, j)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> start:<span class="comment">#startに値が入っているなら</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索の準備</span></span><br><span class="line">stack = deque([start])<span class="comment">#探索の分岐を保存するためのスタック</span></span><br><span class="line">goal = <span class="literal">False</span><span class="comment">#ゴールに到達したかを判断するフラグ</span></span><br><span class="line">dx = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>]<span class="comment">#自分のx座標を動かすための値</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="comment">#自分のy座標を動かすための値</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索</span></span><br><span class="line"><span class="keyword">while</span> stack:<span class="comment">#１ループの終了時にstackが空でなければ</span></span><br><span class="line">    y, x = stack.pop()<span class="comment">#現在の座標を取得</span></span><br><span class="line">    <span class="keyword">if</span> maze[y][x] == <span class="string">"g"</span>:<span class="comment">#ゴールだったら探索を終了</span></span><br><span class="line">        print(<span class="string">"Yes"</span>)</span><br><span class="line">        goal = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">for</span> dxi, dyi <span class="keyword">in</span> zip(dx, dy):<span class="comment">#zip関数：dx,dyのインデックスが同じ要素を同時に代入</span></span><br><span class="line">        <span class="comment">#現在の座標の上下左右のマスを見て，行けるところがないか調べる</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span>&lt;=y+dyi&lt;H <span class="keyword">and</span> <span class="number">0</span>&lt;=x+dxi&lt;W) <span class="keyword">or</span> maze[y+dyi][x+dxi] == <span class="string">"#"</span>:<span class="comment">#次の行き先が「街の中じゃない」もしくは「壁」</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append((y+dyi, x+dxi))<span class="comment">#次に行くところの座標をstackに追加</span></span><br><span class="line">            maze[y][x] = <span class="string">"#"</span><span class="comment">#今立っているところを壁扱いする</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#行けるところのすべてを探索した結果ゴールが無かったとき</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> goal:</span><br><span class="line">    print(<span class="string">"No"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="幅優先探索"><a href="#幅優先探索" class="headerlink" title="幅優先探索"></a>幅優先探索</h2><p>幅優先探索に必要なデータ構造はキューの方．新たな探索地点が追加されたとしてもそれはしばらく置いといて古いものから処理していく．<br><a href="https://atcoder.jp/contests/abc007/tasks/abc007_3" target="_blank" rel="noopener">AtCoder ABC007 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#入力の受け取り</span></span><br><span class="line">R,C = map(int,input().split())</span><br><span class="line">sy,sx = map(int,input().split())</span><br><span class="line">gy,gx = map(int,input().split())</span><br><span class="line">maze = [list(input()) <span class="keyword">for</span> _ <span class="keyword">in</span> range(R)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#探索の準備</span></span><br><span class="line">goal = <span class="literal">False</span> <span class="comment">#探索終了のフラグ </span></span><br><span class="line">maze[gy<span class="number">-1</span>][gx<span class="number">-1</span>] = <span class="string">"g"</span><span class="comment">#goalの設定</span></span><br><span class="line"></span><br><span class="line">queue = deque([(sy<span class="number">-1</span>,sx<span class="number">-1</span>)]) <span class="comment">#キューの初期値としてstartの座標を入れる</span></span><br><span class="line">distance = deque([<span class="number">0</span>]) <span class="comment">#各座標ごとのstartからの距離を管理</span></span><br><span class="line"></span><br><span class="line">maze[sy<span class="number">-1</span>][sx<span class="number">-1</span>] = <span class="string">"#"</span> <span class="comment">#スタート地点を壁とする．これを忘れると無駄な探索が一つ増え，問題によってはWrongAnswerになったりする．</span></span><br><span class="line"></span><br><span class="line">dx = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>]<span class="comment">#自分のx座標を動かすための値</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="comment">#自分のy座標を動かすための値</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> goal:<span class="comment">#goalがFalseの間</span></span><br><span class="line">    y,x = queue.popleft() <span class="comment">#キューの要素の取り出し</span></span><br><span class="line">    past_count = distance.popleft()<span class="comment">#その探索地点のスタートからの距離</span></span><br><span class="line">    <span class="keyword">for</span> dxi,dyi <span class="keyword">in</span> zip(dx,dy):<span class="comment">#その地点の上下左右を調べる</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span>&lt;=x+dxi&lt;C <span class="keyword">and</span> <span class="number">0</span>&lt;=y+dyi&lt;R) <span class="keyword">or</span> maze[y+dyi][x+dxi] == <span class="string">"#"</span>:<span class="comment">#次の行き先が「街の中じゃない」もしくは「壁」</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> maze[y+dyi][x+dxi] == <span class="string">"g"</span>:<span class="comment">#ゴールなら探索終了</span></span><br><span class="line">                goal= <span class="literal">True</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            queue.append((y+dyi,x+dxi))<span class="comment">#行けるところの座標を追加</span></span><br><span class="line">            distance.append(past_count+<span class="number">1</span>)<span class="comment">#追加された地点のスタートからの距離</span></span><br><span class="line">            maze[y+dyi][x+dxi] = <span class="string">"#"</span> <span class="comment">#次に行くところ（探索先）を壁扱いする（他の分岐から同じ場所を調べなおす必要が無いように）</span></span><br><span class="line">print(past_count+<span class="number">1</span>)</span><br></pre></td></tr></table></figure><br>それぞれの実装で一切無駄な探索がないかと聞かれるとあまり自信がない．探索過程の挙動を確認してみるべき．</p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p>どちらを使うべきかも考える必要がある．使い分けについて検索するとある程度の指針が出てくる．<br><a href="https://atcoder.jp/contests/arc031/tasks/arc031_2" target="_blank" rel="noopener">AtCoder ARC031 B問題</a><br><a href="https://atcoder.jp/contests/abc151/tasks/abc151_d" target="_blank" rel="noopener">AtCoder ABC151 D問題</a><br><a href="https://atcoder.jp/contests/joi2011yo/tasks/joi2011yo_e" target="_blank" rel="noopener">AtCoder 第１０回日本情報オリンピック予選 E問題</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
 
 <nav id="pagination">
   
@@ -587,7 +572,7 @@
   
     <li><a href="/categories/サーバーサイド/">サーバーサイド</a><small>1</small></li>
   
-    <li><a href="/categories/メモ/">メモ</a><small>3</small></li>
+    <li><a href="/categories/メモ/">メモ</a><small>2</small></li>
   
     <li><a href="/categories/数学/">数学</a><small>10</small></li>
   
