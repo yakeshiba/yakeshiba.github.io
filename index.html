@@ -44,6 +44,40 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-記事投稿の流れ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-04-05T18:26:27.000Z"><a href="/2020/04/06/記事投稿の流れ/">2020-04-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/04/06/記事投稿の流れ/">記事投稿の流れ</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>Hexoのディレクトリまで移動して<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;xxx&quot;</span><br></pre></td></tr></table></figure><br>で記事の雛形を新規作成．Markdownで記述したあとに<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure><br>でローカルサーバーを立て，<code>http://localhost:4000/</code>にアクセス，レイアウトを確認．<br>最後に<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br></pre></td></tr></table></figure><br>でリモートリポジトリに反映．</p>
+<p>テーマを変えたいときは<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><br>でキャッシュを全削除してから<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-【node-js】ボトルネックの探し方" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -383,60 +417,6 @@
 
 
 
-  <article id="post-接ベクトルと接ベクトル空間の正体（まとめ）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-19T06:11:45.000Z"><a href="/2020/02/19/接ベクトルと接ベクトル空間の正体（まとめ）/">2020-02-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/19/接ベクトルと接ベクトル空間の正体（まとめ）/">接ベクトルと接ベクトル空間の正体（まとめ）</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下の文献やサイトを参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013<br>初瀬弘平，微分幾何学講義，共立出版，1993<br><a href="https://ja.wikipedia.org/wiki/%E6%8E%A5%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E7%A9%BA%E9%96%93" target="_blank" rel="noopener">Wikipedia-接ベクトル空間</a></p>
-<p>前回の記事の内容がまとめきれず（理解しきれず）混乱していたのでまとめなおす．</p>
-<h2 id="接ベクトル"><a href="#接ベクトル" class="headerlink" title="接ベクトル"></a>接ベクトル</h2><h3 id="接ベクトルは作用素である．"><a href="#接ベクトルは作用素である．" class="headerlink" title="接ベクトルは作用素である．"></a><strong>接ベクトルは作用素である．</strong></h3><p>前回の記事と同じ曲線$c$，関数$f$，局所座標系$(x_1,x_2,\ldots,x_m)$を考える．<br>局所座標系の点$p(t=0)$における$c(t)$の速度ベクトルは</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>である．これは局所座標系の取り方に依存する．</p>
-<p>一方，局所座標系に依らない関数</p>
-<script type="math/tex; mode=display">f\circ c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}</script><p>を$t$で微分した</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(t)</script><p>は局所座標系に依存しない．これの$p$における値は</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(0) = \frac{\partial f}{\partial x_1} \frac{dx_1}{dt}(0) + \frac{\partial f}{\partial x_2} \frac{dx_2}{dt}(0) + \cdots + \frac{\partial f}{\partial x_m} \frac{dx_m}{dt}(0)</script><p>となる．<br>この式を局所座標系の速度ベクトル（一番はじめのやつ）と比べてみると，この局所座標系に依らない値は$f$のgradient</p>
-<script type="math/tex; mode=display">\frac{df}{dx} := \left( \frac{\partial f}{\partial x_1}(p),\frac{\partial f}{\partial x_2}(p),\ldots,\frac{\partial f}{\partial x_m}(p) \right)</script><p>と速度ベクトルとの内積とみなせる（局所座標系に依存する速度ベクトルを，その座標系の勾配で補正して依存性を打ち消してやる感じ）．<br>今の「内積」を</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(0) = \left( \frac{dx_1}{dt}(0)\frac{\partial}{\partial x_1}  + \frac{dx_2}{dt}(0)\frac{\partial}{\partial x_2}  + \cdots + \frac{dx_m}{dt}(0)\frac{\partial}{\partial x_m}\right) f</script><p>と変形すると「$f$」と「$f$に作用する偏微分作用素」に分けられる．<strong>この作用素を接ベクトルとする．</strong></p>
-<p>つまり，局所座標系に依存しない速度ベクトルのようなものを探した結果，局所座標系での速度ベクトル</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>を</p>
-<script type="math/tex; mode=display">\left( a_1,a_2,\ldots,a_m \right)</script><p>とおいたとき</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\frac{\partial}{\partial x_i}</script><p>という形をした微分作用素の線形結合（接ベクトル）を用いることになったというわけである．<br>「作用素のベクトル」という抽象的な概念なので混乱しやすいが，</p>
-<script type="math/tex; mode=display">\frac{df}{dx} := \left( \frac{\partial f}{\partial x_1}(p),\frac{\partial f}{\partial x_2}(p),\ldots,\frac{\partial f}{\partial x_m}(p) \right)</script><p><strong>という$m$次ベクトルは$f$の勾配であり，接ベクトルではない．接ベクトルというのは</strong></p>
-<script type="math/tex; mode=display">\boldsymbol{v} = a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)</script><p><strong>という作用素のことである．$\boldsymbol{v}$で表現するせいで余計分かりにくい気がする．</strong></p>
-<h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><h3 id="接ベクトル空間は-m-次元の線形空間である．"><a href="#接ベクトル空間は-m-次元の線形空間である．" class="headerlink" title="接ベクトル空間は$m$次元の線形空間である．"></a><strong>接ベクトル空間は$m$次元の線形空間である．</strong></h3><p>$m$次元$C^r$級多様体$M$とその上の点$p$を考える．$p$を含む座標近傍$(U;x_1,x_2,\ldots,x_m)$上で定義された微分作用素</p>
-<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script><p>は$x_i$軸に関する方向微分（を求める・と呼ばれる作用素）になる．<br>これら$m$個の方向微分は線形独立（証明は普通のベクトルの線形独立性を示すときと同じ方針）であり，これらの線形結合</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\left( \frac{\partial}{\partial x_i} \right)_p</script><p>を，<strong>点$p$における</strong>$M$の接ベクトルという．<br><strong>こいつが表現できる$p$における作用素すべての集合を$T_p(M)$と書き，$p$における$M$の接ベクトル空間という．</strong></p>
-<p>個人的には「ユークリッド空間のような軸のある（それに対応する座標がある）空間が接ベクトル空間で，その座標ひとつひとつを指すのが接ベクトル」と考えるのはよくない気がする．<br>どっちかと言えば「接ベクトル空間」という名前のついた単なる袋があって，その中のボールひとつひとつが接ベクトルであるというイメージ．</p>
-<p><del>（ただ，$m$個の基底があるわけだから接ベクトル空間は$m$次元空間であり，つまり軸のある空間でイメージすることもできるってことか？その座標の各成分が$a_i$と対応しているのか？そうすると$(a_1,a_2,\ldots,a_m)$という$m$次元ベクトルが得られるわけだが，これは接ベクトルとは違うはずだ（接ベクトルは微分作用素）．じゃあこれは何なのか？もしくは，特に考える必要もない存在なのか？）</del><br>↓<br>おそらく，入力がベクトルで出力がベクトルの関数をイメージするとよい．<br>基底が<script type="math/tex">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script>で与えられている$m$次元空間内で$(a_1,a_2,\ldots,a_m)$という座標（ベクトル）を指定する．その座標を入力したときの出力にあたるものが接ベクトルという作用素である<br>$(a_1,a_2,\ldots,a_m)$を一つ指定すれば接ベクトルも一つに決まるという関係ではあるが，$m$次ベクトル$(a_1,a_2,\ldots,a_m)$と接ベクトル$a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)$は別の概念である．その空間内での位置を示しているだけのもの（それ単体で完結しているもの）と，その「ベクトル」そのものだけでは意味がなく何かと組み合わせる（作用させる）必要があるものという違いがある．</p>
-<h2 id="写像としての接ベクトルについて"><a href="#写像としての接ベクトルについて" class="headerlink" title="写像としての接ベクトルについて"></a>写像としての接ベクトルについて</h2><p>「微分幾何学講義」では写像$v:C^\infty(p)\rightarrow\mathbb{R}$を接ベクトルと呼ぶのだとしている．<br>つまり関数$f$に対して$v(f) = a\in\mathbb{R}$という関係が成り立つと言っている．この$a$（適当な値）は接ベクトルではない．これは偏微分の結果出てきた単なる実数である．接ベクトルは「偏微分作用素」だから実数とはまた違う概念である．<br><strong>写像の矢印「$\rightarrow$」が示す先の「$\mathbb{R}$」は，この$a$の所属を指している．接ベクトルの所属のことではない．接ベクトルの所属は接ベクトル空間という$m$次元の線形空間である．</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -459,9 +439,9 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/サーバサイド/">サーバサイド</a><small>1</small></li>
+    <li><a href="/categories/サーバーサイド/">サーバーサイド</a><small>1</small></li>
   
-    <li><a href="/categories/メモ/">メモ</a><small>2</small></li>
+    <li><a href="/categories/メモ/">メモ</a><small>3</small></li>
   
     <li><a href="/categories/数学/">数学</a><small>10</small></li>
   
@@ -478,9 +458,7 @@
   
     <li><a href="/tags/Node-js/">Node.js</a><small>1</small></li>
   
-    <li><a href="/tags/Python/">Python</a><small>1</small></li>
-  
-    <li><a href="/tags/Python3/">Python3</a><small>9</small></li>
+    <li><a href="/tags/Python3/">Python3</a><small>10</small></li>
   
     <li><a href="/tags/テンソル/">テンソル</a><small>1</small></li>
   
