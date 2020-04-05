@@ -44,6 +44,58 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-ビット全探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2020-02-06T03:57:51.000Z"><a href="/2020/02/06/ビット全探索/">2020-02-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2020/02/06/ビット全探索/">ビット全探索</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <p>スイッチのON/OFFの組み合わせなど，「有るか無いか」の二択の組み合わせを全通り試すときにビット全探索を行う．<br>「有る」状態を1，「無い」状態を0で表すとすると，ある組み合わせの状態は2進数で表現されることが分かる．<br>例えばスイッチが一列に4つあってその状態が「1100」のとき，左の二つはON，右の二つはOFFであることを示している．<br>スイッチ一つにつき2通りの状態があるので，スイッチが$N$個ある場合その組み合わせは$2^N$通りである．<br>そこから分かるように，ビット全探索では計算量が指数関数的に増えていくため小規模の問題にしか対処できない．<br>競プロの制限時間に間に合うのは$N=20$ぐらい（$ 2^{20}$はだいたい$10^6$）．<br>逆に言えば，入力の制約で$N$が10とか20のときはビット全探索を解法とする問題である可能性が高い．</p>
+<h2 id="ビット演算子"><a href="#ビット演算子" class="headerlink" title="ビット演算子"></a>ビット演算子</h2><p>2進数を扱う為にビット演算子を知っておく必要がある．ビット全探索で使うのはAND演算子とシフト演算．</p>
+<h3 id="AND演算子"><a href="#AND演算子" class="headerlink" title="AND演算子"></a>AND演算子</h3><p>両方が1のときに1，それ以外で0を返す演算子．<br>ある2進数のそれぞれの桁が0か1かを調べるのに重宝する．上の問題で言うとどのスイッチがついているかを調べられる．<br>AND演算子による演算を論理積という．</p>
+<h3 id="OR演算子"><a href="#OR演算子" class="headerlink" title="OR演算子"></a>OR演算子</h3><p>両方が0のときに0，それ以外で1を返す演算子．OR演算子による演算を論理和という．</p>
+<h3 id="XOR演算子"><a href="#XOR演算子" class="headerlink" title="XOR演算子"></a>XOR演算子</h3><p>両方が異なる値のときに1,それ以外で0を返す演算子．XOR演算子による演算を排他的論理和という．</p>
+<h3 id="NOT演算子"><a href="#NOT演算子" class="headerlink" title="NOT演算子"></a>NOT演算子</h3><p>0を1に，1を0に反転する演算子．NOT演算子による演算を論理否定という．</p>
+<h3 id="シフト演算（左）"><a href="#シフト演算（左）" class="headerlink" title="シフト演算（左）"></a>シフト演算（左）</h3><p>ある2進数の全ての桁を左にずらす．最下位の桁には0が入る．<br>右のシフト演算もある．</p>
+<h2 id="ビット全探索の実装"><a href="#ビット全探索の実装" class="headerlink" title="ビット全探索の実装"></a>ビット全探索の実装</h2><p>例題を解きながら理解するのが一番早い．<br><a href="https://atcoder.jp/contests/abc079/tasks/abc079_c" target="_blank" rel="noopener">AtCoder ABC079 C問題</a></p>
+<p>先にコードを掲載し，その後一行ずつ解説していく．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">S  = input()</span><br><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">    formula = S[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> digit <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br><span class="line">            formula += <span class="string">"+"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            formula += <span class="string">"-"</span></span><br><span class="line">        formula += S[digit+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> eval(formula) == <span class="number">7</span>:</span><br><span class="line">        print(formula+<span class="string">"=7"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure><br>$op1, op2, op3$の3つの箱それぞれに「+」か「-」を入れる．1で+を，0で-を表すことにする．</p>
+<h4 id="1行目"><a href="#1行目" class="headerlink" title="1行目"></a>1行目</h4><p>入力の受け取り．</p>
+<h4 id="2行目"><a href="#2行目" class="headerlink" title="2行目"></a>2行目</h4><p>今回の問題では3か所の箱に+か-を入れるので，全部で8通りの組み合わせがある．ここで注意するのは，range(8)のときに取り得るのは0~7の値であるということ．<br>つまり，2進数表記で000~111となる3桁の数字を取り扱うということを意識する必要がある．すなわち，7までの間に3つの箱に0か1を入れる組み合わせの全通りが登場するということを言っている．<br>余談だが，競プロで他の人の回答を見ると<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;len(S)<span class="number">-1</span>):</span><br></pre></td></tr></table></figure><br>と書かれていることもある．言ってることはrange(8)と同じである．<br>1を$len(S)-1=3$だけ左にビットをシフトすると2進数で「1000」，つまり8の2進数表記となる．</p>
+<h4 id="3行目"><a href="#3行目" class="headerlink" title="3行目"></a>3行目</h4><p>変数formulaに式を格納していくことにする．初めの数字をそのまま入れる．</p>
+<h4 id="4行目"><a href="#4行目" class="headerlink" title="4行目"></a>4行目</h4><p>このforループ内でそれぞれの箱に+と-のどちらを入れるかを決める．3つの箱があるので3回まわす．</p>
+<h4 id="5行目"><a href="#5行目" class="headerlink" title="5行目"></a>5行目</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br></pre></td></tr></table></figure>
+<p>という書き方は，「値operator_state &amp; (1 &lt;&lt; digit)が0でないとき」を意味する．この値は何を計算した結果なのだろうか．<br>例えばoperator_stateが2のとき，2進数で010である．この「010」の各桁の数字が0か1かをfor文を回して調べる．<br>まず，digitが0のときに「010」の一番右の桁が1か0かを調べる(人が見れば明らかだがコンピュータは認識できない)．<br>1&lt;&lt;0 = 1 = 001 と 010 の論理積をとると0なので，010の一番右の桁は0であると認識させることができる．<br>次に,digitが1のときに「010」の右から二番目の桁が1か0かを調べる．1&lt;&lt;1 = 2 = 010 と 010の論理積をとると2(≠0)なので，010の右から二番目の桁は1であると認識させることができる．<br>digitが2のときも同様．</p>
+<h4 id="6行目"><a href="#6行目" class="headerlink" title="6行目"></a>6行目</h4><p>その桁が1であるとき，箱に+を入れる．</p>
+<h4 id="7-8行目"><a href="#7-8行目" class="headerlink" title="7,8行目"></a>7,8行目</h4><p>5,6行目と同様の考え方をすればよい．</p>
+<h4 id="9行目"><a href="#9行目" class="headerlink" title="9行目"></a>9行目</h4><p>与えられた入力を式formulaに代入する．</p>
+<h4 id="10-11-12行目"><a href="#10-11-12行目" class="headerlink" title="10,11,12行目"></a>10,11,12行目</h4><p>関数eval()を利用すると文字列として保存されている数式を実際に計算させることができる．それが7であればその式を出力しbreakする．</p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc128/tasks/abc128_c" target="_blank" rel="noopener">AtCoder ABC128 C問題</a><br><a href="https://atcoder.jp/contests/abc147/tasks/abc147_c" target="_blank" rel="noopener">AtCoder ABC147 C問題</a><br>新基準のC問題としては若干難易度が高い．</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-DP超入門（カエル問題）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -180,6 +232,8 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
+    <li><a href="/categories/サーバサイド/">サーバサイド</a><small>1</small></li>
+  
     <li><a href="/categories/メモ/">メモ</a><small>2</small></li>
   
     <li><a href="/categories/数学/">数学</a><small>10</small></li>
@@ -194,6 +248,8 @@
 <div class="widget tag">
   <h3 class="title">タグ</h3>
   <ul class="entry">
+  
+    <li><a href="/tags/Node-js/">Node.js</a><small>1</small></li>
   
     <li><a href="/tags/Python/">Python</a><small>1</small></li>
   

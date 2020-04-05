@@ -3,15 +3,17 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Pythonで入力を受け取る速度 | うらじろ</title>
+  <title>【Node.js】ボトルネックの探し方 | うらじろ</title>
   <meta name="author" content="kebayashi">
   
-  <meta name="description" content="クエリが多いとき，C++の標準入力を呼び出して受け取るとだいぶ早くなる123456import sysinput=sys.stdin.readlinedef main(args):    #本体if __name__ == &#39;__main__&#39;:    main(argv[1:])↓入力の受け取り方">
+  <meta name="description" content="任意のスクリプト test.js を処理するのにかかった時間の内訳を出力できる．
+1node --prof test.js
+実行すると isolate-~~~~~~~.logというログファイルが出力される．このファイルを1node --prof-process isolate-~~~~~~~.log">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Pythonで入力を受け取る速度"/>
+  <meta property="og:title" content="【Node.js】ボトルネックの探し方"/>
   <meta property="og:site_name" content="うらじろ"/>
 
   
@@ -45,23 +47,25 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-Pythonで入力を受け取る速度" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-【node-js】ボトルネックの探し方" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-03-17T08:44:10.000Z"><a href="/2020/03/17/Pythonで入力を受け取る速度/">2020-03-17</a></time>
+        <time class="dt-published" datetime="2020-04-05T18:02:49.000Z"><a href="/2020/04/06/【node-js】ボトルネックの探し方/">2020-04-06</a></time>
       
       
   
-    <h1 class="p-name title" itemprop="headline name">Pythonで入力を受け取る速度</h1>
+    <h1 class="p-name title" itemprop="headline name">【Node.js】ボトルネックの探し方</h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>クエリが多いとき，C++の標準入力を呼び出して受け取るとだいぶ早くなる<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">input=sys.stdin.readline</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(args)</span>:</span></span><br><span class="line">    <span class="comment">#本体</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main(argv[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure><br>↓入力の受け取り方だけ変え，同じ問題を同じ解法で解いたときの実行時間<br><img src="https://github.com/yakeshiba/pictures/blob/master/%E3%82%AD%E3%83%A3%E3%83%97%E3%83%81%E3%83%A31.PNG?raw=true" alt="デフォルト"><br><img src="https://github.com/yakeshiba/pictures/blob/master/%E3%82%AD%E3%83%A3%E3%83%97%E3%83%81%E3%83%A32.PNG?raw=true" alt="C++"><br>C++が優秀</p>
+        <p>任意のスクリプト test.js を処理するのにかかった時間の内訳を出力できる．</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --prof test.js</span><br></pre></td></tr></table></figure>
+<p>実行すると <code>isolate-~~~~~~~.log</code>というログファイルが出力される．このファイルを<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --prof-process isolate-~~~~~~~.log</span><br></pre></td></tr></table></figure><br>で分かりやすく表示できる．表示されたログの中の<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Bottom up (heavy) profile]:</span><br><span class="line"> Note: percentage shows a share of a particular caller in the total</span><br><span class="line"> amount of its parent calls.</span><br><span class="line"> Callers occupying less than 1.0% are not shown.</span><br><span class="line"></span><br><span class="line">  ticks parent  name</span><br><span class="line">  4719   84.8%  LazyCompile: *fib &#x2F;home&#x2F;vagrant&#x2F;workspace&#x2F;fibonacci&#x2F;test.js:2:13</span><br><span class="line">  4719  100.0%    LazyCompile: *fib &#x2F;home&#x2F;vagrant&#x2F;workspace&#x2F;fibonacci&#x2F;test.js:2:13</span><br><span class="line">  4719  100.0%      LazyCompile: *fib &#x2F;home&#x2F;vagrant&#x2F;workspace&#x2F;fibonacci&#x2F;test.js:2:13</span><br><span class="line">  4719  100.0%        LazyCompile: *fib &#x2F;home&#x2F;vagrant&#x2F;workspace&#x2F;fibonacci&#x2F;test.js:2:13</span><br><span class="line">  4719  100.0%          LazyCompile: *fib &#x2F;home&#x2F;vagrant&#x2F;workspace&#x2F;fibonacci&#x2F;test.js:2:13</span><br><span class="line">  4719  100.0%            LazyCompile: *fib &#x2F;home&#x2F;vagrant&#x2F;workspace&#x2F;fibonacci&#x2F;test.js:2:13</span><br></pre></td></tr></table></figure><br>を見ることで，test.js の処理の中で重い部分を特定できる．</p>
 
       
     </div>
@@ -70,13 +74,13 @@
         
   
   <div class="categories">
-    <a href="/categories/競技プログラミング/">競技プログラミング</a>
+    <a href="/categories/サーバサイド/">サーバサイド</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/Python/">Python</a>
+    <a href="/tags/Node-js/">Node.js</a>
   </div>
 
         
@@ -119,7 +123,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/03/17/Python%E3%81%A7%E5%85%A5%E5%8A%9B%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8B%E9%80%9F%E5%BA%A6/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://yakeshiba.github.io/2020/04/06/%E3%80%90node-js%E3%80%91%E3%83%9C%E3%83%88%E3%83%AB%E3%83%8D%E3%83%83%E3%82%AF%E3%81%AE%E6%8E%A2%E3%81%97%E6%96%B9/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
