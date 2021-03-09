@@ -44,44 +44,42 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article id="post-方向微分の空間としての接ベクトル空間（２）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-ビット全探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-18T10:43:41.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（２）/">2020-02-18</a></time>
+        <time class="dt-published" datetime="2020-02-06T03:57:51.000Z"><a href="/2020/02/06/ビット全探索/">2020-02-06</a></time>
       
       
   
-    <h1 class="title"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（２）/">方向微分の空間としての接ベクトル空間（２）</a></h1>
+    <h1 class="title"><a href="/2020/02/06/ビット全探索/">ビット全探索</a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013</p>
-<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当にいろんな教科書を開いてみると大体このアプローチで書かれている．</p>
-<p>前回の記事と合わせて一つの記事という認識である．</p>
-<h2 id="曲線-c-に沿った方向微分"><a href="#曲線-c-に沿った方向微分" class="headerlink" title="曲線$c$に沿った方向微分"></a>曲線$c$に沿った方向微分</h2><p>$C^r$級多様体$M$の点$p$を通る$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow M,c(0)=p$が与えられているとする．</p>
-<p>$c$のパラメータ$t=0$における方向微分$\boldsymbol{v}_c$，つまり$c$に沿った方向微分を考える．$\boldsymbol{v}_c$はもちろん$p$における方向微分の集合${D_p}^r (M)$の元であるが，実は次の命題が成り立つ．</p>
-<h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>$\boldsymbol{v}_c$は$p$における接ベクトル空間$T_p(M)$の元である．すなわち$\boldsymbol{v}_c$は接ベクトルである．</p>
-<p>証明は省略する．方針としては，点$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を任意に固定し，$\boldsymbol{v}_c$が$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$という方向微分の線形結合として表されることを証明すればよい．</p>
-<p>前回の記事で述べたように，方向微分の値$\boldsymbol{v}_c$は$f,c$の形によって決まり，$p$のまわりの局所座標系の取り方によらない．したがって，$\boldsymbol{v}_c$は局所座標系の取り方によらず，$c$のみで決まる接ベクトルである．</p>
-<p>ところで，上記の証明により$\boldsymbol{v}_c$が$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$という方向微分の線形結合として表されることが分かっているものとして$\boldsymbol{v}_c$を具体的に書くと</p>
-<script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>である．これは，方向微分を基底とする空間（つまり接ベクトル空間）での$\boldsymbol{v}_c$の座標が</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>であると言っている（係数と座標の対応が分からなければ，標準基底の張る三次元ユークリッド空間で考えるとよい）．よく見ると，曲線$c$を$(x_1,x_2\ldots,x_m)$で座標表示して単純に微分する方法で得た速度ベクトル（ユークリッド空間での速度ベクトル）と一致している．このことから，$\boldsymbol{v}_c$は<strong>曲線$c$の$t=0$における速度ベクトル</strong>と呼ばれるべきものであると分かる．</p>
-<p>前回の記事の「多様体上の速度ベクトル」の項で，このような速度ベクトルは局所座標系の取り方に依存してしまう（のでふさわしくない）と述べた．これは局所座標系$(x_1,x_2\ldots,x_m)$に依存する基底$\langle \left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p\rangle$で表したときの係数を見ているからである．$\boldsymbol{v}_c$そのものは</p>
-<script type="math/tex; mode=display">\boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(0)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>という局所座標系に依らない存在であるが，<strong>基底が局所座標系によって変化するので，その係数である</strong></p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p><strong>が局所座標系によって変化するのは当然である．つまり縮尺の違う二つの地図上に描かれている，ある運動（飛行機の航行など）を表す速度ベクトル（矢印）を目で見たときにその長さ（あるいは矢印の指す，その地図上での座標の値）が異なっているのは当然であるが，その矢印が示す運動の「速さ」の絶対的な値は縮尺に関係なく一定であることを言っている．</strong><br>というわけで，速度ベクトルの実体は「$\boldsymbol{v}_c$」である．ここまでの議論により，速度ベクトルを局所座標系の取り方に依らない存在として定式化できた．</p>
-<h2 id="前回と今回の記事のまとめ"><a href="#前回と今回の記事のまとめ" class="headerlink" title="前回と今回の記事のまとめ"></a>前回と今回の記事のまとめ</h2><p>ここまでの話を整理する．</p>
-<h3 id="曲線-c-上の速度ベクトルの定義"><a href="#曲線-c-上の速度ベクトルの定義" class="headerlink" title="曲線$c$上の速度ベクトルの定義"></a>曲線$c$上の速度ベクトルの定義</h3><p>$c:(-\epsilon,\epsilon)\rightarrow M$を$C^r$級曲線とし，$c(0)=p$であるとする．曲線$c$の$t=0$における速度ベクトルとは</p>
-<script type="math/tex; mode=display">\boldsymbol{v}_{c}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>で定義される接ベクトル$\boldsymbol{v}_c \in T_p(M)$のことである．$f$は点$p$のまわりで定義された任意の$C^r$級関数である．</p>
-<p>以後，$\boldsymbol{v}_c$が速度ベクトルであることを意識しやすいように</p>
-<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}</script><p>という記号で表すことにする．上の定義をこの表記で書くと</p>
-<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=0}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}</script><p>である．<br>また，ここまで$t=0$として考えてきたが，$0$に特別な意味はない．$c:(a-\epsilon,a+\epsilon)\rightarrow M$という$C^r$級曲線が$t=a$のときに点$p$を通るとすると，$t=a$における速度ベクトルは</p>
-<script type="math/tex; mode=display">\left.\frac{dc}{dt}\right|_{t=a} = \boldsymbol{v}_{c} = \sum_{i=1}^{m} \frac{dx_i}{dt}(a)\left( \frac{\partial}{\partial x_i} \right)_p</script><p>で与えられる．</p>
-<p><del><strong>$m$次元多様体の速度ベクトル（に相当するもの）の実体は実数（$\mathbb{R}$の元）で，それを$m$個の方向微分係数（いずれも実数）の線形和として表現するとき，それぞれの「方向微分係数の係数（重み）」が接ベクトル空間の元（$m$次元ベクトル）の各成分である．</strong></del><br>↓<br><del><strong>接ベクトル（速度ベクトル）は「ベクトル」の名を冠しつつ，実体は実数である．接ベクトル空間は軸が$m$個ある$m$次元空間だが，その元である接ベクトルは実数であり，一次元配列としてのベクトルではない．写像$v:C^{\infty}(p)\rightarrow\mathbb{R}$を点$p$における$M$の接ベクトルと呼ぶ．</strong></del><br>↓<br><del><strong>写す先が実数ってだけで，写像そのもの（接ベクトル）は$m$次元ベクトルなのか？写像と元の関係ってどうなっている？よく分からなくなってきた．</strong></del><br>↓<br><strong>「接ベクトル空間」のWikipediaが有能だった．次の記事としてもう一度結論をまとめる．</strong></p>
+        <p>スイッチのON/OFFの組み合わせなど，「有るか無いか」の二択の組み合わせを全通り試すときにビット全探索を行う．<br>「有る」状態を1，「無い」状態を0で表すとすると，ある組み合わせの状態は2進数で表現されることが分かる．<br>例えばスイッチが一列に4つあってその状態が「1100」のとき，左の二つはON，右の二つはOFFであることを示している．<br>スイッチ一つにつき2通りの状態があるので，スイッチが$N$個ある場合その組み合わせは$2^N$通りである．<br>そこから分かるように，ビット全探索では計算量が指数関数的に増えていくため小規模の問題にしか対処できない．<br>競プロの制限時間に間に合うのは$N=20$ぐらい（$ 2^{20}$はだいたい$10^6$）．<br>逆に言えば，入力の制約で$N$が10とか20のときはビット全探索を解法とする問題である可能性が高い．</p>
+<h2 id="ビット演算子"><a href="#ビット演算子" class="headerlink" title="ビット演算子"></a>ビット演算子</h2><p>2進数を扱う為にビット演算子を知っておく必要がある．ビット全探索で使うのはAND演算子とシフト演算．</p>
+<h3 id="AND演算子"><a href="#AND演算子" class="headerlink" title="AND演算子"></a>AND演算子</h3><p>両方が1のときに1，それ以外で0を返す演算子．<br>ある2進数のそれぞれの桁が0か1かを調べるのに重宝する．上の問題で言うとどのスイッチがついているかを調べられる．<br>AND演算子による演算を論理積という．</p>
+<h3 id="OR演算子"><a href="#OR演算子" class="headerlink" title="OR演算子"></a>OR演算子</h3><p>両方が0のときに0，それ以外で1を返す演算子．OR演算子による演算を論理和という．</p>
+<h3 id="XOR演算子"><a href="#XOR演算子" class="headerlink" title="XOR演算子"></a>XOR演算子</h3><p>両方が異なる値のときに1,それ以外で0を返す演算子．XOR演算子による演算を排他的論理和という．</p>
+<h3 id="NOT演算子"><a href="#NOT演算子" class="headerlink" title="NOT演算子"></a>NOT演算子</h3><p>0を1に，1を0に反転する演算子．NOT演算子による演算を論理否定という．</p>
+<h3 id="シフト演算（左）"><a href="#シフト演算（左）" class="headerlink" title="シフト演算（左）"></a>シフト演算（左）</h3><p>ある2進数の全ての桁を左にずらす．最下位の桁には0が入る．<br>右のシフト演算もある．</p>
+<h2 id="ビット全探索の実装"><a href="#ビット全探索の実装" class="headerlink" title="ビット全探索の実装"></a>ビット全探索の実装</h2><p>例題を解きながら理解するのが一番早い．<br><a href="https://atcoder.jp/contests/abc079/tasks/abc079_c" target="_blank" rel="noopener">AtCoder ABC079 C問題</a></p>
+<p>先にコードを掲載し，その後一行ずつ解説していく．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">S  = input()</span><br><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">    formula = S[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> digit <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br><span class="line">            formula += <span class="string">"+"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            formula += <span class="string">"-"</span></span><br><span class="line">        formula += S[digit+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> eval(formula) == <span class="number">7</span>:</span><br><span class="line">        print(formula+<span class="string">"=7"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure><br>$op1, op2, op3$の3つの箱それぞれに「+」か「-」を入れる．1で+を，0で-を表すことにする．</p>
+<h4 id="1行目"><a href="#1行目" class="headerlink" title="1行目"></a>1行目</h4><p>入力の受け取り．</p>
+<h4 id="2行目"><a href="#2行目" class="headerlink" title="2行目"></a>2行目</h4><p>今回の問題では3か所の箱に+か-を入れるので，全部で8通りの組み合わせがある．ここで注意するのは，range(8)のときに取り得るのは0~7の値であるということ．<br>つまり，2進数表記で000~111となる3桁の数字を取り扱うということを意識する必要がある．すなわち，7までの間に3つの箱に0か1を入れる組み合わせの全通りが登場するということを言っている．<br>余談だが，競プロで他の人の回答を見ると<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> operator_state <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;len(S)<span class="number">-1</span>):</span><br></pre></td></tr></table></figure><br>と書かれていることもある．言ってることはrange(8)と同じである．<br>1を$len(S)-1=3$だけ左にビットをシフトすると2進数で「1000」，つまり8の2進数表記となる．</p>
+<h4 id="3行目"><a href="#3行目" class="headerlink" title="3行目"></a>3行目</h4><p>変数formulaに式を格納していくことにする．初めの数字をそのまま入れる．</p>
+<h4 id="4行目"><a href="#4行目" class="headerlink" title="4行目"></a>4行目</h4><p>このforループ内でそれぞれの箱に+と-のどちらを入れるかを決める．3つの箱があるので3回まわす．</p>
+<h4 id="5行目"><a href="#5行目" class="headerlink" title="5行目"></a>5行目</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> operator_state &amp; (<span class="number">1</span>&lt;&lt;digit):</span><br></pre></td></tr></table></figure>
+<p>という書き方は，「値operator_state &amp; (1 &lt;&lt; digit)が0でないとき」を意味する．この値は何を計算した結果なのだろうか．<br>例えばoperator_stateが2のとき，2進数で010である．この「010」の各桁の数字が0か1かをfor文を回して調べる．<br>まず，digitが0のときに「010」の一番右の桁が1か0かを調べる(人が見れば明らかだがコンピュータは認識できない)．<br>1&lt;&lt;0 = 1 = 001 と 010 の論理積をとると0なので，010の一番右の桁は0であると認識させることができる．<br>次に,digitが1のときに「010」の右から二番目の桁が1か0かを調べる．1&lt;&lt;1 = 2 = 010 と 010の論理積をとると2(≠0)なので，010の右から二番目の桁は1であると認識させることができる．<br>digitが2のときも同様．</p>
+<h4 id="6行目"><a href="#6行目" class="headerlink" title="6行目"></a>6行目</h4><p>その桁が1であるとき，箱に+を入れる．</p>
+<h4 id="7-8行目"><a href="#7-8行目" class="headerlink" title="7,8行目"></a>7,8行目</h4><p>5,6行目と同様の考え方をすればよい．</p>
+<h4 id="9行目"><a href="#9行目" class="headerlink" title="9行目"></a>9行目</h4><p>与えられた入力を式formulaに代入する．</p>
+<h4 id="10-11-12行目"><a href="#10-11-12行目" class="headerlink" title="10,11,12行目"></a>10,11,12行目</h4><p>関数eval()を利用すると文字列として保存されている数式を実際に計算させることができる．それが7であればその式を出力しbreakする．</p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc128/tasks/abc128_c" target="_blank" rel="noopener">AtCoder ABC128 C問題</a><br><a href="https://atcoder.jp/contests/abc147/tasks/abc147_c" target="_blank" rel="noopener">AtCoder ABC147 C問題</a><br>新基準のC問題としては若干難易度が高い．</p>
 
       
     </div>
@@ -98,438 +96,25 @@
 
 
 
-  <article id="post-方向微分の空間としての接ベクトル空間（１）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-ヒープキューで最小（大）値を素早く得る" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-18T05:45:00.000Z"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">2020-02-18</a></time>
+        <time class="dt-published" datetime="2020-02-04T13:44:42.000Z"><a href="/2020/02/04/ヒープキューで最小（大）値を素早く得る/">2020-02-04</a></time>
       
       
   
-    <h1 class="title"><a href="/2020/02/18/方向微分の空間としての接ベクトル空間（１）/">方向微分の空間としての接ベクトル空間（１）</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013</p>
-<p>多様体の基礎のキソとは異なる視点で接空間を定義する．適当にいろんな教科書を開いてみると大体このアプローチで書かれている．</p>
-<h2 id="ユークリッド空間での速度ベクトル"><a href="#ユークリッド空間での速度ベクトル" class="headerlink" title="ユークリッド空間での速度ベクトル"></a>ユークリッド空間での速度ベクトル</h2><p>くどいようだが，もう一度ユークリッド空間$\mathbb{R}^m$での速度ベクトルを考える．$-\epsilon&lt; t &lt; \epsilon$の範囲を動くパラメータ$t$で表される$C^r$級曲線$c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}^m$を座標表示したものが$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$であるとする．このときの$t=0$における速度ベクトルは</p>
-<script type="math/tex; mode=display">\boldsymbol{v} = \frac{dc(0)}{dt} = \left(\frac{dx_1(0)}{dt},\frac{dx_2(0)}{dt},\ldots,\frac{dx_m(0)}{dt}\right)</script><p>で与えられる．</p>
-<h2 id="多様体上の速度ベクトル"><a href="#多様体上の速度ベクトル" class="headerlink" title="多様体上の速度ベクトル"></a>多様体上の速度ベクトル</h2><p>多様体$M$を$m$次元$C^r$級であるとする．また，$M$上の点$p$を通る$C^r$級曲線を$c$とする．</p>
-<p>まず，$p$を含む座標近傍$(U;x_1,\ldots,x_m)$をとり，曲線$c$を$c(t) = (x_1(t),x_2(t),\ldots x_m(t))$と局所座標表示する（つまりこれは地図帳のあるページ上の座標である）．また，これとは異なる局所座標系をとり，同じ曲線$c$を$c(t) = (y_1(t),y_2(t),\ldots y_m(t))$と座標表示する（これはさっきと別のページ上の座標であり，各成分の値は異なる）．これら二つの座標系（縮尺の異なる二つの地図）における速度ベクトルをユークリッド空間のそれと同じように求めると，それぞれ別のベクトルが求まる．つまり速度ベクトルが座標系の取り方に依存しているといえる．今は「多様体の速度ベクトル」という多様体上のある一点に対してただ一つ対応するものを考えたいのに，それが局所座標系の取り方によって変化するのは喜ばしいことではない．</p>
-<p>以上のことを踏まえると，「$c$の速度ベクトル」は局所座標系の取り方に無関係なものとして定式化されている必要があるとわかる．この問題の解決のために「$c$に沿う微分操作」を考える．<br>点$p$の開近傍（$p$を含む開集合）$U$で定義された任意の$C^r$級関数$f$を考える．パラメータ$t$の曲線$c:(-\epsilon,\epsilon)\rightarrow U$と$f:U\rightarrow\mathbb{R}$の合成関数$f(c(t))$を作ると，これは$t(-\epsilon &lt; t &lt; \epsilon)$を変数とする$C^r$級関数になる($C^r$級関数と$C^r$級関数の合成関数は$C^r$級である)．この合成関数がやっているのは「$f$を曲線$c$上に制限された一変数関数にする」ことである．ここで$f(c(t))$が$p$の周りの局所座標系（地図帳のページ）に関係なく$f$と$c$だけで決まる一変数関数であるということを強調したい．<br>次に，$f(c(t))$の$t=0$における通常の微分係数</p>
-<script type="math/tex; mode=display">\frac{df(c(0))}{dt} = \displaystyle \lim_{t \to 0} \frac{f(c(t))-f(c(0))}{t}</script><p>を考える．これはひとつの実数である．もとの関数$f(c(t))$が局所座標系に無関係だから，この微分係数も局所座標系と無関係に$f$と$c$だけで決まる数である．関数$f$にこの微分係数を関連付ける対応</p>
-<script type="math/tex; mode=display">f\mapsto \frac{df(c(0))}{dt}</script><p>のことを$c$に沿う($t=0$での)<strong>方向微分</strong>とよび，記号$\boldsymbol{v}_c$で表すことにする．先ほど通常の微分係数と言ってたものを，関数$f$に関するものであることを強調して</p>
-<script type="math/tex; mode=display">\boldsymbol{v}_c(f)</script><p>と表す．<br>これが多様体上での「速度ベクトル」に相当するものである．</p>
-<h2 id="方向微分の性質"><a href="#方向微分の性質" class="headerlink" title="方向微分の性質"></a>方向微分の性質</h2><p>曲線$c$に沿う方向微分$\boldsymbol{v}_c$は次の性質をもつ．</p>
-<ul>
-<li>点$p$の開近傍で定義された$C^r$級関数を$f,g$とする．$p$の属する十分小さな開近傍上で$f=g$ならば<script type="math/tex; mode=display">\boldsymbol{v}_c(f) = \boldsymbol{v}_c(g)</script></li>
-<li>上と同じ$f,g$と実数$a,b$に関して<script type="math/tex; mode=display">\boldsymbol{v}_c(af+bg) = a\boldsymbol{v}_c(f)+b\boldsymbol{v}_c(g)</script></li>
-<li>上と同じ$f,g$に関して$fg$をそれらの積とすれば<script type="math/tex; mode=display">\boldsymbol{v}_c(fg) = \boldsymbol{v}_c(f)g(p)+f(p)\boldsymbol{v}_c(g)</script></li>
-</ul>
-<h2 id="点-p-における方向微分"><a href="#点-p-における方向微分" class="headerlink" title="点$p$における方向微分"></a>点$p$における方向微分</h2><p><strong>以下，本記事は曲線$c$に関する方向微分を抽象化した点$p$における形式的な「方向微分」の概念について述べている．</strong></p>
-<h3 id="定義"><a href="#定義" class="headerlink" title="定義"></a>定義</h3><p>点$p$における方向微分$\boldsymbol{v}_c$とは$p$の開近傍で定義された$C^r$級関数$f$に実数$\boldsymbol{v}(f)$を対応させる操作であり，次の性質を持つ．</p>
-<ul>
-<li>関数$f,g$が点$p$の十分小さな開近傍上で一致すれば<script type="math/tex; mode=display">\boldsymbol{v}(f) = \boldsymbol{v}(g)</script></li>
-<li>$a,b,\in\mathbb{R}$に対して<script type="math/tex; mode=display">\boldsymbol{v}(af+bg) = a\boldsymbol{v}(f)+b\boldsymbol{v}(g)</script></li>
-<li>関数$f,g$の積を考えるとき<script type="math/tex; mode=display">\boldsymbol{v}(fg) = \boldsymbol{v}(f)g(p)+f(p)\boldsymbol{v}(g)</script></li>
-</ul>
-<p>既に述べたように$c$に関する方向微分$\boldsymbol{v}_c$もこれらの性質を持っているので，この定義の意味での「方向微分」でもある．<br>他の例を挙げてみる．</p>
-<h3 id="方向微分の例"><a href="#方向微分の例" class="headerlink" title="方向微分の例"></a>方向微分の例</h3><p>点$p$を含む座標近傍$(U;x_1,x_2,\ldots , x_m)$を一つ固定する．$p$の周りで定義された$C^r$級関数$f$に，$p$における$x_i$方向の偏微分係数</p>
-<script type="math/tex; mode=display">\frac{\partial f}{\partial x_i} (p) \in \mathbb{R}</script><p>を対応させる操作を$\left( \frac{\partial}{\partial x_i} \right)_p$と書く．すなわち</p>
-<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_i} \right)_p : f\mapsto \frac{\partial f}{\partial x_i} (p)</script><p>である．このとき$\left( \frac{\partial}{\partial x_i} \right)_p$は$p$における方向微分の三つの性質（上記）を持つ．合成関数の偏微分（連鎖律）などで容易に確認できる．<strong>この方向微分の実体はいわゆる「ベクトル」ではなく「実数」である</strong>．</p>
-<h2 id="点-p-における方向微分の集合"><a href="#点-p-における方向微分の集合" class="headerlink" title="点$p$における方向微分の集合"></a>点$p$における方向微分の集合</h2><p>例で見たように，点$p$における（形式的な）方向微分には色々なものが考えられる．いま，点$p$における方向微分全ての集合を考え，それを</p>
-<script type="math/tex; mode=display">{D_p}^r (M)</script><p>と表すことにする．$D$は微分操作(Derivation)，$M$は考えている多様体，$p$は点，$r$は考えている$M$上の関数が$C^r$級であることを示している．<br>集合${D_p}^r (M)$の個々の元は$\boldsymbol{v}_c$や$\left( \frac{\partial}{\partial x_i} \right)_p$などの方向微分である．そして，二つの方向微分$\boldsymbol{u},\boldsymbol{v}$は$p$まわりで定義された任意の$C^r$級関数$f$について$\boldsymbol{u}(f) = \boldsymbol{v}(f)$であるとき，そしてそのときに限り，集合${D_p}^r (M)$の中で同じ元を表すものとする．<br>重要なのは${D_p}^r (M)$が点$p$のまわりの局所座標系（地図帳のページ）の概念を用いずに定義されていることである．${D_p}^r (M)$の中には$\left( \frac{\partial}{\partial x_i} \right)_p$のように局所座標系$(x_i,x_2,\ldots,x_m)$を選んだ上で決まる元もあるが，この集合そのものは「$p$における方向微分の全体の集合」として与えられており，「集合${D_p}^r (M)$をつくろう！」と思った段階では局所座標系のことを気にしていない．</p>
-<p>また，${D_p}^r (M)$は$\mathbb{R}$上のベクトル空間である（証明は省略する．ベクトル空間の和やスカラー倍の成立を確認すればよい）．</p>
-<h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><p>もう一度強調するが，${D_p}^r (M)$は局所座標系に無関係な集合である．その上で，あらためて$p$まわりの局所座標系$(x_1,x_2,\ldots,x_m)$を一つ選ぶ（地図帳のページを一つ選ぶ）．すると，$m$個の方向微分</p>
-<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p</script><p>が得られる．これらは${D_p}^r (M)$の元であり，以下の命題が成立する．</p>
-<h3 id="命題"><a href="#命題" class="headerlink" title="命題"></a>命題</h3><p>ベクトル空間${D_p}^r (M)$の元として，$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$は線形独立である．</p>
-<p>証明は省略する．線形独立な基底が得られたので，それらが張る空間を考えることができる．</p>
-<h3 id="接ベクトル空間の定義"><a href="#接ベクトル空間の定義" class="headerlink" title="接ベクトル空間の定義"></a>接ベクトル空間の定義</h3><p>$m$個のベクトル$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$の張る${D_p}^r (M)$の部分ベクトル空間を，点$p$における$M$の<strong>接ベクトル空間</strong>とよび，</p>
-<script type="math/tex; mode=display">T_p(M)</script><p>という記号で表す．</p>
-<p>この空間に属するベクトルを，点$p$における$M$の<strong>接ベクトル</strong>という．この定義によれば，点$p$での$M$の接ベクトルとは実数$(a_1,a_2,\ldots,a_m)$に対して</p>
-<script type="math/tex; mode=display">\boldsymbol{v} = a_1\left( \frac{\partial}{\partial x_1} \right)_p + a_2\left( \frac{\partial}{\partial x_2} \right)_p + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)_p</script><p>を満たすような方向微分$\boldsymbol{v}$のことである．<br>また，これらの基底たち自身も点$p$における接ベクトルである．</p>
-<p>接ベクトル空間の基底が$m$個あるのだから，空間の次元は$m$次元である．つまり$T_p(M)$は，いま考えている多様体$M$と同次元である．</p>
-<p>接ベクトル空間$T_p(M)$は$(x_1,x_2,\ldots,x_m)$を選んだうえで<br>定義されるので，局所座標系に依存する概念のように見える．が，実際には局所座標系とは無関係に決まるベクトル空間である（基底一つ一つは局所座標系に依存する）．つまり$(x_1,x_2,\ldots,x_m)$と異なる座標系$(y_1,y_2,\ldots,y_m)$の方向微分</p>
-<script type="math/tex; mode=display">\left( \frac{\partial}{\partial y_1} \right)_p,\left( \frac{\partial}{\partial y_2} \right)_p,\ldots,\left( \frac{\partial}{\partial y_m} \right)_p</script><p>の張る${D_p}^r (M)$の部分ベクトル空間は，$\left( \frac{\partial}{\partial x_1} \right)_p,\left( \frac{\partial}{\partial x_2} \right)_p,\ldots,\left( \frac{\partial}{\partial x_m} \right)_p$の張る空間と一致する（証明は省略する．基底の変換を行う）．<br>この事実により，前回の「基礎のキソ」の速度ベクトルに関する記事の最後，微分の行列$D\Phi(\boldsymbol{p})$が実は基底の変換を行っていたのだと理解できる．</p>
-<p>ここまでの内容をまとめる．$C^r$級多様体$M$の一点$p$を固定すると，$p$における方向微分の全体のなすベクトル空間${D_p}^r (M)$が決まる．これは局所座標系に無関係である．${D_p}^r (M)$の部分ベクトル空間として，接ベクトル空間$T_p(M)$が定まる．この空間も局所座標系の取り方に依らない．</p>
-<p><strong>以上が点$p$に関する形式的な方向微分の抽象的な考察である．次回は$C^r$級多様体$M$の点$p$を通る$C^r$級曲線$c$の話に戻る．</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-多様体の速度ベクトルについて" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-17T08:27:33.000Z"><a href="/2020/02/17/多様体の速度ベクトルについて/">2020-02-17</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/17/多様体の速度ベクトルについて/">多様体の速度ベクトルについて</a></h1>
+    <h1 class="title"><a href="/2020/02/04/ヒープキューで最小（大）値を素早く得る/">ヒープキューで最小（大）値を素早く得る</a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>基礎のキソ5章で速度ベクトルについて記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
-<p>多様体を学ぶ上で重要な概念が「接空間」である．別名は接ベクトル空間．曲線の接線や曲面の接平面の単なる拡張とは<strong>異なる</strong>概念である（単なる拡張とみなすだけでは不十分であるという言い方のほうが正確である）．それらの拡張としての接平面は，対象の多様体が高次元のユークリッド空間の部分集合として与えられているときのみの限定的な存在である．</p>
-<p>「基礎のキソ」ではよくある教科書とは異なるアプローチで接平面を導入している（基礎のキソの著者が独自の解釈で書いているわけでなく，同じアプローチをしている教科書も存在する）．</p>
-<h2 id="速度ベクトル空間"><a href="#速度ベクトル空間" class="headerlink" title="速度ベクトル空間"></a>速度ベクトル空間</h2><p>多様体内で（多様体「上」というと曲面をイメージしてしまうのでこのような表現になっている）の速度ベクトルというものを考えたい．空間（必ずしもユークリッド空間ではない）の中での物体の運動を知りたいという要望はいくらでもあるので，その速度ベクトルの情報を得ようと考えるのは自然である．<br>ユークリッド空間のある点における速度ベクトルを次のように定義する．</p>
-<h3 id="速度ベクトルの定義（ユークリッド空間）"><a href="#速度ベクトルの定義（ユークリッド空間）" class="headerlink" title="速度ベクトルの定義（ユークリッド空間）"></a>速度ベクトルの定義（ユークリッド空間）</h3><p>ユークリッド空間$\mathbb{R}^n$の点$\boldsymbol{p}$を固定する．点$\boldsymbol{p}$を通過するすべての$C^1$級曲線を考え，それから得られる$\boldsymbol{p}$における速度ベクトルの全体を</p>
-<script type="math/tex; mode=display">T_\boldsymbol{p} \mathbb{R}^n</script><p>と表し．便宜的に「$\mathbb{R}^n$の$\boldsymbol{p}$における速度ベクトル空間」と呼ぶことにする．また<script type="math/tex">T_\boldsymbol{p} \mathbb{R}^n</script>の元を「$\mathbb{R}$の点$\boldsymbol{p}$における速度ベクトル」と呼ぶ．</p>
-<p>この集合は実質$\mathbb{R}^n$と同じ．</p>
-<h2 id="多様体内の速度ベクトル（準備）"><a href="#多様体内の速度ベクトル（準備）" class="headerlink" title="多様体内の速度ベクトル（準備）"></a>多様体内の速度ベクトル（準備）</h2><p>多様体$M=(M,A)$の世界で考える．ここで，多様体そのものから直接情報を引き出すことはできず，代わりに地図帳$A$の情報を利用する必要があることを思い出しておこう．</p>
-<h3 id="記号について"><a href="#記号について" class="headerlink" title="記号について"></a>記号について</h3><p>前回の記事などでは地図帳<script type="math/tex">A = \{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>のページ番号として$\lambda,\mu\in\Lambda$を使ってきたが，この表現を廃止する．<br>代わりに局所座標そのものを添え字のように考え，</p>
-<script type="math/tex; mode=display">A=\{\phi:U_\phi\rightarrow\mathbb{R}^n\}</script><p>と表現することにする．要は$\phi$を局所座標が入る変数のように扱う．<br>また，<script type="math/tex">\phi:U_\phi\rightarrow\mathbb{R}^n</script>による像<script type="math/tex">\phi(U_\phi)\subset\mathbb{R}^n</script>を<script type="math/tex">\mathbb{U}_\phi</script>で表す．海抜の話で言うと<script type="math/tex">\mathbb{U}_\phi</script>は<script type="math/tex">\phi</script>ページ目で海抜がとりうる値の集合である．またこの写像は同相写像である．</p>
-<h3 id="多様体の重要な事実"><a href="#多様体の重要な事実" class="headerlink" title="多様体の重要な事実"></a>多様体の重要な事実</h3><p>多様体$M$には位相空間の性質と地図帳の情報だけが存在している．そのような状況下では，実は$M$内の点同士の四則演算が定義されていない（ユークリッド空間内のベクトルの足し算のようなものが考えられていない）．<br>となると，多様体$M$の各点においてユークリッド空間での速度ベクトル</p>
-<script type="math/tex; mode=display">\displaystyle \lim_{t \to t_0} \frac{x(t)-x(t_0)}{t-t_0}</script><p>のような値を求めてもその値に意味はない．多様体内の速度ベクトルの定義には何かしらの一工夫を加える必要がある．</p>
-<h3 id="地図帳を利用した速度ベクトルの表現"><a href="#地図帳を利用した速度ベクトルの表現" class="headerlink" title="地図帳を利用した速度ベクトルの表現"></a>地図帳を利用した速度ベクトルの表現</h3><p>東京上空を飛行機が「東に時速５００㎞」で通過したとする．この飛行機の動いた向きと速さを地図の上に矢印で記したいとき，その地図の縮尺や図法によって矢印の向きや長さは変わる（世界地図に描けば矢印はかなり小さいが，関東圏の地図に描けばそれよりは大きくなる）．このように見た目は異なる矢印だが，同一の飛行機の同一の運動を記述しているわけで，矢印間に何かしらの繋がりはあるはずである．<br>この例を念頭に置きつつ，同じことを数学で表現する．</p>
-<h2 id="多様体内の速度ベクトル"><a href="#多様体内の速度ベクトル" class="headerlink" title="多様体内の速度ベクトル"></a>多様体内の速度ベクトル</h2><h3 id="C-1-級曲線の定義"><a href="#C-1-級曲線の定義" class="headerlink" title="$C^1$級曲線の定義"></a>$C^1$級曲線の定義</h3><ul>
-<li>区間<script type="math/tex">[a,b]\subset\mathbb{R}</script>上で定義された連続写像<script type="math/tex">x:[a,b]\rightarrow M</script>を曲線と呼ぶ．</li>
-<li>曲線<script type="math/tex">x:[a,b]\rightarrow M</script>が$C^1$級であるとは，$M$の任意の局所座標<script type="math/tex">\phi:U_\phi\rightarrow\mathbb{U}_\phi</script>に対し<script type="math/tex">x(t_0)\in U_\phi(t_0\in(a,b))</script>であれば<script type="math/tex">t_0</script>に十分近い$t$に関して<script type="math/tex">t\mapsto \phi\circ x(t)</script>が<script type="math/tex">\mathbb{U}_\phi\subset\mathbb{R}^n</script>内の$C^1$級曲線になっていることをいう．</li>
-</ul>
-<p>二つ目の文章を噛み砕いて説明すると，<br>①$M$の地図帳の任意のページ$\phi$に対し，<br>②$[a,b]$という区間内のある値<script type="math/tex">t_0</script>の写像<script type="math/tex">x(t_0)</script>がそのページの観測元のエリア<script type="math/tex">U_\phi</script>内に収まるなら（<script type="math/tex">x(t_0)\in U_\phi(t_0\in(a,b))</script>）<br>③その<script type="math/tex">t_0</script>に十分近い値を写した$\phi(x(t))$に関しても同じページの中の$C^1$級曲線（つまり連続写像）になっている（<script type="math/tex">t\mapsto \phi\circ x(t)</script>が<script type="math/tex">\mathbb{U}_\phi\subset\mathbb{R}^n</script>）ときに$x$を$C^1$級と呼ぶ<br>と言っている．</p>
-<p>重要な事実として，「$C^1$級多様体の曲線の一部をあるページでみたときに$C^1$級曲線になっていれば，その部分を含む他のページでも$C^1$級曲線になっている」ことがわかっている．</p>
-<h3 id="速度ベクトルの表現"><a href="#速度ベクトルの表現" class="headerlink" title="速度ベクトルの表現"></a>速度ベクトルの表現</h3><p>点$p\in M$を固定し，時刻$t=0$に$p$を通過する$C^1$級曲線<script type="math/tex">x:[-1,1]\rightarrow M,t\mapsto x(t)</script>を考える．点$p=x(0)$を東京，曲線$x$を飛行機の経路だと思えばよい．<br>次に地図帳$A$の点$p$が記録されているページを探す．そのページに載っている点$p$の像を</p>
-<script type="math/tex; mode=display">\boldsymbol{p}=\phi(p)\in\mathbb{U}_{\phi}</script><p>と表す（イメージのしやすさ的に，例として<script type="math/tex">\mathbb{U}_{\phi}</script>を<script type="math/tex">\mathbb{R}^2</script>で考えるとよい）．このとき，地図帳の$\phi$ページ目の<script type="math/tex">\mathbb{U}_\phi</script>の中には$C^1$級曲線$x(t)$の時刻$t=0$前後の様子が</p>
-<script type="math/tex; mode=display">\boldsymbol{x}(t):=\phi(x(t))(t\approx0)</script><p>として記録されているはずである（$x(t)$は多様体$M$上で定義された曲線．それを$\phi$ページ目に写したものが<script type="math/tex">\boldsymbol{x}(t)</script>である）．<br>以下，$\epsilon$を十分小さい正の数として固定し，<script type="math/tex">t=0</script>を含む時刻の区間<script type="math/tex">\mathbb{I}=[- \epsilon,\epsilon]</script>について<script type="math/tex">x(\mathbb{I})\subset U_\phi</script>であると仮定する．つまり地図帳の$\phi$ページ目の飛行経路が<script type="math/tex">\boldsymbol{x}(\mathbb{I})\subset\mathbb{U}_{\phi}</script>として記録されているような状況である．<br>このとき，<script type="math/tex">C^1</script>級曲線<script type="math/tex">\boldsymbol{x}:\mathbb{I}\rightarrow \mathbb{U}_{\phi}</script>の時刻０における速度ベクトル</p>
-<script type="math/tex; mode=display">\boldsymbol{v}=\frac{d\boldsymbol{x}(0)}{dt}=\displaystyle \lim_{\Delta t \to 0} \frac{\boldsymbol{x}(\Delta t)-\boldsymbol{x}(0)}{\Delta t}</script><p>が計算できる．これは<script type="math/tex">\boldsymbol{p}\in\mathbb{U}_{\phi}\subset\mathbb{R}^n</script>における速度ベクトル空間<script type="math/tex">T_{\boldsymbol{p}}\mathbb{U}_\phi = \mathbb{R}^n</script>の元であり，すなわち地図帳の$\phi$ページ目の座標系での$\boldsymbol{p}$における速度を矢印として記したものと考えられる．</p>
-<h3 id="局所座標への依存性"><a href="#局所座標への依存性" class="headerlink" title="局所座標への依存性"></a>局所座標への依存性</h3><p>地図（ページ）ごとに縮尺や図法が違うため，同じ飛行経路でも矢印の向きや長さが異なるのであった．とはいえ同じ運動（飛行経路）を表している以上，異なる地図に書かれた矢印同士に何か関連はあるはずだ．</p>
-<p>複数のページに同じ経路が書かれている状況をつくる．いま，$\phi$とは別のページ<script type="math/tex">\psi\in A</script>が存在して<script type="math/tex">p\in U_\psi</script>であったと仮定する．このとき<script type="math/tex">x(\mathbb{I})\subset U_\phi\cap U_\psi</script>としてよい．また，多様体$M$上の飛行経路$x(t)(t\in\mathbb{I})$を$\psi$で観測したとき，<script type="math/tex">\mathbb{U}_\psi</script>内では</p>
-<script type="math/tex; mode=display">\boldsymbol{y}(t) := \psi(x(t)),\boldsymbol{q} = \psi(p)=\boldsymbol{y}(0)</script><p>と表されるとする．このとき$\phi$ページ目の速度ベクトル$\boldsymbol{v}$と同様に，$\psi$ページ目の座標系での速度ベクトル</p>
-<script type="math/tex; mode=display">\boldsymbol{u} = \frac{d\boldsymbol{y}(0)}{dt}</script><p>が計算できる．これは点$\boldsymbol{q}$における速度ベクトル空間<script type="math/tex">T_\boldsymbol{q}\mathbb{U}_\psi</script>の元である．</p>
-<p>ここからは二つの矢印<script type="math/tex">\boldsymbol{v},\boldsymbol{u}</script>の関係を明らかにしていく．いま，<script type="math/tex">\boldsymbol{p}</script>の近傍<script type="math/tex">\phi(U_\phi\cap U_\psi)</script>において同相写像</p>
-<script type="math/tex; mode=display">\Phi=\Phi_{\phi\psi}=\psi\circ\phi^{-1}:\phi(U_\phi\cap U_\psi)\rightarrow\psi(U_\phi\cap U_\psi)</script><p>が定まっている．地図帳の$\phi$ページ目と$\psi$ページ目の共通部分の対応関係はこの写像でのみ表されている．また多様体$M$は$C^1$級なのでこの写像$\Phi$も$C^1$級同相写像であり，点<script type="math/tex">\boldsymbol{p}\in\mathbb{U}_{\phi}</script>における微分<script type="math/tex">D\Phi(\boldsymbol{p})</script>が$n$次正方行列として計算できる．二つの速度ベクトルの関係は，この微分（行列）を用いて次のように記述される．</p>
-<h4 id="命題"><a href="#命題" class="headerlink" title="命題"></a><strong>命題</strong></h4><p>$\phi$ページの速度ベクトル<script type="math/tex">\boldsymbol{v}</script>と$\psi$ページの速度ベクトル<script type="math/tex">\boldsymbol{u}</script>に対し$\boldsymbol{u}=D\Phi(\boldsymbol{p})\boldsymbol{v}$が成り立つ．<br>ただし同相写像</p>
-<script type="math/tex; mode=display">\Phi:\phi(U_\phi\cap U_\psi)\rightarrow\psi(U_\phi\cap U_\psi),\boldsymbol{y}=\Phi(\boldsymbol{x})</script><p>であり，<script type="math/tex">\boldsymbol{v}</script>および<script type="math/tex">\boldsymbol{u}</script>は縦ベクトルとみなしている．</p>
-<p>ここで行列$D\Phi(\boldsymbol{p})$は<script type="math/tex">(\partial y_i / \partial x_j)_{ij}</script>で与えられる．上記命題の証明は基礎のキソ５章にて記されているのでそちらを参照する．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-多様体上で関数を扱う" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-14T04:15:09.000Z"><a href="/2020/02/14/多様体上で関数を扱う/">2020-02-14</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/14/多様体上で関数を扱う/">多様体上で関数を扱う</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>基礎のキソ4章で多様体について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
-<p>位相空間の一点ごとになにか値を与える写像を関数というのであった．多様体$M=(M,A)$も（厳密には$M$単体で）位相空間だから，多様体$M$上の一点に値を与える写像というものを考えることができる．</p>
-<h2 id="地図帳で表現された関数の整合性"><a href="#地図帳で表現された関数の整合性" class="headerlink" title="地図帳で表現された関数の整合性"></a>地図帳で表現された関数の整合性</h2><p>位相空間$M$上の関数<script type="math/tex">f:M\rightarrow\mathbb{R}</script>が与えられているとき，これを多様体$M$上の関数<script type="math/tex">f:M\rightarrow\mathbb{R}</script>とみなせる．ただし多様体$M$から直接情報を取り出すことができず，地図帳$A$からの情報のみで全てを察するしかないという問題がある．<br>例として挙げられているのは海抜高度．$M$が地球の表面であり，海抜高度が関数$f:M\rightarrow\mathbb{R}$で与えられているとする．地図帳$A$の各ページには衛星<script type="math/tex">\{\phi_\lambda\}_{\lambda\in\Lambda}</script>たちが観測した海抜高度（関数値）が色や等高線として記録される．すなわち地図帳の$\lambda$ページ目を開くと，<script type="math/tex">\phi_\lambda(U_\lambda)=\mathbb{U}_\lambda</script>で定義された実数値関数</p>
-<script type="math/tex; mode=display">F_\lambda = f\circ{\phi_\lambda}^{-1}:\mathbb{U}_\lambda\rightarrow\mathbb{R}</script><p>が色や等高線で描かれている．以下は基礎のキソ4章に載っている図で，写像同士の関連性が分かりやすい．<br>　　　　<img src="https://github.com/yakeshiba/pictures/blob/master/%E5%A4%9A%E6%A7%98%E4%BD%93%E3%81%AE%E6%95%B4%E5%90%88%E6%80%A7.PNG?raw=true" alt="地図帳のあるページに表現された多様体上の関数"><br>この合成関数でやっているのは「<script type="math/tex">{\phi_\lambda}^{-1}</script>で観測エリア<script type="math/tex">U_\lambda</script>を「再現」して，そいつの海抜を$f$で求める」ということである．この<script type="math/tex">F_\lambda</script>は$\mathbb{R}^n$のある領域から$\mathbb{R}$への関数であり，多変数関数の微分・積分が適用可能である．<br>ここで，「整合性」について考える．実際の世界を例に挙げて考えると．日本地図上の「名古屋」と愛知県地図上の「名古屋」のいずれも同じ色で塗られて同じような等高線が引かれているはずである．つまり眺めるスケールが異なったとしても．値そのものは同じになる必要がある．これが整合性という言葉が指していることである．これを数学で表現する．<br>多様体$M=(M,A)$上の関数$f:M\rightarrow\mathbb{R}$について，実際に得られる情報は地図帳$A$（の局所座標<script type="math/tex">\phi\lambda:U_\lambda \rightarrow\mathbb{U}_\lambda</script>)を通した関数</p>
-<script type="math/tex; mode=display">F_\lambda = f\circ{\phi_\lambda}^{-1}:\mathbb{U}_\lambda\rightarrow\mathbb{R}</script><p>の集まりである．この情報は地図帳の各ページが海抜高度に応じて色付けされていることを表現している．この状況下において「整合性」を数学で表現すると，地図帳の異なるページの重複部分<script type="math/tex">x\in U_\lambda\cap U_\mu</script>において</p>
-<script type="math/tex; mode=display">F_\lambda(\phi_\lambda(x)) = F_\mu(\phi_\mu(x))</script><p>なる関係式が成立しているということである．「$\lambda$ページ目に載っている重複部分$x$の海抜（左辺）は，$\mu$ページ目に載っている重複部分$x$の海抜（右辺）と等しい」という（当然の）ことを式で表しているだけである．</p>
-<h2 id="多様体上の関数の微分可能性"><a href="#多様体上の関数の微分可能性" class="headerlink" title="多様体上の関数の微分可能性"></a>多様体上の関数の微分可能性</h2><p><script type="math/tex">C^\alpha</script>級多様体とは，その上に<script type="math/tex">C^\alpha</script>級関数が定義できる多様体のことである．これを念頭に置いて読み進める．</p>
-<h3 id="ユークリッド空間上の-C-1-級関数について"><a href="#ユークリッド空間上の-C-1-級関数について" class="headerlink" title="ユークリッド空間上の$C^1$級関数について"></a>ユークリッド空間上の$C^1$級関数について</h3><p>開集合$\mathbb{U}\subset\mathbb{R}^n$について関数<script type="math/tex">F:\mathbb{U}\rightarrow\mathbb{R}</script>が$C^1$級関数であるとは，<script type="math/tex">\boldsymbol{x} = (x_1,x_2,\ldots,x_n)\in\mathbb{U}</script>を変数とするとき各成分$x_i$についての偏導関数<script type="math/tex">\boldsymbol{x} \mapsto \frac{\partial F(\boldsymbol{x})}{\partial x_i}\in\mathbb{R}</script>が存在し，連続関数であることをいう．</p>
-<h3 id="C-1-級多様体上の-C-1-級関数について"><a href="#C-1-級多様体上の-C-1-級関数について" class="headerlink" title="$C^1$級多様体上の$C^1$級関数について"></a>$C^1$級多様体上の$C^1$級関数について</h3><p>ユークリッド空間上のそれとは異なる定義がなされている．</p>
-<h4 id="C-1-級多様体上の-C-1-級関数の定義"><a href="#C-1-級多様体上の-C-1-級関数の定義" class="headerlink" title="$C^1$級多様体上の$C^1$級関数の定義"></a><strong>$C^1$級多様体上の$C^1$級関数の定義</strong></h4><p>$M$は$C^1$級多様体であると仮定する．関数$f:M\rightarrow\mathbb{R}$が$C^1$級関数であるとは，全ての局所座標<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\mathbb{U}_\lambda</script>について，関数<script type="math/tex">F_\lambda := f\circ{\phi_\lambda}^{-1}:\mathbb{U}_\lambda\rightarrow\mathbb{R}</script>が$C^1$級関数であることをいう．</p>
-<p>この定義では関数$f$そのものが偏微分可能かどうかについて言及していない．そもそも$f$の偏導関数が存在すると言ってないし，$M$の各点で$f$の偏微分係数を求めたりすることはない（できない？）．<br>あくまで地図帳の各ページの地形図からそこの海抜を求める関数<script type="math/tex">F_\lambda</script>がユークリッド空間上の$C^1$級関数と同じ性質を持っているという話である．別の言い方をすれば，色や等高線で書かれた$f$の値がそのページ固有の座標系に関して連続な偏導関数を持つということである．</p>
-<h4 id="「-C-1-級多様体である」ことが保障するもの"><a href="#「-C-1-級多様体である」ことが保障するもの" class="headerlink" title="「$C^1$級多様体である」ことが保障するもの"></a><strong>「$C^1$級多様体である」ことが保障するもの</strong></h4><p>基礎のキソで１ページ分使って解説されているが，とにかく重要なのは<br>「地図帳のあるページのある地域で海抜高度を表す色が$C^1$級で変化していれば，同一地域が記載されている他のページにおいても，海抜高度を表す色は$C^1$級に変化している」<br>の部分である．<br>このように局所座標（ページ）によらない普遍的な性質を「多様体上の関数$f$の性質」ということにする．<br>なお，偏微分係数そのものの値は$f$の普遍的な性質ではない．そのページの地図の縮尺や図法次第で海抜の変化度合いは変わるからである（地図帳の各ページは実際の地球上の距離の大小関係を正確に反映していない．同じ名古屋市に注目するとき，紙面のサイズが同じ世界地図と県地図とでずいぶんと大きさが違って見える）．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-多様体の定義とイメージ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-13T14:16:42.000Z"><a href="/2020/02/13/多様体の定義とイメージ/">2020-02-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/13/多様体の定義とイメージ/">多様体の定義とイメージ</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>基礎のキソ4章で多様体について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
-<p>多様体(manifold)は独立した空間の概念で，例えば球面などでイメージされる．多様体の「外」の空間，つまり球面から外れた空間というものは存在しない．イメージとしては地球の「外」，つまり宇宙に相当する空間が存在しないと言っているようなものである．<br>そして，我々は多様体「上」の情報を取り扱うために多様体上の空間を部分的にユークリッド空間として処理する（ユークリッド空間に投影する）必要がある．</p>
-<h2 id="準備（同相写像）"><a href="#準備（同相写像）" class="headerlink" title="準備（同相写像）"></a>準備（同相写像）</h2><p>多様体の定義に同相写像の概念が必要である．</p>
-<h3 id="同相写像の定義"><a href="#同相写像の定義" class="headerlink" title="同相写像の定義"></a>同相写像の定義</h3><p>二つの位相空間$(S,O),(S’,O’)$について，写像<script type="math/tex">f:S\rightarrow S'</script>が同相写像であるとは次の条件を満たすとき．<br>1.　全単射であり，したがって<script type="math/tex">f^{-1}:S'\rightarrow S</script>が写像として定まる．<br>2.　$f$も$f^{-1}$も連続である．</p>
-<h3 id="定義の解釈"><a href="#定義の解釈" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>二つの空間が同相であるというのは，二つの空間を「同じとみなせる」ということ．<br>開集合系，すなわちグループ分け全体の間にも一対一の対応があるから．$(S,O)$と$(S’,O’)$は位相空間という枠組みで解釈し続ける限り，「同じ空間を別の名前で表現している」だけとも言える．つまり写像$f$は空間の名前を$S$から$S’$に変えているだけとみなせる．</p>
-<h2 id="定義と翻訳"><a href="#定義と翻訳" class="headerlink" title="定義と翻訳"></a>定義と翻訳</h2><p>初めに定義を記し，順番に日本語に翻訳する．</p>
-<h3 id="多様体の定義"><a href="#多様体の定義" class="headerlink" title="多様体の定義"></a>多様体の定義</h3><p>1.　$M$を位相空間とする．<br>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．<br>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自身を単に多様体$M$と呼ぶ．<br>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
-<script type="math/tex; mode=display">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>は同相写像であるが，これがすべての<script type="math/tex">\mu,\lambda\in\Lambda</script>について<script type="math/tex">C^\alpha</script>級であるとき，$M$を<script type="math/tex">C^\alpha</script>級多様体と呼ぶ．ただし<script type="math/tex">0\leq\alpha\leq\infty</script>もしくは<script type="math/tex">\alpha=\omega</script>（解析的関数）とする．とくに$C^0$級多様体は位相多様体とも呼ぶ．</p>
-<h3 id="定義の解釈-1"><a href="#定義の解釈-1" class="headerlink" title="定義の解釈"></a>定義の解釈</h3><p>多様体の大雑把なイメージは古代人にとっての地球（の表面）であるとのこと．自分がいる周辺は（つまり局所的には）広がりを持った空間として認識できるが，全体としてどうなっているのか把握できない存在である．そのイメージをもって定義を解釈していく．</p>
-<h4 id="＜定義１について＞"><a href="#＜定義１について＞" class="headerlink" title="＜定義１について＞"></a><strong>＜定義１について＞</strong></h4><p>1.　$M$を位相空間とする．</p>
-<p>$M$はすでに存在が確定した位相空間だということである．われわれにとっての「宇宙」や「地球」のように，はっきりとそこに存在している．数学的に言えば，<script type="math/tex">\mathbb{R}^n</script>自身やその中の単位球面のように．集合として完全に特定できなくてはならない．<br>↑このように記述があるが，いまいちよくわからない．とにかく$M$の部分集合について位相空間の性質があるってことだけ把握しておけばよいのか？</p>
-<h4 id="＜定義２について＞"><a href="#＜定義２について＞" class="headerlink" title="＜定義２について＞"></a><strong>＜定義２について＞</strong></h4><p>2.　$n$を自然数とする．添え字集合$\Lambda$をもつ写像の族<script type="math/tex">A=\{\phi_\lambda:U_\lambda\rightarrow\mathbb{R}^n\}_{\lambda\in\Lambda}</script>が位相空間$M$の地図帳(atlas)であるとは，$A$が以下を満たすとき：<br>(a)　<script type="math/tex">\{U_\lambda\}_{\lambda\in\Lambda}</script>はそれぞれ$M$の開被覆である．すなわち<script type="math/tex">U_\lambda</script>はそれぞれ$M$の開集合であり，かつ<script type="math/tex">\bigcup_{\lambda\in\Lambda} U_{\lambda} = M</script>が成り立つ．<br>(b)　すべての<script type="math/tex">\lambda\in\Lambda</script>について，<script type="math/tex">\phi_\lambda:U_\lambda\rightarrow\phi_\lambda(U_\lambda)\subset\mathbb{R}^n</script>は同相写像．この<script type="math/tex">\phi_\lambda</script>を<script type="math/tex">U_\lambda</script>上の局所座標(local chart,local coordinate)と呼ぶ．</p>
-<p>自分が地表にいるとき，あたりを見渡しても遠くに地平線が見えるだけなので，地球が平面であると錯覚してしまう．あたりを見渡すだけでなく地球の隅々まで歩きつくし，観測することで大局的な形状である球面を認識できるのである．この定義は「歩きつくす」ことを済ませた後の，世界地図（あるいは正確に地図帳）$A$が与えられている状態のことを言っている．</p>
-<p>・(a)について<br>ここは特に「基礎のキソ」の例えがわかりやすい．$M$が未知の惑星だとして，そこに集合<script type="math/tex">\Lambda</script>（たとえば<script type="math/tex">\Lambda=\{1,2,3,\ldots\}</script>）で番号付けされた多数の観測用衛星<script type="math/tex">\{\phi_\lambda\}_{\lambda\in\Lambda}</script>を打ち上げ，惑星$M$の上空に張りつかせる．衛星はそれぞれ決まった領域<script type="math/tex">U_\lambda\subset M</script>の情報を<script type="math/tex">\phi_\lambda(U_\lambda) = \mathbb{U}_\lambda</script>として，つまり<script type="math/tex">\phi_\lambda</script>というカメラを通じて$\mathbb{R}^2$（今は$M$の地表という2次元を観測することにしている）という媒体に記録する．「世界地図」を作るためには惑星の全体を観測する必要があるから，<script type="math/tex">U_\lambda</script>の和集合は$M$でなくてはならない．これが開被覆が要請している条件である．</p>
-<p>・(b)について<br>観測衛星の観測結果を記録する媒体として$\mathbb{R}^n$（観測対象が地表だった先程とは異なりもっと一般的な話をしている？）のコピーを観測衛星の数$\Lambda$だけ用意し，それぞれの通し番号<script type="math/tex">\lambda\in\Lambda</script>に応じた添え字をつけて<script type="math/tex">{\mathbb{R}_\lambda}^n</script>と名前を付ける．これを束ねたのが地図帳である．さらに条件(b)によって<script type="math/tex">{\mathbb{R}_\lambda}^n</script>（地図帳の$\lambda$ページ目）には衛星<script type="math/tex">\phi_\lambda</script>の記録した像<script type="math/tex">\mathbb{U}_\lambda</script>が記録される．この観測と記録が一体化されたシステムが，定義における地図帳$A$の実体である．</p>
-<h4 id="＜定義３について＞"><a href="#＜定義３について＞" class="headerlink" title="＜定義３について＞"></a><strong>＜定義３について＞</strong></h4><p>3.　位相空間$M$とその地図帳$A$とのペア$(M,A)$を多様体あるいは$n$次元多様体と呼ぶ．地図帳の存在が暗に仮定されているときは$M$自信を単に多様体$M$と呼ぶ．</p>
-<p>定義２でイメージした地図帳$A$を備えた位相空間$M$を多様体と呼ぶ．厳密には空間と地図帳のセットを多様体というが単に空間のことを指して多様体と言う事も多いし，今後は断りがなければそうすることにする．</p>
-<h4 id="＜定義４について＞"><a href="#＜定義４について＞" class="headerlink" title="＜定義４について＞"></a><strong>＜定義４について＞</strong></h4><p>4.　<script type="math/tex">U_\lambda\cap U_\mu \neq \emptyset</script>のとき，写像</p>
-<script type="math/tex; mode=display">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>は同相写像であるが，これがすべての<script type="math/tex">\mu,\lambda\in\Lambda</script>について<script type="math/tex">C^\alpha</script>級であるとき，$M$を<script type="math/tex">C^\alpha</script>級多様体と呼ぶ．ただし<script type="math/tex">0\leq\alpha\leq\infty</script>もしくは<script type="math/tex">\alpha=\omega</script>（解析的関数）とする．とくに$C^0$級多様体は位相多様体とも呼ぶ．</p>
-<p>これも基礎のキソの例が分かりやすい．<br>日本の道路地図を開いて青森から鹿児島まで車で移動したいとする．スタート地点の青森のページを開き，そこから南下していくとすぐにそのページからはみ出してしまう．だから次のページを開いて自分の位置をまた探すわけだが，ふつうは道路地図の各ページは上下左右の端が他のページのそれと重複するようになっていて，その重複部分を通じて他のページとのつながりを読み取ることができ，その結果地図上の自分の位置もわかる．<br>多様体の地図帳にもページ同士のつながりというものがあり，重要な役割を果たす．地図帳$A$のある一つのページだけ見ていても多様体$M$の全貌は分からないので，自分たちでページ同士を切り貼りして全体を追う必要がある．このページを切り貼りするとあのページの横にあるはずだとか，そういったつながりの具合を規定するのがこの定義の条件</p>
-<script type="math/tex; mode=display">\phi_\mu\circ\phi_{\lambda}^{-1}:\phi_\lambda(U_\lambda\cap U_\mu)\rightarrow\phi_\mu(U_\lambda\cap U_\mu)</script><p>である．</p>
-<p><script type="math/tex">U_\lambda\cap U_\mu</script>は道路地図でいう重複している部分である．このエリアを衛星<script type="math/tex">\phi_\lambda</script>で観測して地図（$\lambda$ページ目）に載せるとき，そこが衛星<script type="math/tex">\phi_\mu</script>で観測したときの地図($\mu$ページ目)のどこに相当するかを示している．その対応関係を<script type="math/tex">\Phi_{\lambda\mu} := \phi_\mu\circ\phi_{\lambda}^{-1}</script>と書くことにしている．<br>ちなみに記号「$\circ$」は合成関数を示す．合成関数は右の写像から順に解釈していく．<br>まず<script type="math/tex">{\phi_\lambda}^{-1}</script>で観測エリア<script type="math/tex">U_\lambda</script>を「再現」して，そのエリアを衛星<script type="math/tex">\phi_\mu</script>で観測する．このとき<script type="math/tex">\phi_\mu</script>が観測するのは元々自分のエリアじゃないので，自分のエリアと被っている一部分だけを観測することになる．その「一部分」にあたるのが<script type="math/tex">U_\lambda\cap U_\mu</script>である．</p>
-<p>$C^\alpha$級の話は微分に着目しているわけだが，また後で触れることにする．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-位相空間とは" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-12T10:33:54.000Z"><a href="/2020/02/12/位相空間とは/">2020-02-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/12/位相空間とは/">位相空間とは</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>基礎のキソ3章で位相空間について記されているのでそれを読んで整理する．<br>内容に間違いがあるかもしれないので，適宜見直しや修正をしていきたい．</p>
-<h2 id="開集合系・位相の直感的解釈"><a href="#開集合系・位相の直感的解釈" class="headerlink" title="開集合系・位相の直感的解釈"></a>開集合系・位相の直感的解釈</h2><p>今回の主役である位相空間のイメージをつくる．</p>
-<h3 id="集合について（準備）"><a href="#集合について（準備）" class="headerlink" title="集合について（準備）"></a>集合について（準備）</h3><p>整数$n\in\mathbb{Z}$に対し，$\mathbb{R}^2$上の半径$1$，中心座標が$(n,0)$の開円盤を</p>
-<script type="math/tex; mode=display">B_n := \{(x,y)\in\mathbb{R}^2:(x-n)^2+y^2<1\}</script><p>とおく．$B_n$はある円の内側の座標の集合である．このとき，$n$の値によって$B_n$の元が変わる（取り得る座標が異なるため）．<br>それらすべてをまとめて表現するため，「無限個の$n$の中から具体的な$n$を一つ定めたときの$B_n$」を全て合わせたものを</p>
-<script type="math/tex; mode=display">\bigcup_{n\in\mathbb{Z}}B_n = \cdots\cup B_{-2}\cup B_{-1}\cup B_{0}\cup B_1\cup B_2\cdots</script><p>と表す．この集合を和集合という．また，この式の左辺の$\mathbb{Z}$にあたる集合を添え字集合という．</p>
-<h3 id="位相空間の定義"><a href="#位相空間の定義" class="headerlink" title="位相空間の定義"></a>位相空間の定義</h3><p>集合$S$に対し部分集合の族(部分集合の集合)$O$が$S$の開集合系であるとは，次の三つの条件<br>1.　<script type="math/tex">S\in O</script>かつ<script type="math/tex">\emptyset\in O</script><br>2.　<script type="math/tex">m\in\mathbb{N},O_1,\ldots,O_m \Longrightarrow O_1\cap\cdots O_m\in O</script><br>3.　任意の集合$\Lambda$に対し，各元$\lambda\in\Lambda$から$O$の元<script type="math/tex">O_\lambda</script>への対応を考えたとき<script type="math/tex">\bigcup_{\lambda\in\Lambda} O_{\lambda} \in O</script></p>
-<p>を満たすときをいう．<br>集合$S$に開集合系$O$が与えられているとき「$S$には$O$による位相（構造）が入る」といい，$O$の元を開集合とよぶ．このときの$S$を<strong>位相空間</strong>という．</p>
-<h3 id="条件の翻訳"><a href="#条件の翻訳" class="headerlink" title="条件の翻訳"></a>条件の翻訳</h3><p>位相空間が満たすべき三つの条件を日本語に訳す．<br>条件１→もとの集合$S$自体も部分集合の集合（族）$O$に属するグループ（つまり$S$のとある部分集合のこと）である．空集合$\emptyset$も$O$に属するグループとみなす．<br>条件２→$O$に属する有限個のグループに対し，それらの共通部分（積集合）も$O$に属するグループである<br>条件３→$O$に属するグループの有限個あるいは無限個の和集合も$O$に属するグループである．<br>以上より，「位相」というのは「グループ分け」の感覚を定式化したものと捉えられる．練習問題を解くとより一層イメージが明確になる．</p>
-<h3 id="練習問題１"><a href="#練習問題１" class="headerlink" title="練習問題１"></a>練習問題１</h3><p>$S = $ <script type="math/tex">\{英，仏，米\}</script> に対して以下のように部分集合の族$O$を定めるとき，$(S,O)$が位相空間となっているのはどれか？<br>Ⅰ.　<script type="math/tex">O=\{\emptyset,\{英，仏\},\{仏，米\},S\}</script><br>Ⅱ.　<script type="math/tex">O=\{\emptyset,\{英\},\{仏\},\{米\},S\}</script><br>Ⅲ.　<script type="math/tex">O=\{\emptyset,\{米\},\{英，米\},\{米，仏\},S\}</script></p>
-<p>三つの条件それぞれを満たしているかどうか調べる．<br>条件１→いずれも満たしている．<br>条件２→Ⅰは満たしていない（<script type="math/tex">\{英，仏\}\cap\{仏，米\}=\{仏\}</script>だが，$O$に<script type="math/tex">\{仏\}</script>は含まれていない）．Ⅱ，Ⅲは満たしている．<br>条件３→Ⅱは満たしていない（例えば<script type="math/tex">\{英\}，\{仏\}</script>の和集合<script type="math/tex">\{英，仏\}</script>がない）．Ⅰ，Ⅲは満たしている．<br>以上より，位相空間となっているのはⅢである．</p>
-<h2 id="コメント"><a href="#コメント" class="headerlink" title="コメント"></a>コメント</h2><p>基礎のキソ3章ではこの後に「位相空間としてのユークリッド空間」について述べられているが，この章を整理するのはここまでにしてとりあえず次の章をまとめることにする．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-双対空間をなんとなく理解する" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-11T06:05:21.000Z"><a href="/2020/02/11/双対空間をなんとなく理解する/">2020-02-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/11/双対空間をなんとなく理解する/">双対空間をなんとなく理解する</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下のサイトを読んでまとめる．<br>Tomoki Kawahira：<a href="http://www.math.titech.ac.jp/~kawahira/courses/kiso.html" target="_blank" rel="noopener">多様体の基礎のキソ</a></p>
-<p>自分の説明が不十分だったり解釈に間違いがあったりするかもしれないので，適宜見直しや修正をしていきたい．</p>
-<h2 id="線形汎関数"><a href="#線形汎関数" class="headerlink" title="線形汎関数"></a>線形汎関数</h2><p>線形写像$f:\mathbb{R}^n\to\mathbb{R}$を$\mathbb{R}^n$の<strong>線形汎関数</strong>と呼ぶ．ベクトルを入力としたときにスカラーを出力する関数のことである．</p>
-<h2 id="双対空間"><a href="#双対空間" class="headerlink" title="双対空間"></a>双対空間</h2><p>例えばベクトルの内積を考える．$n$次元ベクトル$\boldsymbol{a}$と$\boldsymbol{b}$について，$f_a$と$f_b$が</p>
-<script type="math/tex; mode=display">f_a(\boldsymbol{x}) = \boldsymbol{a}\cdot\boldsymbol{x},\boldsymbol{x}\in\mathbb{R}^n</script><script type="math/tex; mode=display">f_b(\boldsymbol{x}) = \boldsymbol{b}\cdot\boldsymbol{x},\boldsymbol{x}\in\mathbb{R}^n</script><p>という関数のとき，$f_a$と$f_b$はいずれも線形汎関数である．つまり，$\mathbb{R}^n$の線形汎関数の集合$(\mathbb{R}^n)^{＊}$というものを考えたとき，$f_a$と$f_b$はいずれも集合$(\mathbb{R}^n)^{＊}$の元である.<br>また，ベクトルの内積について，任意の$\alpha,\beta\in\mathbb{R}$に対し</p>
-<script type="math/tex; mode=display">(\alpha\boldsymbol{a}+\beta\boldsymbol{b})\cdot\boldsymbol{x} = \alpha(\boldsymbol{a}\cdot\boldsymbol{x}) + \beta(\boldsymbol{b}\cdot\boldsymbol{x})</script><p>という関係が成り立つ（ベクトルの内積なので当然）．<br>これは，集合$(\mathbb{R}^n)^{＊}$の中で全ての線形汎関数が満たす関係式</p>
-<script type="math/tex; mode=display">f_{\alpha a + \beta b}(\boldsymbol{x}) = \alpha f_a(\boldsymbol{x}) + \beta f_b(\boldsymbol{x})</script><p>である．この関係式が満たす性質（和とスカラー倍）は線形空間のものだから，集合$(\mathbb{R}^n)^{＊}$が線形空間であることが分かる．この線形空間$(\mathbb{R}^n)^{＊}$を$\mathbb{R}^n$の<strong>双対空間</strong>と呼ぶ．</p>
-<h3 id="双対空間の定義"><a href="#双対空間の定義" class="headerlink" title="双対空間の定義"></a>双対空間の定義</h3><p>任意の線形汎関数$f,g\in(\mathbb{R}^n)^{＊}$，定数$\alpha\in\mathbb{R}$について</p>
-<ul>
-<li>和 : $f+g\in(\mathbb{R}^n)^{＊}$を$(f+g)(\boldsymbol{x}):= f(\boldsymbol{x}) + g(\boldsymbol{x}),\boldsymbol{x}\in\mathbb{R}^n$</li>
-<li>スカラー倍 : $\alpha f\in(\mathbb{R}^n)^{＊}$を$(\alpha f)(\boldsymbol{x}) := \alpha f(\boldsymbol{x}),\boldsymbol{x}\in\mathbb{R}^n$</li>
-</ul>
-<p>と定義する．零ベクトルに対応するのは$0(\boldsymbol{x})=0$となる線形汎関数$0$である．</p>
-<h2 id="双対空間の性質（双対性）"><a href="#双対空間の性質（双対性）" class="headerlink" title="双対空間の性質（双対性）"></a>双対空間の性質（双対性）</h2><p>$\mathbb{R}^n$と$(\mathbb{R}^n)^{＊}$の関係をみてみる．<br>①線形汎関数$f_a\in(\mathbb{R}^n)^{＊}$を自由に選べて，入力するベクトル$\boldsymbol{x}\in\mathbb{R}^n$が不明なときを考える．求まる内積の値は$\boldsymbol{x}$に関して線形であるという性質があるから，基底となる$n$個の線形汎関数に対して同じ$\boldsymbol{x}$を入力したときに求まる$n$個の内積値を見ることで入力した$\boldsymbol{x}$が何なのかを当てることができる．<br>②入力するベクトル$\boldsymbol{x}_0$を自由に選べて，線形汎関数$f$が不明なときを考える．求まる内積の値は$f$に関して線形であるという性質があるから，基底となる$n$個の$n$次元ベクトル（こっちは想像しやすい．単位ベクトルなど）を入力したときに求まる内積値を見ることでどの関数$f$に$\boldsymbol{x}_0$を入力したのかを当てることができる（$f_a$の$\boldsymbol{a}$の具体的な値を求められる）．</p>
-<p>以上の対称的な関係が成り立っていることから，$x$と$f$には互いが互いを調べられる機能が備わっている事が分かる．この性質を<strong>双対性</strong>という．</p>
-<h2 id="more-information"><a href="#more-information" class="headerlink" title="more information"></a>more information</h2><p>以上の議論を一般化したものが「多様体の基礎のキソ」の1.6.6節に載っているので必要に応じてそちらを参考にする．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-数列に対する操作その１（部分和・累積和，LIS）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-10T04:09:27.000Z"><a href="/2020/02/10/数列に対する操作その１（部分和・累積和，LIS）/">2020-02-10</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/10/数列に対する操作その１（部分和・累積和，LIS）/">数列に対する操作その１（部分和・累積和，LIS）</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>競プロではしばしば与えられた数列に対して何かしらの操作を加える問題が出題される．今回はそのうちの典型問題と解法を抑える．</p>
-<h2 id="累積和を利用した部分和の計算"><a href="#累積和を利用した部分和の計算" class="headerlink" title="累積和を利用した部分和の計算"></a>累積和を利用した部分和の計算</h2><p>数列の一定範囲の値を足し合わせたものを部分和という．部分和を求めるために必要な情報が累積和と呼ばれる値である．累積和$S_i$は数列の値である$a_0$から$a_i$までの値を全て足し合わせたものである．<br>例えば長さ5の数列に対して範囲3の部分和を求めたいとする．累積和$S_0$から$S_4$は</p>
-<script type="math/tex; mode=display">S_0 = a_0</script><script type="math/tex; mode=display">S_1 = a_0+a_1</script><script type="math/tex; mode=display">S_2 = a_0+a_1+a_2</script><script type="math/tex; mode=display">S_3 = a_0+a_1+a_2+a_3</script><script type="math/tex; mode=display">S_4 = a_0+a_1+a_2+a_3+a_4</script><p>であり，求めたい長さ3の部分和$P_0$，$P_1$，$P_2$は</p>
-<script type="math/tex; mode=display">P_0 = a_0+a_1+a_2</script><script type="math/tex; mode=display">P_1 = a_1+a_2+a_3</script><script type="math/tex; mode=display">P_2 = a_2+a_3+a_4</script><p>である．<br>上の$S$や$P$に関する式を眺めると，求めたい部分和$P_0$，$P_1$，$P_2$について</p>
-<script type="math/tex; mode=display">P_0 = a_0+a_1+a_2 = S_2</script><script type="math/tex; mode=display">P_1 = a_1+a_2+a_3 = (a_0+a_1+a_2+a_3)-(a_0) = S_3-S_0</script><script type="math/tex; mode=display">P_2 = a_2+a_3+a_4 = (a_0+a_1+a_2+a_3+a_4) - (a_0+a_1) = S_4-S_1</script><p>の関係が成り立っていることがわかる．これを元の数列の長さ$N$や部分和を求めたい範囲$K$に応じて実装すればよい．<br>以下の問題は基礎中の基礎．特に難しい応用を考える必要もなく，求めるべきは部分和そのもの．<br><a href="https://atcoder.jp/contests/abc037/tasks/abc037_c" target="_blank" rel="noopener">AtCoder ABC037 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">N, K = map(int,input().split())</span><br><span class="line">A = list(map(int,input().split()))</span><br><span class="line">cumsum = []<span class="comment">#累積和を保存するリスト．</span></span><br><span class="line">cumsum.append(A[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N<span class="number">-1</span>):<span class="comment">#累積和の計算．部分和を求めるための前処理．</span></span><br><span class="line">    cumsum.append(A[i+<span class="number">1</span>]+cumsum[i])</span><br><span class="line">ans_sum = []<span class="comment">#部分和を保存するリスト</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(N-K+<span class="number">1</span>):<span class="comment">#部分和の計算</span></span><br><span class="line">    <span class="keyword">if</span> j == <span class="number">0</span>:<span class="comment">#一個目の要素を含む範囲の時は累積和そのものの値</span></span><br><span class="line">        ans_sum.append(cumsum[K<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">else</span>:<span class="comment">#それ以外</span></span><br><span class="line">        ans_sum.append(cumsum[j+K<span class="number">-1</span>]-cumsum[j<span class="number">-1</span>])</span><br><span class="line">print(sum(ans_sum))</span><br></pre></td></tr></table></figure></p>
-<h2 id="LIS問題"><a href="#LIS問題" class="headerlink" title="LIS問題"></a>LIS問題</h2><p>与えられた数列$a_0,a_1,…,a_N$に対し，$0 \leq j &lt; i \leq N$を満たす整数について$a_j &lt; a_i$を満たす部分の内の最長のものを最長増加部分列(LIS:Longest Increasing Subsequence)という．要はどの隣接する2つの要素を見たとしても必ず右にある要素の値の方が大きい数列のことである．<br>よくわからない場合は問題を見た方が早い．<br><a href="https://chokudai_s001.contest.atcoder.jp/tasks/chokudai_S001_h" target="_blank" rel="noopener">AtCoder ChokudaiSpeedrun001 H問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">N = int(input())</span><br><span class="line">a = list(map(int,input().split()))</span><br><span class="line">LIS = [a[<span class="number">0</span>]]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">    <span class="keyword">if</span> a[i] &gt; LIS[<span class="number">-1</span>]:<span class="comment">#LISの右端の要素より大きいとき</span></span><br><span class="line">        LIS.append(a[i])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        LIS[bisect.bisect_left(LIS,a[i])] = a[i]<span class="comment">#bisect_leftで「a[i]より大きい値の内の最小値」の位置</span></span><br><span class="line">print(len(LIS))</span><br></pre></td></tr></table></figure><br>上のコードでやっているのは，新たに用意した空の（最終的に単調増加にしたい）リストLISに対して元の数列の要素$a_0,a_1,…,a_N$の一つひとつをLISの適切な位置に配置しているということである．<br>初めに$a_0$をLISに追加して初期化しておき，その後は各要素$a_1,a_2,…a_N$の値とLISの末端の値”LIS[-1]”の大小関係によって処理を考える．<br>①$a_i&gt;$ LIS[-1]のとき，$a_i$をそのままappendする．<br>②そうでないとき，LISの適切な要素を$a_i$で上書きする．上書きする要素の位置は「LISに含まれる『$a_i$より大きい値』の中で最小の要素」の場所である．その位置を（速く）求めるのに二分探索をする必要があるが，Python3ならbisectというモジュールを用いるだけでよい．<br>本当にこの方法で最長の単調増加数列が求まるのか疑問に思うかもしれないが，外部サイトにて証明されている．LISのアルゴリズムの説明そのものもこちらの記事の方が分かりやすい．<br><a href="https://qiita.com/python_walker/items/d1e2be789f6e7a0851e5" target="_blank" rel="noopener">Qiita 最長増加部分列(LIS)の長さを求める</a></p>
-<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc154/tasks/abc154_d" target="_blank" rel="noopener">AtCoder ABC154 D問題</a><br><a href="https://atcoder.jp/contests/arc098/tasks/arc098_a" target="_blank" rel="noopener">AtCoder ABC098 C問題</a><br>累積和の考え方を使わなきゃならない問題の見極めが出来るようになりたい．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-二分探索で要領よく探す" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-08T09:59:18.000Z"><a href="/2020/02/08/二分探索で要領よく探す/">2020-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/08/二分探索で要領よく探す/">二分探索で要領よく探す</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>ソートされた配列の中から目当ての値を探し出す方法の一つに二分探索（Binary Search）という手法がある．探索範囲を二分割しながら求めたい値が存在する領域を狭めつつ，最終的に一つに特定する方法である．</p>
-<h2 id="具体例"><a href="#具体例" class="headerlink" title="具体例"></a>具体例</h2><p>例えば<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">101</span>)]</span><br></pre></td></tr></table></figure><br>という配列の中で左から順に探索する線形探索を適用してみる．3という値がどこにあるか探したいときは順に1,2,3と探していけばすぐ見つかるが，90という値を探したいときは1,2,3,…,89,90と90個もの領域を探索していく必要がある．後半にある値を求めたい場合はこれだと効率が悪い．そこで二分探索を適用する．<br>二分探索は探索領域を中央で二分割することを繰り返す手法である．90という値を探すとき，「1~100の一つの領域」を「1~50,51~100の二つの領域」に分割し，その内の90が所属する方を次の探索領域とする．このとき90がどちらに所属するかを判断するために，配列があらかじめソートされている必要がある．分割基準の50 &lt; 90なので，90は後半の領域に含まれると判断できるのである．これを領域内に含まれる数が90だけになるまで繰り返す．<br>二分探索はソートされている配列にのみ適用できるという制約があるが，一から全ての値を見ながら探していく線形探索（Linear Search）と比べて圧倒的に速い．配列のサイズが$N$のときの計算量は線形探索が$O(N)$,二分探索が$O(logN)$である．</p>
-<h2 id="実装"><a href="#実装" class="headerlink" title="実装"></a>実装</h2><p>以下の問題を例題として実装を考える．<br><a href="https://atcoder.jp/contests/abc146/tasks/abc146_c" target="_blank" rel="noopener">AtCoder ABC146 C問題</a><br>実装上のポイントは「探索領域の端っこの管理」である．例えば，探索領域の左端の値をleft，右端の値をrightという変数で管理することにする．一反復内では探索領域は右か左のどちらか一方向のみから狭くなるので，求めたい値が二分割の内どっちに所属しているかでleftあるいはrightのどちらかを更新することになる．leftとrightの位置関係が入れ替わったときを探索の終了の合図とする．<br>なお，以下の実装は「分割の基準値」について処理した後に「分割の基準値未満の領域」と「分割の基準値より大きい領域」の二つに分けている．上の例だと「基準値50」を処理した後に「1~49の領域」と「51~100の領域」に分けていることになる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">A, B, money = map(int,input().split())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">afford</span><span class="params">(N)</span>:</span><span class="comment">#その整数が買えるか否かを返すbool関数</span></span><br><span class="line">    p = A*N+B*len(str(N))</span><br><span class="line">    <span class="keyword">if</span> p &lt;= money:<span class="comment">#その整数が買えるなら</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索領域の初期値</span></span><br><span class="line">left = <span class="number">0</span></span><br><span class="line">right = <span class="number">10</span>**<span class="number">9</span></span><br><span class="line"><span class="comment">#答えの初期値</span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#二分探索</span></span><br><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">    middle = left+(right-left)//<span class="number">2</span><span class="comment">#探索領域を二分割する．分割の基準となる値をmiddleに代入．</span></span><br><span class="line">    <span class="keyword">if</span> afford(middle):<span class="comment">#middleの値で買えるなら</span></span><br><span class="line">        ans = middle<span class="comment">#とりあえずmiddleが買える中での最高値ってことにする</span></span><br><span class="line">        left = middle+<span class="number">1</span><span class="comment">#もっと大きな値を買えないかを調べるため，探索領域の左端を更新</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = middle<span class="number">-1</span><span class="comment">#もっと小さな値を調べるため，探索領域の右端を更新</span></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure><br>ちなみにこの問題では整数$N$に対して値段が単調増加であるため二分探索を適用できた（大事なこと）．</p>
-<h2 id="Pythonのbisectモジュール"><a href="#Pythonのbisectモジュール" class="headerlink" title="Pythonのbisectモジュール"></a>Pythonのbisectモジュール</h2><p>Pythonで二分探索を使うときによく使われるモジュールがbisectである．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>]<span class="comment">#昇順にソートされたリスト</span></span><br></pre></td></tr></table></figure><br>bisect_leftを使うと昇順リストAに含まれていない値$x$がどこに入るかを教えてくれる.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(A,<span class="number">3</span>)<span class="comment">#x=3のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span></span><br></pre></td></tr></table></figure><br>また，Aに含まれている値$y$を指定するとその値が最初に出てくる場所を教えてくれる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(A,<span class="number">2</span>)<span class="comment">#y=2のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span></span><br></pre></td></tr></table></figure><br>bisect_rightを使うと値$z$以下のAの要素数を教えてくれる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_right(A,<span class="number">4</span>)<span class="comment">#z=4のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_d" target="_blank" rel="noopener">AtCoder ABC143 D問題</a><br>まず二分探索の問題に落とし込む必要がある．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-深さ優先探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-07T02:07:06.000Z"><a href="/2020/02/07/深さ優先探索/">2020-02-07</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/07/深さ優先探索/">深さ優先探索・幅優先探索</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>深さ優先探索(DFS:Depth-First Search)と幅優先探索(BFS:Breadth-First Search)はいずれも全探索手法の一つである．<br>これらの手法について調べると，しばしば迷路の進み方を例題として解説されている．迷路で分かれ道に出会ったときに一つの道を選んで行けるところまで行くのが深さ優先探索で，全ての道について一歩ずつ満遍なく進んでいくのが幅優先探索である．<br>これらの探索手法を用いるために，とある工夫されたデータ構造を知っておく必要がある．いわゆるキュー(queue)とスタック(stack)である．</p>
-<h2 id="キューとスタック"><a href="#キューとスタック" class="headerlink" title="キューとスタック"></a>キューとスタック</h2><h3 id="キュー"><a href="#キュー" class="headerlink" title="キュー"></a>キュー</h3><p>あるリストに対して先に加えられたデータから先に取り出す（FIFO:First In First Out）操作を行うとき，そのリストをキュー(queue)と呼ぶ．<br>キューにデータを加えることをエンキュー(enqueue)，取り出すことをデキュー(dequeue)と呼ぶ．</p>
-<h3 id="スタック"><a href="#スタック" class="headerlink" title="スタック"></a>スタック</h3><p>あるリストに対して最後に加えられたデータから優先して取り出す(LIFO:Last In First Out)操作を行うとき，そのリストをスタック(stack)と呼ぶ．<br>スタックにデータを加えることをプッシュ(push)，取り出すことをポップ(pop)と呼ぶ．</p>
-<h3 id="Pythonのdequeモジュール"><a href="#Pythonのdequeモジュール" class="headerlink" title="Pythonのdequeモジュール"></a>Pythonのdequeモジュール</h3><p>Pythonでキューとスタックを扱うときに便利なモジュールがdequeである．<br>これを用いて通常のリストよりも要素の取り出しと追加を効率よく行えるdequeオブジェクトを生成する．<br>ただし，与えられた（両端以外の）インデックスに対応する要素を取り出すことに関しては通常のリストの方が優れているらしいので，端っこ以外の値に頻繁にアクセスするなら普通のリストの方が良いらしい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])<span class="comment">#dequeオブジェクトの生成</span></span><br></pre></td></tr></table></figure><br>キューとして扱う場合はd.popleft()で取り出し，d.append()で追加する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">d.popleft()<span class="comment">#1が取り出される</span></span><br><span class="line">d.append(<span class="number">6</span>)<span class="comment">#右端に6が追加される</span></span><br></pre></td></tr></table></figure><br>スタックとして扱う場合はd.pop()で取り出し，d.append()で追加する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">d.pop()<span class="comment">#5が取り出される</span></span><br><span class="line">d.append(<span class="number">6</span>)<span class="comment">#右端に6が追加される</span></span><br></pre></td></tr></table></figure><br>他にも便利な機能があるので調べる価値あり．</p>
-<h2 id="深さ優先探索"><a href="#深さ優先探索" class="headerlink" title="深さ優先探索"></a>深さ優先探索</h2><p>深さ優先探索に必要なデータ構造はスタックの方．新たな探索地点が追加されたら，そこを優先的に調べる（どんどん奥に進んでいく）．<br><a href="https://atcoder.jp/contests/atc001/tasks/dfs_a" target="_blank" rel="noopener">AtCoder ATC001 A問題</a><br>AtCoder公式の解説が問題ページに掲載されているのでそっちを見た方がいい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#入力の受け取り</span></span><br><span class="line">H, W = map(int,input().split())</span><br><span class="line">maze = [list(input()) <span class="keyword">for</span> _ <span class="keyword">in</span> range(H)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#スタート地点の決定（多分ほんとは入力を受け取る段階でやったほうがいい）</span></span><br><span class="line">start = <span class="literal">None</span><span class="comment">#スタート地点の位置を入れる変数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(H):<span class="comment">#スタート地点の探索</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(W):</span><br><span class="line">        <span class="keyword">if</span> maze[i][j] == <span class="string">"s"</span>:</span><br><span class="line">            start = (i, j)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> start:<span class="comment">#startに値が入っているなら</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索の準備</span></span><br><span class="line">stack = deque([start])<span class="comment">#探索の分岐を保存するためのスタック</span></span><br><span class="line">goal = <span class="literal">False</span><span class="comment">#ゴールに到達したかを判断するフラグ</span></span><br><span class="line">dx = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>]<span class="comment">#自分のx座標を動かすための値</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="comment">#自分のy座標を動かすための値</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索</span></span><br><span class="line"><span class="keyword">while</span> stack:<span class="comment">#１ループの終了時にstackが空でなければ</span></span><br><span class="line">    y, x = stack.pop()<span class="comment">#現在の座標を取得</span></span><br><span class="line">    <span class="keyword">if</span> maze[y][x] == <span class="string">"g"</span>:<span class="comment">#ゴールだったら探索を終了</span></span><br><span class="line">        print(<span class="string">"Yes"</span>)</span><br><span class="line">        goal = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">for</span> dxi, dyi <span class="keyword">in</span> zip(dx, dy):<span class="comment">#zip関数：dx,dyのインデックスが同じ要素を同時に代入</span></span><br><span class="line">        <span class="comment">#現在の座標の上下左右のマスを見て，行けるところがないか調べる</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span>&lt;=y+dyi&lt;H <span class="keyword">and</span> <span class="number">0</span>&lt;=x+dxi&lt;W) <span class="keyword">or</span> maze[y+dyi][x+dxi] == <span class="string">"#"</span>:<span class="comment">#次の行き先が「街の中じゃない」もしくは「壁」</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append((y+dyi, x+dxi))<span class="comment">#次に行くところの座標をstackに追加</span></span><br><span class="line">    maze[y][x] = <span class="string">"#"</span><span class="comment">#今立っているところを壁扱いする</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#行けるところのすべてを探索した結果ゴールが無かったとき</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> goal:</span><br><span class="line">    print(<span class="string">"No"</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="幅優先探索"><a href="#幅優先探索" class="headerlink" title="幅優先探索"></a>幅優先探索</h2><p>幅優先探索に必要なデータ構造はキューの方．新たな探索地点が追加されたとしてもそれはしばらく置いといて古いものから処理していく．<br><a href="https://atcoder.jp/contests/abc007/tasks/abc007_3" target="_blank" rel="noopener">AtCoder ABC007 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#入力の受け取り</span></span><br><span class="line">R,C = map(int,input().split())</span><br><span class="line">sy,sx = map(int,input().split())</span><br><span class="line">gy,gx = map(int,input().split())</span><br><span class="line">maze = [list(input()) <span class="keyword">for</span> _ <span class="keyword">in</span> range(R)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#探索の準備</span></span><br><span class="line">goal = <span class="literal">False</span> <span class="comment">#探索終了のフラグ </span></span><br><span class="line">maze[gy<span class="number">-1</span>][gx<span class="number">-1</span>] = <span class="string">"g"</span><span class="comment">#goalの設定</span></span><br><span class="line"></span><br><span class="line">queue = deque([(sy<span class="number">-1</span>,sx<span class="number">-1</span>)]) <span class="comment">#キューの初期値としてstartの座標を入れる</span></span><br><span class="line">distance = deque([<span class="number">0</span>]) <span class="comment">#各座標ごとのstartからの距離を管理</span></span><br><span class="line"></span><br><span class="line">maze[sy<span class="number">-1</span>][sx<span class="number">-1</span>] = <span class="string">"#"</span> <span class="comment">#スタート地点を壁とする．これを忘れると無駄な探索が一つ増え，問題によってはWrongAnswerになったりする．</span></span><br><span class="line"></span><br><span class="line">dx = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>]<span class="comment">#自分のx座標を動かすための値</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="comment">#自分のy座標を動かすための値</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> goal:<span class="comment">#goalがFalseの間</span></span><br><span class="line">    y,x = queue.popleft() <span class="comment">#キューの要素の取り出し</span></span><br><span class="line">    past_count = distance.popleft()<span class="comment">#その探索地点のスタートからの距離</span></span><br><span class="line">    <span class="keyword">for</span> dxi,dyi <span class="keyword">in</span> zip(dx,dy):<span class="comment">#その地点の上下左右を調べる</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span>&lt;=x+dxi&lt;C <span class="keyword">and</span> <span class="number">0</span>&lt;=y+dyi&lt;R) <span class="keyword">or</span> maze[y+dyi][x+dxi] == <span class="string">"#"</span>:<span class="comment">#次の行き先が「街の中じゃない」もしくは「壁」</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> maze[y+dyi][x+dxi] == <span class="string">"g"</span>:<span class="comment">#ゴールなら探索終了</span></span><br><span class="line">                goal= <span class="literal">True</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            queue.append((y+dyi,x+dxi))<span class="comment">#行けるところの座標を追加</span></span><br><span class="line">            distance.append(past_count+<span class="number">1</span>)<span class="comment">#追加された地点のスタートからの距離</span></span><br><span class="line">            maze[y+dyi][x+dxi] = <span class="string">"#"</span> <span class="comment">#次に行くところ（探索先）を壁扱いする（他の分岐から同じ場所を調べなおす必要が無いように）</span></span><br><span class="line">print(past_count+<span class="number">1</span>)</span><br></pre></td></tr></table></figure><br>それぞれの実装で一切無駄な探索がないかと聞かれるとあまり自信がない．探索過程の挙動を確認してみるべき．</p>
-<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p>どちらを使うべきかも考える必要がある．使い分けについて検索するとある程度の指針が出てくる．<br><a href="https://atcoder.jp/contests/arc031/tasks/arc031_2" target="_blank" rel="noopener">AtCoder ARC031 B問題</a><br><a href="https://atcoder.jp/contests/abc151/tasks/abc151_d" target="_blank" rel="noopener">AtCoder ABC151 D問題</a><br><a href="https://atcoder.jp/contests/joi2011yo/tasks/joi2011yo_e" target="_blank" rel="noopener">AtCoder 第１０回日本情報オリンピック予選 E問題</a></p>
+        <h2 id="デフォルトの関数による最大・最小値の取得"><a href="#デフォルトの関数による最大・最小値の取得" class="headerlink" title="デフォルトの関数による最大・最小値の取得"></a>デフォルトの関数による最大・最小値の取得</h2><p>適当なリスト<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure><br>の最大値あるいは最小値が欲しいとき<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">max_value = max(A)</span><br><span class="line">min_value = min(A)</span><br></pre></td></tr></table></figure><br>とすれば簡単に求められる．これらの関数は特に工夫されていないので，リストのサイズが$n$のとき計算量は$O(n)$である．<br>そのため，例えば「最大値から１引いて元のリストに戻す」という操作を$m$回繰り返すとき，全体の計算量は$O(mn)$である．このように操作ごとに最大値や最小値の値を探し直さなくてはならない問題で$m$や$n$が大きいと競プロの制限時間に間に合わない場合がある．</p>
+<h2 id="ヒープキューによる最大・最小値の取得"><a href="#ヒープキューによる最大・最小値の取得" class="headerlink" title="ヒープキューによる最大・最小値の取得"></a>ヒープキューによる最大・最小値の取得</h2><p>最大値の取り出しに「ヒープキュー」を利用することを考える．ヒープキューを利用すると値の取り出しにかかる計算量は$O(logn)$で済む．<br>先の問題だと全体の計算量は$O(mlogn)$となるのでTLEを回避できるようになるかもしれない．<br>実装には木構造の理解が必要だが，Pythonではheapqモジュールが利用可能であるため使うだけなら簡単である．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">heapq.heapify(A)<span class="comment">#リストをheapqオブジェクトに変換</span></span><br></pre></td></tr></table></figure><br>最小値を取り出すためにheappopメソッドを利用する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">min_value = heapq.heappop(A)</span><br></pre></td></tr></table></figure><br>なお，最大値を直接取り出すメソッドは用意されていない．<br>最大値を取り出す際はリストの各要素に-1をかけて，それをheapqオブジェクトにし,最小値を取り出した後に符号を戻してあげればよい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = [-i <span class="keyword">for</span> i <span class="keyword">in</span> A]</span><br><span class="line">heapq.heapify(A)</span><br><span class="line">max_value = -heapq.heappop(A)</span><br></pre></td></tr></table></figure><br>なお，キューに格納した後の各要素をひとつずつ-1倍するのではなく最初から-1倍しておいたものを格納していく方がよい（という記述を見た）．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = list(map(<span class="keyword">lambda</span> x: -int(x), input().split()))<span class="comment">#入力の受け取り</span></span><br></pre></td></tr></table></figure><br>値の挿入もできる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heapq.heappush(A,<span class="number">0</span>)<span class="comment">#Aに0を挿入</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc141/tasks/abc141_d" target="_blank" rel="noopener">AtCoder ABC141 D問題</a><br>heapqの威力がよく分かる．</p>
 
       
     </div>
@@ -552,8 +137,6 @@
     <a href="/" class="alignleft prev">前の投稿</a>
   
   
-    <a href="/page/3/" class="alignright next">次の投稿</a>
-  
   <div class="clearfix"></div>
 </nav></div></div>
     <aside id="sidebar" class="alignright">
@@ -570,13 +153,11 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/サーバーサイド/">サーバーサイド</a><small>1</small></li>
+    <li><a href="/categories/サーバーサイド/">サーバーサイド</a><small>2</small></li>
   
-    <li><a href="/categories/メモ/">メモ</a><small>2</small></li>
+    <li><a href="/categories/メモ/">メモ</a><small>1</small></li>
   
-    <li><a href="/categories/数学/">数学</a><small>10</small></li>
-  
-    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>10</small></li>
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>9</small></li>
   
   </ul>
 </div>
@@ -587,17 +168,11 @@
   <h3 class="title">タグ</h3>
   <ul class="entry">
   
+    <li><a href="/tags/Maven/">Maven</a><small>1</small></li>
+  
     <li><a href="/tags/Node-js/">Node.js</a><small>1</small></li>
   
-    <li><a href="/tags/Python3/">Python3</a><small>10</small></li>
-  
-    <li><a href="/tags/テンソル/">テンソル</a><small>1</small></li>
-  
-    <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
-  
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>9</small></li>
-  
-    <li><a href="/tags/線形代数学/">線形代数学</a><small>2</small></li>
+    <li><a href="/tags/Python3/">Python3</a><small>9</small></li>
   
   </ul>
 </div>
@@ -607,7 +182,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2020 kebayashi
+  &copy; 2021 kebayashi
   
 </div>
 <div class="clearfix"></div></footer>

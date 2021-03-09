@@ -44,6 +44,44 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article id="post-【Maven】【SpringBoot】問題と解決" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2021-03-09T10:06:48.000Z"><a href="/2021/03/09/【Maven】【SpringBoot】問題と解決/">2021-03-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2021/03/09/【Maven】【SpringBoot】問題と解決/">【Maven】【SpringBoot】問題と解決法</a></h1>
+  
+
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
+      
+        <ul>
+<li>pom.xmlに新たなdependencyタグを追加したが認識されない<ul>
+<li>IDEを再起動する</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article id="post-記事投稿の流れ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
@@ -251,31 +289,29 @@
 
 
 
-  <article id="post-コード進行テンプレ" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-数列に対する操作その１（部分和・累積和，LIS）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-21T15:55:03.000Z"><a href="/2020/02/22/コード進行テンプレ/">2020-02-22</a></time>
+        <time class="dt-published" datetime="2020-02-10T04:09:27.000Z"><a href="/2020/02/10/数列に対する操作その１（部分和・累積和，LIS）/">2020-02-10</a></time>
       
       
   
-    <h1 class="title"><a href="/2020/02/22/コード進行テンプレ/">コード進行テンプレ</a></h1>
+    <h1 class="title"><a href="/2020/02/10/数列に対する操作その１（部分和・累積和，LIS）/">数列に対する操作その１（部分和・累積和，LIS）</a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <h2 id="基本の進行"><a href="#基本の進行" class="headerlink" title="基本の進行"></a>基本の進行</h2><h3 id="ダイアトニック"><a href="#ダイアトニック" class="headerlink" title="ダイアトニック"></a>ダイアトニック</h3><p>Ⅰ→Ⅵm→Ⅱm→Ⅴ（１６２５）<br>Ⅰ→Ⅴ→Ⅵm→Ⅲm→Ⅳ→Ⅰ→Ⅱm（Ⅳ）→Ⅴ（カノン進行）<br>Ⅰ→Ⅳ→Ⅴ→Ⅲm<br>Ⅰ→Ⅲm→Ⅳ→Ⅴ<br>Ⅱm→Ⅲm→Ⅳ→Ⅴ（サビ直前）<br>Ⅱm→Ⅴ→Ⅰ→Ⅵm<br>Ⅳ→Ⅴ→Ⅲm→Ⅵm（王道進行）<br>Ⅳ→Ⅴ→Ⅵm→Ⅵm<br>Ⅳ→Ⅰ→Ⅴ→Ⅵm<br>Ⅵm→Ⅳ→Ⅴ→Ⅰ（小室進行）<br>Ⅵm→Ⅳ→Ⅰ→Ⅴ（洋楽にありがち）<br>Ⅵm→Ⅰ→Ⅳ→Ⅴ<br>Ⅵm→Ⅴ→Ⅳ→Ⅲm</p>
-<h2 id="コピーした進行（歌モノ）"><a href="#コピーした進行（歌モノ）" class="headerlink" title="コピーした進行（歌モノ）"></a>コピーした進行（歌モノ）</h2><h3 id="ダイアトニック（メジャー）"><a href="#ダイアトニック（メジャー）" class="headerlink" title="ダイアトニック（メジャー）"></a>ダイアトニック（メジャー）</h3><h4 id="AメロBメロ"><a href="#AメロBメロ" class="headerlink" title="AメロBメロ"></a><strong>AメロBメロ</strong></h4><p>Ⅳ→Ⅴ→Ⅲm7→Ⅵm7→Ⅱm7→Ⅴ→Ⅰsus4→Ⅰ<br>Ⅳ→Ⅴ→Ⅲm7→Ⅵ7→Ⅱm7→Ⅲm→Ⅰdim7→Ⅴ#→Ⅴ<br>ⅣM7→Ⅰ→Ⅴ#dim→Ⅵm7</p>
-<h4 id="サビ"><a href="#サビ" class="headerlink" title="サビ"></a><strong>サビ</strong></h4><p>Ⅰ→Ⅴ・Ⅴ#dim→Ⅵm7・Ⅴ→Ⅳ#dim→Ⅱm7→Ⅴ→Ⅲm7・Ⅵ→Ⅱm7→Ⅴ#・Ⅴ<br>Ⅰ→Ⅳ→Ⅴ→Ⅴ#dim→Ⅵm→Ⅳ→Ⅴ→Ⅴ（→Ⅰ)</p>
-<h3 id="ダイアトニック（マイナー）"><a href="#ダイアトニック（マイナー）" class="headerlink" title="ダイアトニック（マイナー）"></a>ダイアトニック（マイナー）</h3><p>以下はメジャースケール内でのディグリーネーム</p>
-<h4 id="AメロBメロ-1"><a href="#AメロBメロ-1" class="headerlink" title="AメロBメロ"></a><strong>AメロBメロ</strong></h4><p>Ⅵm→Ⅲm→Ⅱ→Ⅱ→Ⅳ→Ⅴ→Ⅵm→Ⅵm</p>
-<h4 id="サビ-1"><a href="#サビ-1" class="headerlink" title="サビ"></a><strong>サビ</strong></h4><p>Ⅳ→Ⅴ→Ⅵm→Ⅵm→Ⅳ→Ⅲ7→Ⅵm→Ⅵm</p>
-<h2 id="コピーした進行（インスト）"><a href="#コピーした進行（インスト）" class="headerlink" title="コピーした進行（インスト）"></a>コピーした進行（インスト）</h2><h3 id="ダイアトニック（メジャー）-1"><a href="#ダイアトニック（メジャー）-1" class="headerlink" title="ダイアトニック（メジャー）"></a>ダイアトニック（メジャー）</h3><h4 id="AメロBメロ-2"><a href="#AメロBメロ-2" class="headerlink" title="AメロBメロ"></a><strong>AメロBメロ</strong></h4><h4 id="サビ-2"><a href="#サビ-2" class="headerlink" title="サビ"></a><strong>サビ</strong></h4><h3 id="その他"><a href="#その他" class="headerlink" title="その他"></a>その他</h3><p>以下はダイアトニックメジャースケール内でのディグリーネーム</p>
-<h4 id="AメロBメロ-3"><a href="#AメロBメロ-3" class="headerlink" title="AメロBメロ"></a><strong>AメロBメロ</strong></h4><p>Ⅵm/Ⅴ→Ⅲ7(#9)→Ⅲm7→Ⅱ(inherit)</p>
-<h4 id="サビ-3"><a href="#サビ-3" class="headerlink" title="サビ"></a><strong>サビ</strong></h4><p>Ⅱm7→Ⅳdim7→Ⅲm7→Ⅴdim7(クッキング)</p>
+        <p>競プロではしばしば与えられた数列に対して何かしらの操作を加える問題が出題される．今回はそのうちの典型問題と解法を抑える．</p>
+<h2 id="累積和を利用した部分和の計算"><a href="#累積和を利用した部分和の計算" class="headerlink" title="累積和を利用した部分和の計算"></a>累積和を利用した部分和の計算</h2><p>数列の一定範囲の値を足し合わせたものを部分和という．部分和を求めるために必要な情報が累積和と呼ばれる値である．累積和$S_i$は数列の値である$a_0$から$a_i$までの値を全て足し合わせたものである．<br>例えば長さ5の数列に対して範囲3の部分和を求めたいとする．累積和$S_0$から$S_4$は</p>
+<script type="math/tex; mode=display">S_0 = a_0</script><script type="math/tex; mode=display">S_1 = a_0+a_1</script><script type="math/tex; mode=display">S_2 = a_0+a_1+a_2</script><script type="math/tex; mode=display">S_3 = a_0+a_1+a_2+a_3</script><script type="math/tex; mode=display">S_4 = a_0+a_1+a_2+a_3+a_4</script><p>であり，求めたい長さ3の部分和$P_0$，$P_1$，$P_2$は</p>
+<script type="math/tex; mode=display">P_0 = a_0+a_1+a_2</script><script type="math/tex; mode=display">P_1 = a_1+a_2+a_3</script><script type="math/tex; mode=display">P_2 = a_2+a_3+a_4</script><p>である．<br>上の$S$や$P$に関する式を眺めると，求めたい部分和$P_0$，$P_1$，$P_2$について</p>
+<script type="math/tex; mode=display">P_0 = a_0+a_1+a_2 = S_2</script><script type="math/tex; mode=display">P_1 = a_1+a_2+a_3 = (a_0+a_1+a_2+a_3)-(a_0) = S_3-S_0</script><script type="math/tex; mode=display">P_2 = a_2+a_3+a_4 = (a_0+a_1+a_2+a_3+a_4) - (a_0+a_1) = S_4-S_1</script><p>の関係が成り立っていることがわかる．これを元の数列の長さ$N$や部分和を求めたい範囲$K$に応じて実装すればよい．<br>以下の問題は基礎中の基礎．特に難しい応用を考える必要もなく，求めるべきは部分和そのもの．<br><a href="https://atcoder.jp/contests/abc037/tasks/abc037_c" target="_blank" rel="noopener">AtCoder ABC037 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">N, K = map(int,input().split())</span><br><span class="line">A = list(map(int,input().split()))</span><br><span class="line">cumsum = []<span class="comment">#累積和を保存するリスト．</span></span><br><span class="line">cumsum.append(A[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N<span class="number">-1</span>):<span class="comment">#累積和の計算．部分和を求めるための前処理．</span></span><br><span class="line">    cumsum.append(A[i+<span class="number">1</span>]+cumsum[i])</span><br><span class="line">ans_sum = []<span class="comment">#部分和を保存するリスト</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(N-K+<span class="number">1</span>):<span class="comment">#部分和の計算</span></span><br><span class="line">    <span class="keyword">if</span> j == <span class="number">0</span>:<span class="comment">#一個目の要素を含む範囲の時は累積和そのものの値</span></span><br><span class="line">        ans_sum.append(cumsum[K<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">else</span>:<span class="comment">#それ以外</span></span><br><span class="line">        ans_sum.append(cumsum[j+K<span class="number">-1</span>]-cumsum[j<span class="number">-1</span>])</span><br><span class="line">print(sum(ans_sum))</span><br></pre></td></tr></table></figure></p>
+<h2 id="LIS問題"><a href="#LIS問題" class="headerlink" title="LIS問題"></a>LIS問題</h2><p>与えられた数列$a_0,a_1,…,a_N$に対し，$0 \leq j &lt; i \leq N$を満たす整数について$a_j &lt; a_i$を満たす部分の内の最長のものを最長増加部分列(LIS:Longest Increasing Subsequence)という．要はどの隣接する2つの要素を見たとしても必ず右にある要素の値の方が大きい数列のことである．<br>よくわからない場合は問題を見た方が早い．<br><a href="https://chokudai_s001.contest.atcoder.jp/tasks/chokudai_S001_h" target="_blank" rel="noopener">AtCoder ChokudaiSpeedrun001 H問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">N = int(input())</span><br><span class="line">a = list(map(int,input().split()))</span><br><span class="line">LIS = [a[<span class="number">0</span>]]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">    <span class="keyword">if</span> a[i] &gt; LIS[<span class="number">-1</span>]:<span class="comment">#LISの右端の要素より大きいとき</span></span><br><span class="line">        LIS.append(a[i])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        LIS[bisect.bisect_left(LIS,a[i])] = a[i]<span class="comment">#bisect_leftで「a[i]より大きい値の内の最小値」の位置</span></span><br><span class="line">print(len(LIS))</span><br></pre></td></tr></table></figure><br>上のコードでやっているのは，新たに用意した空の（最終的に単調増加にしたい）リストLISに対して元の数列の要素$a_0,a_1,…,a_N$の一つひとつをLISの適切な位置に配置しているということである．<br>初めに$a_0$をLISに追加して初期化しておき，その後は各要素$a_1,a_2,…a_N$の値とLISの末端の値”LIS[-1]”の大小関係によって処理を考える．<br>①$a_i&gt;$ LIS[-1]のとき，$a_i$をそのままappendする．<br>②そうでないとき，LISの適切な要素を$a_i$で上書きする．上書きする要素の位置は「LISに含まれる『$a_i$より大きい値』の中で最小の要素」の場所である．その位置を（速く）求めるのに二分探索をする必要があるが，Python3ならbisectというモジュールを用いるだけでよい．<br>本当にこの方法で最長の単調増加数列が求まるのか疑問に思うかもしれないが，外部サイトにて証明されている．LISのアルゴリズムの説明そのものもこちらの記事の方が分かりやすい．<br><a href="https://qiita.com/python_walker/items/d1e2be789f6e7a0851e5" target="_blank" rel="noopener">Qiita 最長増加部分列(LIS)の長さを求める</a></p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc154/tasks/abc154_d" target="_blank" rel="noopener">AtCoder ABC154 D問題</a><br><a href="https://atcoder.jp/contests/arc098/tasks/arc098_a" target="_blank" rel="noopener">AtCoder ABC098 C問題</a><br>累積和の考え方を使わなきゃならない問題の見極めが出来るようになりたい．</p>
 
       
     </div>
@@ -292,35 +328,27 @@
 
 
 
-  <article id="post-テンソルに関連する数学（１）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-二分探索で要領よく探す" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-20T06:09:20.000Z"><a href="/2020/02/20/テンソルに関連する数学（１）/">2020-02-20</a></time>
+        <time class="dt-published" datetime="2020-02-08T09:59:18.000Z"><a href="/2020/02/08/二分探索で要領よく探す/">2020-02-08</a></time>
       
       
   
-    <h1 class="title"><a href="/2020/02/20/テンソルに関連する数学（１）/">テンソルに関連する数学（１）</a></h1>
+    <h1 class="title"><a href="/2020/02/08/二分探索で要領よく探す/">二分探索で要領よく探す</a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>以下の書籍を参考にし，自分用にメモする．<br>[1] 原啓介，線形性・固有値・テンソル-線形代数応用への最短コース，講談社，2019<br>[2] George B.Arfken and Hans J.Weber，ベクトル・テンソルと行列，講談社，1999</p>
-<p>これまでは「テンソル＝ベクトルや行列を拡張した三次元以上の多次元配列」という漠然としたイメージだけで研究を進めてきた.<br>研究内容的にはそれでも問題ないが，数学的にきちんと理解しようと思う．</p>
-<p>なお，参考にした書籍で集合$F$というものが度々登場しているが，これは$\mathbb{R}$あるいは$\mathbb{C}$のことである（$F$の元はスカラーである）．</p>
-<h2 id="「テンソル＝多次元配列」という認識について"><a href="#「テンソル＝多次元配列」という認識について" class="headerlink" title="「テンソル＝多次元配列」という認識について"></a>「テンソル＝多次元配列」という認識について</h2><p>書籍[1]によれば，この認識は間違いではない．ただし不十分である．<br>確かにテンソルは多次元配列として表現されるが，その配列に求められる性質まで含めたものが数学的にきちんと定められた「テンソル」である（例えば，行列は二次元配列である．が，単なる二次元配列でなく，それらの積がきちんと定められていたりする）．そこでテンソルに求められる性質が<strong>多重線形性</strong>である．</p>
-<h2 id="多重線形性"><a href="#多重線形性" class="headerlink" title="多重線形性"></a>多重線形性</h2><p>多重線形性の定義をする前に「直積」という概念を知っておく必要がある．</p>
-<h3 id="定義（直積）"><a href="#定義（直積）" class="headerlink" title="定義（直積）"></a>定義（直積）</h3><p>二つの集合$A,B$に対し，それらの直積とはそれらの任意の元$a\in A,b\in B$の順序対$(a,b)$の全てからなる集合</p>
-<script type="math/tex; mode=display">A\times B = \{(a,b)|a\in A\wedge b\in B\}</script><p>である．</p>
-<p>$A,B$がいずれも$\mathbb{R}$だったら，それらの直積$\mathbb{R}\times\mathbb{R}$は二次元平面$\mathbb{R}^2$である（順序対$(a,b)$は座標）．<br>また，集合は二つに限らない．三つ以上の集合の間でも直積は同様に定義できる．</p>
-<p>テンソルに要請される性質が多重線形性である．</p>
-<h3 id="定義（多重線形性，双線形性）"><a href="#定義（多重線形性，双線形性）" class="headerlink" title="定義（多重線形性，双線形性）"></a>定義（多重線形性，双線形性）</h3><p>$F$上の線形空間$V_1,V_2,\ldots,V_m$と$W$に対し，直積$V_1\times V_2\times\cdots\times V_m$から$W$への写像$f$，つまり対応</p>
-<script type="math/tex; mode=display">V_1\times V_2\times\cdots\times V_m\ni(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_m)\mapsto f(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_m)\in W</script><p>が各変数$\boldsymbol{v}_j$について線形であるとき，$f$は多重線形性をもつ．あるいは多重線形写像であるという．<br>特に，二つの線形空間$U,V$の直積からの$W$への写像を双線形写像という．</p>
-<p>「各変数について線形性が成り立つ」の意味を双線形写像の例で説明すると，これは<br>$U,V,W$が$F$上の線形空間として，写像$f:U\times V\rightarrow W$が任意の$\boldsymbol{u},\boldsymbol{u}’\in U$と$\boldsymbol{v},\boldsymbol{v}’\in V$と任意の$a,b\in F$に対し</p>
-<script type="math/tex; mode=display">f(a\boldsymbol{u}+b\boldsymbol{u}',\boldsymbol{v}) = af(\boldsymbol{u},\boldsymbol{v})+bf(\boldsymbol{u}',\boldsymbol{v}),</script><script type="math/tex; mode=display">f(\boldsymbol{u},a\boldsymbol{v}+b\boldsymbol{v}') = af(\boldsymbol{u},\boldsymbol{v})+bf(\boldsymbol{u},\boldsymbol{v}')</script><p>の関係を満たすということである（ベクトルの内積など．ベクトルの内積は双線形写像である）．</p>
+        <p>ソートされた配列の中から目当ての値を探し出す方法の一つに二分探索（Binary Search）という手法がある．探索範囲を二分割しながら求めたい値が存在する領域を狭めつつ，最終的に一つに特定する方法である．</p>
+<h2 id="具体例"><a href="#具体例" class="headerlink" title="具体例"></a>具体例</h2><p>例えば<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">101</span>)]</span><br></pre></td></tr></table></figure><br>という配列の中で左から順に探索する線形探索を適用してみる．3という値がどこにあるか探したいときは順に1,2,3と探していけばすぐ見つかるが，90という値を探したいときは1,2,3,…,89,90と90個もの領域を探索していく必要がある．後半にある値を求めたい場合はこれだと効率が悪い．そこで二分探索を適用する．<br>二分探索は探索領域を中央で二分割することを繰り返す手法である．90という値を探すとき，「1~100の一つの領域」を「1~50,51~100の二つの領域」に分割し，その内の90が所属する方を次の探索領域とする．このとき90がどちらに所属するかを判断するために，配列があらかじめソートされている必要がある．分割基準の50 &lt; 90なので，90は後半の領域に含まれると判断できるのである．これを領域内に含まれる数が90だけになるまで繰り返す．<br>二分探索はソートされている配列にのみ適用できるという制約があるが，一から全ての値を見ながら探していく線形探索（Linear Search）と比べて圧倒的に速い．配列のサイズが$N$のときの計算量は線形探索が$O(N)$,二分探索が$O(logN)$である．</p>
+<h2 id="実装"><a href="#実装" class="headerlink" title="実装"></a>実装</h2><p>以下の問題を例題として実装を考える．<br><a href="https://atcoder.jp/contests/abc146/tasks/abc146_c" target="_blank" rel="noopener">AtCoder ABC146 C問題</a><br>実装上のポイントは「探索領域の端っこの管理」である．例えば，探索領域の左端の値をleft，右端の値をrightという変数で管理することにする．一反復内では探索領域は右か左のどちらか一方向のみから狭くなるので，求めたい値が二分割の内どっちに所属しているかでleftあるいはrightのどちらかを更新することになる．leftとrightの位置関係が入れ替わったときを探索の終了の合図とする．<br>なお，以下の実装は「分割の基準値」について処理した後に「分割の基準値未満の領域」と「分割の基準値より大きい領域」の二つに分けている．上の例だと「基準値50」を処理した後に「1~49の領域」と「51~100の領域」に分けていることになる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">A, B, money = map(int,input().split())</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">afford</span><span class="params">(N)</span>:</span><span class="comment">#その整数が買えるか否かを返すbool関数</span></span><br><span class="line">    p = A*N+B*len(str(N))</span><br><span class="line">    <span class="keyword">if</span> p &lt;= money:<span class="comment">#その整数が買えるなら</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索領域の初期値</span></span><br><span class="line">left = <span class="number">0</span></span><br><span class="line">right = <span class="number">10</span>**<span class="number">9</span></span><br><span class="line"><span class="comment">#答えの初期値</span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#二分探索</span></span><br><span class="line"><span class="keyword">while</span> left &lt;= right:</span><br><span class="line">    middle = left+(right-left)//<span class="number">2</span><span class="comment">#探索領域を二分割する．分割の基準となる値をmiddleに代入．</span></span><br><span class="line">    <span class="keyword">if</span> afford(middle):<span class="comment">#middleの値で買えるなら</span></span><br><span class="line">        ans = middle<span class="comment">#とりあえずmiddleが買える中での最高値ってことにする</span></span><br><span class="line">        left = middle+<span class="number">1</span><span class="comment">#もっと大きな値を買えないかを調べるため，探索領域の左端を更新</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        right = middle<span class="number">-1</span><span class="comment">#もっと小さな値を調べるため，探索領域の右端を更新</span></span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure><br>ちなみにこの問題では整数$N$に対して値段が単調増加であるため二分探索を適用できた（大事なこと）．</p>
+<h2 id="Pythonのbisectモジュール"><a href="#Pythonのbisectモジュール" class="headerlink" title="Pythonのbisectモジュール"></a>Pythonのbisectモジュール</h2><p>Pythonで二分探索を使うときによく使われるモジュールがbisectである．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>]<span class="comment">#昇順にソートされたリスト</span></span><br></pre></td></tr></table></figure><br>bisect_leftを使うと昇順リストAに含まれていない値$x$がどこに入るかを教えてくれる.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(A,<span class="number">3</span>)<span class="comment">#x=3のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span></span><br></pre></td></tr></table></figure><br>また，Aに含まれている値$y$を指定するとその値が最初に出てくる場所を教えてくれる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_left(A,<span class="number">2</span>)<span class="comment">#y=2のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span></span><br></pre></td></tr></table></figure><br>bisect_rightを使うと値$z$以下のAの要素数を教えてくれる．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bisect.bisect_right(A,<span class="number">4</span>)<span class="comment">#z=4のとき</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_d" target="_blank" rel="noopener">AtCoder ABC143 D問題</a><br>まず二分探索の問題に落とし込む必要がある．</p>
 
       
     </div>
@@ -337,93 +365,29 @@
 
 
 
-  <article id="post-ベクトル場の話" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <article id="post-深さ優先探索" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-19T07:58:14.000Z"><a href="/2020/02/19/ベクトル場の話/">2020-02-19</a></time>
+        <time class="dt-published" datetime="2020-02-07T02:07:06.000Z"><a href="/2020/02/07/深さ優先探索/">2020-02-07</a></time>
       
       
   
-    <h1 class="title"><a href="/2020/02/19/ベクトル場の話/">ベクトル場の話</a></h1>
-  
-
-    </header>
-    <div class="e-content entry" itemprop="articleBody">
-      
-        <p>以下の文献を参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013<br>初瀬弘平，微分幾何学講義，共立出版，1993</p>
-<p>空間の各点にそこを始点とするベクトルが割り当てられている状況が実問題でもしばしば登場する．それがベクトル場の意味するところである．<br>例えば地球の万有引力により生じる力（重力）も，地球の中心に向かって引かれる矢印で表現できる．地球から離れれば離れるほどその矢印は短くなっていく．この状況では重力をベクトル場として見ているのである．</p>
-<h2 id="多様体上のベクトル場"><a href="#多様体上のベクトル場" class="headerlink" title="多様体上のベクトル場"></a>多様体上のベクトル場</h2><p>先ほどの例（実世界は三次元ユークリッド空間）を一般化し，多様体上のベクトル場を考える．</p>
-<h3 id="ベクトル場の定義"><a href="#ベクトル場の定義" class="headerlink" title="ベクトル場の定義"></a>ベクトル場の定義</h3><p>$M$を$C^r$級多様体$(1\leq r\leq\infty)$とする．$M$の各点$p$に，$p$における接ベクトル$X_p\in T_p(M)$がひとつずつ対応しているとき，その対応</p>
-<script type="math/tex; mode=display">X=\{X_p\}_{p\in M}</script><p>のことを$M$上のベクトル場という．</p>
-<p>つまり$M$上の一点ごとに一つその点での代表的な接ベクトルを選んで，その選ばれた接ベクトルたち全体が形成する矢印の流れ$X$をベクトル場というのである．</p>
-<h2 id="ベクトル場の性質"><a href="#ベクトル場の性質" class="headerlink" title="ベクトル場の性質"></a>ベクトル場の性質</h2><p>異なる二つのベクトル場が与えられたとき，それらを加えて第三の新たなベクトル場を作ることができるとする．<br>つまり<script type="math/tex">X=\{X_p\}_{p\in M},Y=\{Y_p\}_{p\in M}</script>のとき</p>
-<script type="math/tex; mode=display">X + Y = \{X_p + Y_p\}_{p\in M}</script><p>と定義する．<br>また，ベクトル場には関数$f:M\rightarrow\mathbb{R}$を掛けることができるとする．$X$の$f$倍は</p>
-<script type="math/tex; mode=display">fX = \{f(p)X_p\}_{p\in M}</script><p>で定義される．関数を掛けるという表現をしたが，実際に掛けられているのは$f(p)$というスカラー（点$p$での関数値）である．</p>
-<p>和や積に関して，交換法則や結合法則も成立する．</p>
-<h2 id="１階の微分作用素としてのベクトル場"><a href="#１階の微分作用素としてのベクトル場" class="headerlink" title="１階の微分作用素としてのベクトル場"></a>１階の微分作用素としてのベクトル場</h2><p>点$p\in M$における接ベクトル$X_p\in T_p(M)$は方向微分（という操作）で，$p$のまわりで定義された$C^r$級関数$f$に実数$X_p(f)$を対応させる操作のことであった．つまり</p>
-<script type="math/tex; mode=display">X_p(f) = \left( a_1\left( \frac{\partial}{\partial x_1} \right)_p + a_2\left( \frac{\partial}{\partial x_2} \right)_p + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)_p \right)f</script><p>である．<br>$X$がベクトル場で$f$が$M$上で定義された$C^r$級関数のとき，対応</p>
-<script type="math/tex; mode=display">p\mapsto X_p(f) \in\mathbb{R}</script><p>を考えれば．$M$上の関数が得られる（ベクトル場が与えられているということは，各点での接ベクトル（偏微分作用素の係数$a_i$）が既に決まっているということである）．この関数を$Xf$で表す．つまり点$p$での値が</p>
-<script type="math/tex; mode=display">(Xf)(p):=X_p(f)</script><p>と求まる関数が$Xf$である．$Xf$を「関数$f$にベクトル場$X$を作用させて得られる関数」という（ベクトル場$X$を作用させるということは，接ベクトルを作用させるということである．さらに言えば，接ベクトルを作用させるということは，偏微分作用素を作用させるということである）．<br>この関数は局所座標系の取り方と無関係である．</p>
-<h2 id="ベクトル場のかっこ積"><a href="#ベクトル場のかっこ積" class="headerlink" title="ベクトル場のかっこ積"></a>ベクトル場のかっこ積</h2><p>以後，断りの無い限り多様体は$C^\infty$級である．</p>
-<h3 id="かっこ積の定義"><a href="#かっこ積の定義" class="headerlink" title="かっこ積の定義"></a>かっこ積の定義</h3><p>多様体$M$上に二つのベクトル場$X,Y$が与えられたとき，それらの<strong>かっこ積</strong>とは</p>
-<script type="math/tex; mode=display">[X,Y]f = X(Yf)-Y(Xf)</script><p>で定義される$M$上の$C^\infty$級ベクトル場$[X,Y]$である．</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article id="post-接ベクトルと接ベクトル空間の正体（まとめ）" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time class="dt-published" datetime="2020-02-19T06:11:45.000Z"><a href="/2020/02/19/接ベクトルと接ベクトル空間の正体（まとめ）/">2020-02-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2020/02/19/接ベクトルと接ベクトル空間の正体（まとめ）/">接ベクトルと接ベクトル空間の正体（まとめ）</a></h1>
+    <h1 class="title"><a href="/2020/02/07/深さ優先探索/">深さ優先探索・幅優先探索</a></h1>
   
 
     </header>
     <div class="e-content entry" itemprop="articleBody">
       
-        <p>以下の文献やサイトを参考にし，自分用にメモする．<br>松本幸夫，多様体の基礎，東京大学出版会，2013<br>初瀬弘平，微分幾何学講義，共立出版，1993<br><a href="https://ja.wikipedia.org/wiki/%E6%8E%A5%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E7%A9%BA%E9%96%93" target="_blank" rel="noopener">Wikipedia-接ベクトル空間</a></p>
-<p>前回の記事の内容がまとめきれず（理解しきれず）混乱していたのでまとめなおす．</p>
-<h2 id="接ベクトル"><a href="#接ベクトル" class="headerlink" title="接ベクトル"></a>接ベクトル</h2><h3 id="接ベクトルは作用素である．"><a href="#接ベクトルは作用素である．" class="headerlink" title="接ベクトルは作用素である．"></a><strong>接ベクトルは作用素である．</strong></h3><p>前回の記事と同じ曲線$c$，関数$f$，局所座標系$(x_1,x_2,\ldots,x_m)$を考える．<br>局所座標系の点$p(t=0)$における$c(t)$の速度ベクトルは</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>である．これは局所座標系の取り方に依存する．</p>
-<p>一方，局所座標系に依らない関数</p>
-<script type="math/tex; mode=display">f\circ c:(-\epsilon,\epsilon)\rightarrow\mathbb{R}</script><p>を$t$で微分した</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(t)</script><p>は局所座標系に依存しない．これの$p$における値は</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(0) = \frac{\partial f}{\partial x_1} \frac{dx_1}{dt}(0) + \frac{\partial f}{\partial x_2} \frac{dx_2}{dt}(0) + \cdots + \frac{\partial f}{\partial x_m} \frac{dx_m}{dt}(0)</script><p>となる．<br>この式を局所座標系の速度ベクトル（一番はじめのやつ）と比べてみると，この局所座標系に依らない値は$f$のgradient</p>
-<script type="math/tex; mode=display">\frac{df}{dx} := \left( \frac{\partial f}{\partial x_1}(p),\frac{\partial f}{\partial x_2}(p),\ldots,\frac{\partial f}{\partial x_m}(p) \right)</script><p>と速度ベクトルとの内積とみなせる（局所座標系に依存する速度ベクトルを，その座標系の勾配で補正して依存性を打ち消してやる感じ）．<br>今の「内積」を</p>
-<script type="math/tex; mode=display">\frac{d}{dt}f\circ c(0) = \left( \frac{dx_1}{dt}(0)\frac{\partial}{\partial x_1}  + \frac{dx_2}{dt}(0)\frac{\partial}{\partial x_2}  + \cdots + \frac{dx_m}{dt}(0)\frac{\partial}{\partial x_m}\right) f</script><p>と変形すると「$f$」と「$f$に作用する偏微分作用素」に分けられる．<strong>この作用素を接ベクトルとする．</strong></p>
-<p>つまり，局所座標系に依存しない速度ベクトルのようなものを探した結果，局所座標系での速度ベクトル</p>
-<script type="math/tex; mode=display">\left( \frac{dx_1}{dt}(0),\frac{dx_2}{dt}(0) ,\ldots,\frac{dx_m}{dt}(0) \right)</script><p>を</p>
-<script type="math/tex; mode=display">\left( a_1,a_2,\ldots,a_m \right)</script><p>とおいたとき</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\frac{\partial}{\partial x_i}</script><p>という形をした微分作用素の線形結合（接ベクトル）を用いることになったというわけである．<br>「作用素のベクトル」という抽象的な概念なので混乱しやすいが，</p>
-<script type="math/tex; mode=display">\frac{df}{dx} := \left( \frac{\partial f}{\partial x_1}(p),\frac{\partial f}{\partial x_2}(p),\ldots,\frac{\partial f}{\partial x_m}(p) \right)</script><p><strong>という$m$次ベクトルは$f$の勾配であり，接ベクトルではない．接ベクトルというのは</strong></p>
-<script type="math/tex; mode=display">\boldsymbol{v} = a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)</script><p><strong>という作用素のことである．$\boldsymbol{v}$で表現するせいで余計分かりにくい気がする．</strong></p>
-<h2 id="接ベクトル空間"><a href="#接ベクトル空間" class="headerlink" title="接ベクトル空間"></a>接ベクトル空間</h2><h3 id="接ベクトル空間は-m-次元の線形空間である．"><a href="#接ベクトル空間は-m-次元の線形空間である．" class="headerlink" title="接ベクトル空間は$m$次元の線形空間である．"></a><strong>接ベクトル空間は$m$次元の線形空間である．</strong></h3><p>$m$次元$C^r$級多様体$M$とその上の点$p$を考える．$p$を含む座標近傍$(U;x_1,x_2,\ldots,x_m)$上で定義された微分作用素</p>
-<script type="math/tex; mode=display">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script><p>は$x_i$軸に関する方向微分（を求める・と呼ばれる作用素）になる．<br>これら$m$個の方向微分は線形独立（証明は普通のベクトルの線形独立性を示すときと同じ方針）であり，これらの線形結合</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{m} a_i\left( \frac{\partial}{\partial x_i} \right)_p</script><p>を，<strong>点$p$における</strong>$M$の接ベクトルという．<br><strong>こいつが表現できる$p$における作用素すべての集合を$T_p(M)$と書き，$p$における$M$の接ベクトル空間という．</strong></p>
-<p>個人的には「ユークリッド空間のような軸のある（それに対応する座標がある）空間が接ベクトル空間で，その座標ひとつひとつを指すのが接ベクトル」と考えるのはよくない気がする．<br>どっちかと言えば「接ベクトル空間」という名前のついた単なる袋があって，その中のボールひとつひとつが接ベクトルであるというイメージ．</p>
-<p><del>（ただ，$m$個の基底があるわけだから接ベクトル空間は$m$次元空間であり，つまり軸のある空間でイメージすることもできるってことか？その座標の各成分が$a_i$と対応しているのか？そうすると$(a_1,a_2,\ldots,a_m)$という$m$次元ベクトルが得られるわけだが，これは接ベクトルとは違うはずだ（接ベクトルは微分作用素）．じゃあこれは何なのか？もしくは，特に考える必要もない存在なのか？）</del><br>↓<br>おそらく，入力がベクトルで出力がベクトルの関数をイメージするとよい．<br>基底が<script type="math/tex">\left( \frac{\partial}{\partial x_i} \right)_p,1\leq i\leq m</script>で与えられている$m$次元空間内で$(a_1,a_2,\ldots,a_m)$という座標（ベクトル）を指定する．その座標を入力したときの出力にあたるものが接ベクトルという作用素である<br>$(a_1,a_2,\ldots,a_m)$を一つ指定すれば接ベクトルも一つに決まるという関係ではあるが，$m$次ベクトル$(a_1,a_2,\ldots,a_m)$と接ベクトル$a_1\left( \frac{\partial}{\partial x_1} \right) + a_2\left( \frac{\partial}{\partial x_2} \right) + \cdots + a_m\left( \frac{\partial}{\partial x_m} \right)$は別の概念である．その空間内での位置を示しているだけのもの（それ単体で完結しているもの）と，その「ベクトル」そのものだけでは意味がなく何かと組み合わせる（作用させる）必要があるものという違いがある．</p>
-<h2 id="写像としての接ベクトルについて"><a href="#写像としての接ベクトルについて" class="headerlink" title="写像としての接ベクトルについて"></a>写像としての接ベクトルについて</h2><p>「微分幾何学講義」では写像$v:C^\infty(p)\rightarrow\mathbb{R}$を接ベクトルと呼ぶのだとしている．<br>つまり関数$f$に対して$v(f) = a\in\mathbb{R}$という関係が成り立つと言っている．この$a$（適当な値）は接ベクトルではない．これは偏微分の結果出てきた単なる実数である．接ベクトルは「偏微分作用素」だから実数とはまた違う概念である．<br><strong>写像の矢印「$\rightarrow$」が示す先の「$\mathbb{R}$」は，この$a$の所属を指している．接ベクトルの所属のことではない．接ベクトルの所属は接ベクトル空間という$m$次元の線形空間である．</strong></p>
+        <p>深さ優先探索(DFS:Depth-First Search)と幅優先探索(BFS:Breadth-First Search)はいずれも全探索手法の一つである．<br>これらの手法について調べると，しばしば迷路の進み方を例題として解説されている．迷路で分かれ道に出会ったときに一つの道を選んで行けるところまで行くのが深さ優先探索で，全ての道について一歩ずつ満遍なく進んでいくのが幅優先探索である．<br>これらの探索手法を用いるために，とある工夫されたデータ構造を知っておく必要がある．いわゆるキュー(queue)とスタック(stack)である．</p>
+<h2 id="キューとスタック"><a href="#キューとスタック" class="headerlink" title="キューとスタック"></a>キューとスタック</h2><h3 id="キュー"><a href="#キュー" class="headerlink" title="キュー"></a>キュー</h3><p>あるリストに対して先に加えられたデータから先に取り出す（FIFO:First In First Out）操作を行うとき，そのリストをキュー(queue)と呼ぶ．<br>キューにデータを加えることをエンキュー(enqueue)，取り出すことをデキュー(dequeue)と呼ぶ．</p>
+<h3 id="スタック"><a href="#スタック" class="headerlink" title="スタック"></a>スタック</h3><p>あるリストに対して最後に加えられたデータから優先して取り出す(LIFO:Last In First Out)操作を行うとき，そのリストをスタック(stack)と呼ぶ．<br>スタックにデータを加えることをプッシュ(push)，取り出すことをポップ(pop)と呼ぶ．</p>
+<h3 id="Pythonのdequeモジュール"><a href="#Pythonのdequeモジュール" class="headerlink" title="Pythonのdequeモジュール"></a>Pythonのdequeモジュール</h3><p>Pythonでキューとスタックを扱うときに便利なモジュールがdequeである．<br>これを用いて通常のリストよりも要素の取り出しと追加を効率よく行えるdequeオブジェクトを生成する．<br>ただし，与えられた（両端以外の）インデックスに対応する要素を取り出すことに関しては通常のリストの方が優れているらしいので，端っこ以外の値に頻繁にアクセスするなら普通のリストの方が良いらしい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])<span class="comment">#dequeオブジェクトの生成</span></span><br></pre></td></tr></table></figure><br>キューとして扱う場合はd.popleft()で取り出し，d.append()で追加する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">d.popleft()<span class="comment">#1が取り出される</span></span><br><span class="line">d.append(<span class="number">6</span>)<span class="comment">#右端に6が追加される</span></span><br></pre></td></tr></table></figure><br>スタックとして扱う場合はd.pop()で取り出し，d.append()で追加する．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">d.pop()<span class="comment">#5が取り出される</span></span><br><span class="line">d.append(<span class="number">6</span>)<span class="comment">#右端に6が追加される</span></span><br></pre></td></tr></table></figure><br>他にも便利な機能があるので調べる価値あり．</p>
+<h2 id="深さ優先探索"><a href="#深さ優先探索" class="headerlink" title="深さ優先探索"></a>深さ優先探索</h2><p>深さ優先探索に必要なデータ構造はスタックの方．新たな探索地点が追加されたら，そこを優先的に調べる（どんどん奥に進んでいく）．<br><a href="https://atcoder.jp/contests/atc001/tasks/dfs_a" target="_blank" rel="noopener">AtCoder ATC001 A問題</a><br>AtCoder公式の解説が問題ページに掲載されているのでそっちを見た方がいい．<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#入力の受け取り</span></span><br><span class="line">H, W = map(int,input().split())</span><br><span class="line">maze = [list(input()) <span class="keyword">for</span> _ <span class="keyword">in</span> range(H)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#スタート地点の決定（多分ほんとは入力を受け取る段階でやったほうがいい）</span></span><br><span class="line">start = <span class="literal">None</span><span class="comment">#スタート地点の位置を入れる変数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(H):<span class="comment">#スタート地点の探索</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(W):</span><br><span class="line">        <span class="keyword">if</span> maze[i][j] == <span class="string">"s"</span>:</span><br><span class="line">            start = (i, j)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> start:<span class="comment">#startに値が入っているなら</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索の準備</span></span><br><span class="line">stack = deque([start])<span class="comment">#探索の分岐を保存するためのスタック</span></span><br><span class="line">goal = <span class="literal">False</span><span class="comment">#ゴールに到達したかを判断するフラグ</span></span><br><span class="line">dx = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>]<span class="comment">#自分のx座標を動かすための値</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="comment">#自分のy座標を動かすための値</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索</span></span><br><span class="line"><span class="keyword">while</span> stack:<span class="comment">#１ループの終了時にstackが空でなければ</span></span><br><span class="line">    y, x = stack.pop()<span class="comment">#現在の座標を取得</span></span><br><span class="line">    <span class="keyword">if</span> maze[y][x] == <span class="string">"g"</span>:<span class="comment">#ゴールだったら探索を終了</span></span><br><span class="line">        print(<span class="string">"Yes"</span>)</span><br><span class="line">        goal = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">for</span> dxi, dyi <span class="keyword">in</span> zip(dx, dy):<span class="comment">#zip関数：dx,dyのインデックスが同じ要素を同時に代入</span></span><br><span class="line">        <span class="comment">#現在の座標の上下左右のマスを見て，行けるところがないか調べる</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span>&lt;=y+dyi&lt;H <span class="keyword">and</span> <span class="number">0</span>&lt;=x+dxi&lt;W) <span class="keyword">or</span> maze[y+dyi][x+dxi] == <span class="string">"#"</span>:<span class="comment">#次の行き先が「街の中じゃない」もしくは「壁」</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append((y+dyi, x+dxi))<span class="comment">#次に行くところの座標をstackに追加</span></span><br><span class="line">    maze[y][x] = <span class="string">"#"</span><span class="comment">#今立っているところを壁扱いする</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#行けるところのすべてを探索した結果ゴールが無かったとき</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> goal:</span><br><span class="line">    print(<span class="string">"No"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="幅優先探索"><a href="#幅優先探索" class="headerlink" title="幅優先探索"></a>幅優先探索</h2><p>幅優先探索に必要なデータ構造はキューの方．新たな探索地点が追加されたとしてもそれはしばらく置いといて古いものから処理していく．<br><a href="https://atcoder.jp/contests/abc007/tasks/abc007_3" target="_blank" rel="noopener">AtCoder ABC007 C問題</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="comment">#入力の受け取り</span></span><br><span class="line">R,C = map(int,input().split())</span><br><span class="line">sy,sx = map(int,input().split())</span><br><span class="line">gy,gx = map(int,input().split())</span><br><span class="line">maze = [list(input()) <span class="keyword">for</span> _ <span class="keyword">in</span> range(R)]</span><br><span class="line"></span><br><span class="line"><span class="comment">#探索の準備</span></span><br><span class="line">goal = <span class="literal">False</span> <span class="comment">#探索終了のフラグ </span></span><br><span class="line">maze[gy<span class="number">-1</span>][gx<span class="number">-1</span>] = <span class="string">"g"</span><span class="comment">#goalの設定</span></span><br><span class="line"></span><br><span class="line">queue = deque([(sy<span class="number">-1</span>,sx<span class="number">-1</span>)]) <span class="comment">#キューの初期値としてstartの座標を入れる</span></span><br><span class="line">distance = deque([<span class="number">0</span>]) <span class="comment">#各座標ごとのstartからの距離を管理</span></span><br><span class="line"></span><br><span class="line">maze[sy<span class="number">-1</span>][sx<span class="number">-1</span>] = <span class="string">"#"</span> <span class="comment">#スタート地点を壁とする．これを忘れると無駄な探索が一つ増え，問題によってはWrongAnswerになったりする．</span></span><br><span class="line"></span><br><span class="line">dx = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>]<span class="comment">#自分のx座標を動かすための値</span></span><br><span class="line">dy = [<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span>]<span class="comment">#自分のy座標を動かすための値</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#探索</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> goal:<span class="comment">#goalがFalseの間</span></span><br><span class="line">    y,x = queue.popleft() <span class="comment">#キューの要素の取り出し</span></span><br><span class="line">    past_count = distance.popleft()<span class="comment">#その探索地点のスタートからの距離</span></span><br><span class="line">    <span class="keyword">for</span> dxi,dyi <span class="keyword">in</span> zip(dx,dy):<span class="comment">#その地点の上下左右を調べる</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">0</span>&lt;=x+dxi&lt;C <span class="keyword">and</span> <span class="number">0</span>&lt;=y+dyi&lt;R) <span class="keyword">or</span> maze[y+dyi][x+dxi] == <span class="string">"#"</span>:<span class="comment">#次の行き先が「街の中じゃない」もしくは「壁」</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> maze[y+dyi][x+dxi] == <span class="string">"g"</span>:<span class="comment">#ゴールなら探索終了</span></span><br><span class="line">                goal= <span class="literal">True</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            queue.append((y+dyi,x+dxi))<span class="comment">#行けるところの座標を追加</span></span><br><span class="line">            distance.append(past_count+<span class="number">1</span>)<span class="comment">#追加された地点のスタートからの距離</span></span><br><span class="line">            maze[y+dyi][x+dxi] = <span class="string">"#"</span> <span class="comment">#次に行くところ（探索先）を壁扱いする（他の分岐から同じ場所を調べなおす必要が無いように）</span></span><br><span class="line">print(past_count+<span class="number">1</span>)</span><br></pre></td></tr></table></figure><br>それぞれの実装で一切無駄な探索がないかと聞かれるとあまり自信がない．探索過程の挙動を確認してみるべき．</p>
+<h2 id="例題"><a href="#例題" class="headerlink" title="例題"></a>例題</h2><p>どちらを使うべきかも考える必要がある．使い分けについて検索するとある程度の指針が出てくる．<br><a href="https://atcoder.jp/contests/arc031/tasks/arc031_2" target="_blank" rel="noopener">AtCoder ARC031 B問題</a><br><a href="https://atcoder.jp/contests/abc151/tasks/abc151_d" target="_blank" rel="noopener">AtCoder ABC151 D問題</a><br><a href="https://atcoder.jp/contests/joi2011yo/tasks/joi2011yo_e" target="_blank" rel="noopener">AtCoder 第１０回日本情報オリンピック予選 E問題</a></p>
 
       
     </div>
@@ -462,13 +426,11 @@
   <h3 class="title">カテゴリー</h3>
   <ul class="entry">
   
-    <li><a href="/categories/サーバーサイド/">サーバーサイド</a><small>1</small></li>
+    <li><a href="/categories/サーバーサイド/">サーバーサイド</a><small>2</small></li>
   
-    <li><a href="/categories/メモ/">メモ</a><small>2</small></li>
+    <li><a href="/categories/メモ/">メモ</a><small>1</small></li>
   
-    <li><a href="/categories/数学/">数学</a><small>10</small></li>
-  
-    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>10</small></li>
+    <li><a href="/categories/競技プログラミング/">競技プログラミング</a><small>9</small></li>
   
   </ul>
 </div>
@@ -479,17 +441,11 @@
   <h3 class="title">タグ</h3>
   <ul class="entry">
   
+    <li><a href="/tags/Maven/">Maven</a><small>1</small></li>
+  
     <li><a href="/tags/Node-js/">Node.js</a><small>1</small></li>
   
-    <li><a href="/tags/Python3/">Python3</a><small>10</small></li>
-  
-    <li><a href="/tags/テンソル/">テンソル</a><small>1</small></li>
-  
-    <li><a href="/tags/多様体の基礎のキソ/">多様体の基礎のキソ</a><small>5</small></li>
-  
-    <li><a href="/tags/微分幾何学/">微分幾何学</a><small>9</small></li>
-  
-    <li><a href="/tags/線形代数学/">線形代数学</a><small>2</small></li>
+    <li><a href="/tags/Python3/">Python3</a><small>9</small></li>
   
   </ul>
 </div>
@@ -499,7 +455,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2020 kebayashi
+  &copy; 2021 kebayashi
   
 </div>
 <div class="clearfix"></div></footer>
